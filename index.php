@@ -24,5 +24,3 @@ $mvc = new MvcController();
 $mvc -> pagina();
 
 ?>
-
-<p>Esto es una prueba</p>
