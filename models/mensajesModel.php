@@ -51,34 +51,42 @@ class MensajesModel extends Datos {
         $stmt->close(); //cerramos la conexión cuando hemos terminado.
         $vaciaNotificaciones->close();
     }
-    
-    public function remitenteModel($tabla,$id){
+
+    public function remitenteModel($tabla, $id) {
         $stmt = Conexion::conectar()->prepare("SELECT nombre,apellido1,apellido2 FROM $tabla WHERE id=$id");
         $stmt->execute();
         return $stmt->fetch();
         $stmt->close();
-    }//fin función remitenteModel
-    
-    
-        public function borrarMensajeModel($datosModel, $tabla){
-			$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id=:id");
+    }
 
-			$stmt->bindParam(":id", $datosModel ,PDO::PARAM_INT);		
-			
-                        //var_dump($stmt);
-                        
-                       
-			if($stmt->execute()){
-				return "ok";
-			}else{
-				return "ko";
-			}
+//fin función remitenteModel
 
-			
-			$stmt->close();
+    public function borrarMensajeModel($datosModel, $tabla) {
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id=:id");
 
-	} // fin función borrarMensajes
-    
+        $stmt->bindParam(":id", $datosModel, PDO::PARAM_INT);
+
+        //var_dump($stmt);
+
+
+        if ($stmt->execute()) {
+            return "ok";
+        } else {
+            return "ko";
+        }
+        $stmt->close();
+    }
+
+// fin función borrarMensajes
+
+    public function listarDestinatariosModel() {
+        $stmt = Conexion::conectar()->prepare("SELECT id, nombre, apellido1, apellido2 FROM usuario");
+        
+        $stmt->execute();
+
+        return $stmt->fetchAll(); //fetchAll porque obtiene todas las filas de un conjunto de resultados
+        $stmt->close();
+    }
 
 }
 
