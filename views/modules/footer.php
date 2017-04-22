@@ -1,0 +1,1 @@
+<nav><center><h2>Pie de página - Copyright <?php echo date("Y"); ?></h2></center></nav>
