@@ -17,7 +17,9 @@ if (isset($_SESSION["validar"])) {
     }else if($_SESSION["rol"]==2){ //profesor
         echo '<ul><li><a href="#">Vista de profesor</a></li><ul>';
     }else if($_SESSION["rol"]==3){ //alumnos
-        echo '<ul><li><a href="#">Vista de alumno</a></li><ul>';
+        echo '<ul><li><a href="#">Vista de alumno</a></li>
+        <li><a href="index.php?action=msg">Mensajes</a></li><ul>
+        <li><a href="index.php?action=verMensajes">Ver mensajes</a></li>';
     }else if($_SESSION["rol"]==4){ //Por autorizar
         echo '<ul><li><a href="#">vista de usuario sin autorizar</a></li><ul>';
     }        
