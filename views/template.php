@@ -1,102 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
         <title>¡¡Pillo sitio!!</title>	
         <link rel="stylesheet" type="text/css" href="styles/base.css">
     </head>
 
     <body>
-        <nav>
-            <?php include "modules/navegacion.php"; ?>      
-        </nav>
+        <main> <!-- Contenedor de la web -->
+            <header> <!-- Para las notificaciones, botón de login y logout -->
+                <?php
+                session_start();
 
-        <?php
-        if (isset($_SESSION["usuario"])) {
-            echo '<p>Bienvenido ';
-            echo ucfirst($_SESSION["usuario"]) . '</p>';
-            if ($_SESSION["notificaciones"] > 0) {
-                echo '<p>Tienes ' . $_SESSION["notificaciones"] . ' <a href="index.php?action=verMensajes">mensajes</a></p>';
+                if (!isset($_SESSION["validar"])) {
 
-                /* Esta parte es mejor hacerla con ajax para que se vean las actualizaciones en tiempo real */
-            }
-        }
-        ?> 
-        <section>
+                    /* Navegación para cuando no estemos logueados o registrados */
+                    echo '<a href="index.php?action=login">Login</a>
+                          <a href="index.php?action=registro">Registro</a>';
 
-            <?php
-            $mvc = new MvcController();
-            $mvc->enlacesPaginasController();
-            ?>
+                    //exit(); //usando el método exit() hacemos que nadie pueda, de ninguna forma continuar el script y alterarlo. 
+                }  
 
-        </section>
+                if (isset($_SESSION["usuario"])) {
+                    echo '<p>Bienvenido ';
+                    echo ucfirst($_SESSION["usuario"]) . '      </p>';
+                    echo '<a href="index.php?action=salir">Salir</a>';
+                    if ($_SESSION["notificaciones"] > 0) {
+                        echo '<p>Tienes ' . $_SESSION["notificaciones"] . ' <a href="index.php?action=verMensajes">mensajes</a></p>';
 
-<?php if (isset($_SESSION["validar"])) { ?>
+                        /* Esta parte es mejor hacerla con ajax para que se vean las actualizaciones en tiempo real */
+                    }
+                }
+                ?> 
 
-            <aside>
-                <article>
+            </header>
 
-                    <h1>Esto es un ejemplo</h1> 
-                    <p>Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto</p>
-                    <p>Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto</p>
-                    <p>Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto</p>                       
-                </article>
-                
-                <article>
-
-                    <h1>Esto es un ejemplo</h1> 
-                    <p>Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto</p>
-                    <p>Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto</p>
-                    <p>Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto</p>                       
-                </article>
-                
-                <article>
-
-                    <h1>Esto es un ejemplo</h1> 
-                    <p>Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto</p>
-                    <p>Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto</p>
-                    <p>Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto
-                        Texto texto texto lorem texto texto texto</p>                       
-                </article>
-
-            </aside>
+            <nav>
+                <a href="index.php"><img src="img/logotipo.jpeg"></a>
+                <?php include "modules/navegacion.php"; ?>      
+            </nav>
 
 
-<?php } ?>
+            <section>
+
+                <?php
+                $mvc = new MvcController();
+                $mvc->enlacesPaginasController();
+                ?>
+
+            </section>
+
+            <?php if (isset($_SESSION["validar"])) { ?>
+
+                <aside>
+                    <article>
+
+                        <h1>Esto es un ejemplo</h1> 
+                        <p>Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto</p>
+                        <p>Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto</p>
+                        <p>Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto</p>                       
+                    </article>
+
+                    <article>
+
+                        <h1>Esto es un ejemplo</h1> 
+                        <p>Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto</p>
+                        <p>Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto</p>
+                        <p>Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto</p>                       
+                    </article>
+
+                    <article>
+
+                        <h1>Esto es un ejemplo</h1> 
+                        <p>Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto</p>
+                        <p>Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto</p>
+                        <p>Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto
+                            Texto texto texto lorem texto texto texto</p>                       
+                    </article>
+
+                </aside>
 
 
-        <footer>
-        <?php include "modules/footer.php"; ?>
+            <?php } ?>
 
-        </footer>
 
+            <footer>
+                <?php include "modules/footer.php"; ?>
+
+            </footer>
+        </main>
     </body>
 
 </html>

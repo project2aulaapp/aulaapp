@@ -1,12 +1,33 @@
+header{
+    position: fixed;
+    top:.5em;
+    right: 15px;
+    color: white;
+    background: black;
+    height: 6em;
+    width: 90%;
+    margin-bottom: .5em;
+    z-index: 1;
+    border-radius: 5px; 
+    text-align: right;    
+}
+
+header a{
+    color:white;
+    padding: .5em;   
+}
+
 
 nav{
+                        
 			position:relative;
 			margin:auto;
 			width:100%;
 			height:auto;
 			background:black;
 			color:white;
-			border-radius: 5px;
+			border-radius: 5px;   
+                        margin-top: 7em;
 		}
 
 		nav ul{
