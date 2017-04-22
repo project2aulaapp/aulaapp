@@ -28,7 +28,7 @@ class UsuariosController extends MvcController{
 		}
 	}
 
-	#Login de usuarios ingresar.php
+	#Registro de usuarios ingresar.php
 		#------------------------------------
 
 	public function ingresoUsuarioController(){
@@ -153,6 +153,22 @@ class UsuariosController extends MvcController{
 			}
 		}
 	}
+        
+        	public function listarUsuariosController(){ // con esta función listaremos TODOS los usuarios de la aplicación
+
+		$respuesta = UsuariosModel::listarUsuariosModel("usuario");
+
+		foreach ($respuesta as $fila => $item) {
+			echo'<tr>
+				<td>'.$item["user"].'</td>
+				<td>'.$item["email"].'</td>				
+				<td><a href="index.php?action=usuarios&idBorrar='.$item["id"].'"><button>Borrar</button></a></td>
+			</tr>';
+		}		
+	}
+        
+        
+        
 
 }
 

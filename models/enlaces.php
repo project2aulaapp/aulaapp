@@ -16,6 +16,12 @@ class Paginas{
 			$module =  "views/modules/inicio.php";
 		
 		}
+                
+                else if($enlaces == "lUsuarios"){
+
+			$module =  "views/modules/listadoUsuarios.php";
+		
+		}
 
 		
                 else if($enlaces == "verMensajes"){

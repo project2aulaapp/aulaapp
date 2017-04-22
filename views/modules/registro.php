@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>Formulario registro</title>
-    <link rel="stylesheet" href="validacionRegistro/style.css">
-</head>
-
-<body>
 	<h1>REGISTRO DE USUARIO</h1>
 
     <form method="post" id="myForm">
@@ -46,7 +36,7 @@
             <span></span>
         </p>
         <p>
-            <textarea type="text" name="respuestaRegistro" id="answer" placeholder="Respuesta" title="respuesta"></textarea>
+            <input type="text" name="respuestaRegistro" id="answer" placeholder="Respuesta" title="respuesta">
             <span></span>
         </p>
         <p>
@@ -54,11 +44,8 @@
             <button type="reset" value="Limpiar">LIMPIAR</button>
         </p>
     </form>
-    <script type="text/javascript" src="validacionRegistro/validacionSubmit.js"></script>
-    <script type="text/javascript" src="validacionRegistro/validacionBlur.js"></script>
-</body>
-
-</html>
+    <script type="text/javascript" src="javascript/validacionSubmit.js"></script>
+    <script type="text/javascript" src="javascript/validacionBlur.js"></script>
 
 <?php
 

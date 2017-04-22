@@ -112,6 +112,24 @@ class UsuariosModel extends Datos {
         }
         $stmt->close();
     }
+    
+    # FUNCIÓN PARA LISTAR TODOS LOS USUARIOS DE LA APLICACIÓN PARA QUE EL ADMINISTRADOR LOS DÉ DE BAJA SI PROCEDE
+    
+    public function listarUsuariosModel($tabla) {
+
+        $stmt = Conexion::conectar()->prepare("SELECT id,user,email FROM $tabla WHERE id!=1"); //Todos menos el administrador principal
+
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(); //fetchAll porque obtiene todas las filas de un conjunto de resultados
+        $stmt->close(); //cerramos la conexión cuando hemos terminado.
+    }
+    
+    
+    
+    
+    
 
 }
 

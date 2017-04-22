@@ -60,7 +60,7 @@ class MensajesController extends MvcController {
         echo '<select name="destinatario">'; 
         foreach ($respuesta as $fila => $item) 
             {                   
-              echo '<option value="'.$item["id"].'">'.ucfirst($item["nombre"]).' '.$item["apellido1"].' '.$item["apellido2"].'</option>';       
+              echo '<option value="'.$item["id"].'">'.utf8_encode(ucfirst($item["nombre"])).' '.utf8_encode($item["apellido1"]).' '.utf8_encode($item["apellido2"]).'</option>';       
             }
         echo '</select>';
     }

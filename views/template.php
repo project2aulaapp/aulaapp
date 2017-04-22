@@ -24,7 +24,7 @@
 
                 if (isset($_SESSION["usuario"])) {
                     echo '<p>Bienvenido ';
-                    echo ucfirst($_SESSION["usuario"]) . '      </p>';
+                    echo ucfirst($_SESSION["usuario"]) . '      </p>';                    
                     echo '<a href="index.php?action=salir">Salir</a>';
                     if ($_SESSION["notificaciones"] > 0) {
                         echo '<p>Tienes ' . $_SESSION["notificaciones"] . ' <a href="index.php?action=verMensajes">mensajes</a></p>';
