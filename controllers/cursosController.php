@@ -69,7 +69,7 @@ class CursosController extends MvcController {
                         //var_dump($respuesta);
                         
 			if ($respuesta == "ok") {
-				header("location:index.php?action=index");
+				header("location:index.php?action=seleccionAsignaturas");
 			}else{
                             echo 'Algo falló';
                         }

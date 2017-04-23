@@ -44,18 +44,34 @@ class AsignaturaModel extends Datos {
     
     
     
-    public function eleccionAsignaturasModel($datosModel,$id){    
-        $stmt = Conexion::conectar()->prepare("INSERT INTO alumnoasignatura(idAsignatura, idAlumno) VALUES (".$datosModel["asignatura"].",$id)");
+    public function eleccionAsignaturasModel($datosModel,$id){   
+            
+            $values = '';            
+            $longitud = count($datosModel);
+            
+            for($i=0 ; $i<$longitud ; $i++){
+                if($i<($longitud-1)){
+                 $values = ',('.$datosModel[$i].', '.$id.')'.$values;   
+                }else{
+                    $values = '('.$datosModel[$i].', '.$id.')'.$values;
+                }
+                
+            }  
+       
+        //echo $values;
+        
+        $stmt = Conexion::conectar()->prepare("INSERT INTO alumnoasignatura (idAsignatura, idAlumno) VALUES $values");
         
         
-        if ($stmt->execute()) {
-
+        if ($stmt->execute()){ 
+            $_SESSION["asignaturasElegidas"]=true; // si ya ha elegido asignaturas se crea esta variable de sesión para que no pueda volver a elegirlas
             return "ok";
         } else {
             return "ko";
         }
-
         $stmt->close();
+         
+         
     }
     
     

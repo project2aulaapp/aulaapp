@@ -32,9 +32,9 @@ class AsignaturasController extends MvcController {
             $respuesta = AsignaturaModel::listarAsignaturasModel(); //pido datos al servidor           
             //var_dump($respuesta);
             foreach ($respuesta as $fila => $item) {//aquí los recorro, como quiero una lista de inputs tipo checkbox pues lo hago así
-                echo '<input type="checkbox" value="'.$item["id"].'" name="asignaturas">'.$item["nombre"].'<br>';
+                echo '<input type="checkbox" value="'.$item["id"].'" name="asignaturas[]">'.$item["nombre"].'<br>';
             }
-            echo '<input type="submit" value="Enviar" name="enviar">';
+            echo '<input type="submit" value="Enviar">';
     }
     
     
@@ -46,23 +46,22 @@ class AsignaturasController extends MvcController {
     
     public function elegirAsignaturasController(){
             if (isset($_POST["asignaturas"])) {
-            $datosController=array();
-            
-            $datosController['asignatura']=$_POST['asignaturas'];    
+                       
+            $datosController=$_POST['asignaturas'];    
                               
             
-            var_dump($datosController);
-            $respuesta = AsignaturaModel::eleccionAsignaturaModel($datosController, $_SESSION["userId"]);
+            //var_dump($datosController);
+            $respuesta = AsignaturaModel::eleccionAsignaturasModel($datosController, $_SESSION["userId"]);
 
 
-            var_dump($respuesta);
-            /*if ($respuesta == "ok") {
-                //header("location:index.php?action=ok");
-                echo "Asignatura grabada!";
+            //var_dump($respuesta);
+            if ($respuesta == "ok") {
+                header("location:index.php?action=index");
+                //echo "Asignaturas elegidas!";
             } else {
                 //header("location:index.php");
                 echo "maaaaaaal!";
-            }*/
+            }
         }else{
             echo "nada";
         }
