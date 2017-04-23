@@ -78,11 +78,11 @@ class UsuariosController extends MvcController{
 		}		
 	}
 
-		#Editar usuario editar.php
-		#------------------------------------
+	#Editar usuario editar.php
+	#------------------------------------
 	public function editarUsuarioController(){
 
-		$datosController = $_GET["id"];
+		$datosController = $_SESSION["userId"];
 
 		//echo $datos;
 
@@ -92,8 +92,20 @@ class UsuariosController extends MvcController{
 		<input type="hidden" value="'.$respuesta["id"].'" name="idEditar">
 
 		<input type="text" value="'.$respuesta["user"].'" name="usuarioEditar" required>
+                    
+		<input type="text" value="'.$respuesta["nombre"].'" name="nombreEditar" required>
+                    
+		<input type="text" value="'.$respuesta["apellido1"].'" name="apellido1Editar" required>
+                    
+		<input type="text" value="'.$respuesta["apellido2"].'" name="apellido2Editar" required>
 
-		<input type="text" value="'.$respuesta["password"].'" name="passwordEditar" required>
+		<input type="hidden" value="'.$respuesta["password"].'" name="passwordEditar" required>
+                
+                Antigua contraseña <input type="password" value="" name="oldPassword" required>
+                
+                Nueva contraseña<input type="password" value="" name="newPassword" required>
+                
+                Repite nueva contraseña<input type="password" value="" name="newRePassword" required>
 
 		<input type="email" value="'.$respuesta["email"].'" name="emailEditar" required>
 
@@ -102,26 +114,66 @@ class UsuariosController extends MvcController{
 
 
 	#Actualizar usuario editar.php
-		#------------------------------------
+        #------------------------------------
 	public function actualizarUsuarioController(){
 
 		if(isset($_POST["usuarioEditar"])){
 			$datosController = array(
-							"id"=>$_POST["idEditar"],
+							"id"=>$_SESSION["userId"],
 							"user"=>$_POST["usuarioEditar"],
+							"nombre"=>$_POST["nombreEditar"],
+							"ape1"=>$_POST["apellido1Editar"],
+							"ape2"=>$_POST["apellido2Editar"],
+                                                        "pass"=>$_POST["passwordEditar"],
+                                                        "passAntiguo"=>  sha1($_POST["oldPassword"]),
+                                                        "newPass"=>  $_POST["newPassword"],
+                                                        "rePassAntiguo"=>  $_POST["newRePassword"],
 							"email"=>$_POST["emailEditar"]
 						  );//para enviarle al modelo para modificar
-
-			$respuesta = UsuariosModel::actualizarUsuarioModel($datosController,"usuario");
-
+                        
+                if(($datosController["pass"] == $datosController["passAntiguo"])
+                        && ($datosController["newPass"]==$datosController["rePassAntiguo"])
+                        && $datosController["pass"]!="" 
+                        && $datosController["passAntiguo"]!="" 
+                        && $datosController["newPass"]!="" 
+                        && $datosController["rePassAntiguo"]!=""){
+                    $respuesta = UsuariosModel::actualizarUsuarioModel($datosController,"usuario");
+            
 			if($respuesta == "ok"){
-				header("location:index.php?action=cambio");
+				header("location:index.php?action=perfil");
 			}else{
 				echo "error, no se actualizó";
 			}
+                }else{
+                    echo 'Ha ocurrido algún error, comprueba que has introducido bien los datos, no se ha actualizado nada.';
+                    
+                    
+                }
+			
 
 		}
 	}
+        
+        
+        #   Función para ver tu perfil de usuario y modificar algún dato
+        
+        
+        public function verPerfilUsuarioController(){
+            $datosController = $_SESSION["userId"];
+
+		$respuesta = UsuariosModel::verPerfilUsuarioModel($datosController,"usuario");
+                
+                echo '<p>Nombre de usuario: '.$respuesta["user"].'</p>';
+                echo '<p>Nombre: '.$respuesta["nombre"].'</p>';
+                echo '<p>Primer apellido: '.$respuesta["apellido1"].'</p>';
+                echo '<p>Segundo apellido: '.$respuesta["apellido2"].'</p>';
+                echo '<p>Email: '.$respuesta["email"].'</p>';
+                echo '<p>Fecha de registro: '.$respuesta["fecha_alta"].'</p>';
+                
+                echo '<a href="index.php?action=editarPerfil">Editar perfil</a>';
+        }
+        
+        #   Función para autorizar usuarios que se han dado de alta en la aplicación
         
         public function autorizarUsuarioController(){
 
@@ -149,7 +201,7 @@ class UsuariosController extends MvcController{
 			$datosController = $_GET["idBorrar"];
 			$respuesta = UsuariosModel::borrarUsuarioModel($datosController,"usuario");
 			if ($respuesta == "ok") {
-				header("location:index.php?action=usuarios");
+				header("location:index.php?action=lUsuarios");
 			}
 		}
 	}

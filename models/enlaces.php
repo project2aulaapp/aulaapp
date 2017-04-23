@@ -17,6 +17,19 @@ class Paginas{
 		
 		}
                 
+                else if($enlaces == "perfil"){
+
+			$module =  "views/modules/verPerfil.php";
+		
+		}
+                
+                else if($enlaces == "editarPerfil"){
+
+			$module =  "views/modules/editar.php";
+		
+		}
+                
+                
                 else if($enlaces == "lUsuarios"){
 
 			$module =  "views/modules/listadoUsuarios.php";
@@ -32,7 +45,7 @@ class Paginas{
 
 		else if($enlaces == "ok"){
 
-			$module =  "views/modules/registro.php";
+			$module =  "views/modules/login.php";
 		
 		}
 

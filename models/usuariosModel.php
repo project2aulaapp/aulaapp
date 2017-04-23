@@ -57,25 +57,41 @@ class UsuariosModel extends Datos {
     }
 
     public function editarUsuarioModel($datosModel, $tabla) {
-        $stmt = Conexion::conectar()->prepare("SELECT id,user, email FROM $tabla WHERE id = :id");
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id = $datosModel");
 
-        $stmt->bindParam(":id", $datosModel, PDO::PARAM_INT); //aquí $datosModel como sólo da un resultado no hay que poner corchetes
         $stmt->execute();
 
         return $stmt->fetch(); //sólo una fila, la del usuario
         $stmt->close();
     }
+    
+    public function verPerfilUsuarioModel($datosModel, $tabla) {
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id = $datosModel");
+
+        $stmt->execute();
+
+        return $stmt->fetch(); //sólo una fila, la del usuario, por eso fetch y no fetchAll()
+        $stmt->close();
+    }
+    
+    
+    
 
     #Actualización  de usuarios
     #------------------------------------		
 
     public function actualizarUsuarioModel($datosModel, $tabla) {
-        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET user=:usuario,email=:email WHERE id=:id");
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET user=:usuario,email=:email,password=:pass,nombre=:nombre,apellido1=:apellido1,apellido2=:apellido2 WHERE id=:id");
 
         $stmt->bindParam(":id", $datosModel["id"], PDO::PARAM_INT);
         $stmt->bindParam(":usuario", $datosModel["user"], PDO::PARAM_STR);
         $stmt->bindParam(":email", $datosModel["email"], PDO::PARAM_STR);
-
+        $stmt->bindParam(":pass", sha1($datosModel["newPass"]), PDO::PARAM_STR);
+        $stmt->bindParam(":apellido1", $datosModel["ape1"], PDO::PARAM_STR);
+        $stmt->bindParam(":apellido2", $datosModel["ape2"], PDO::PARAM_STR);
+        $stmt->bindParam(":nombre", $datosModel["nombre"], PDO::PARAM_STR);
+        
+        
         if ($stmt->execute()) {
             return "ok";
         } else {

@@ -13,13 +13,18 @@ if (isset($_SESSION["validar"])) {
                 <li><a href="index.php?action=lCursos">Listar cursos</a></li>
                 <li><a href="index.php?action=verMensajes">Ver mensajes</a></li>
                 <li><a href="index.php?action=lUsuarios">Listar usuarios</a></li>
+                <li><a href="index.php?action=perfil">Ver tu perfil de usuario</a></li>
 	</ul>';
     }else if($_SESSION["rol"]==2){ //profesor
-        echo '<ul><li><a href="#">Vista de profesor</a></li><ul>';
+        echo '<ul><li><a href="#">Vista de profesor</a></li>
+              <li><a href="index.php?action=perfil">Ver tu perfil de usuario</a></li>
+              <ul>';
     }else if($_SESSION["rol"]==3){ //alumnos
         echo '<ul><li><a href="#">Vista de alumno</a></li>
         <li><a href="index.php?action=msg">Mensajes</a></li><ul>
-        <li><a href="index.php?action=verMensajes">Ver mensajes</a></li>';
+        <li><a href="index.php?action=verMensajes">Ver mensajes</a>
+        <li><a href="index.php?action=perfil">Ver tu perfil de usuario</a></li>
+        </li>';
     }else if($_SESSION["rol"]==4){ //Por autorizar
         echo '<ul><li><a href="#">vista de usuario sin autorizar</a></li><ul>';
     }        
