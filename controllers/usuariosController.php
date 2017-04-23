@@ -206,11 +206,7 @@ class UsuariosController extends MvcController {
         }
     }
 
-    # Función para inscribirse a un curso, cuando el usuario entre por primera vez se tendrá que inscribir a un curso y solo uno
-
-    public function inscripcionCursoUsuarioController() {
-        
-    }
+    
 
 }
 

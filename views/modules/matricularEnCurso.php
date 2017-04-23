@@ -14,9 +14,10 @@ echo "Matriculado: ".$_SESSION["inscrito"];
 
 
 
-if($_SESSION["inscrito"]==1){ //si ya está inscrito lo llevamos al index
+if($_SESSION["inscrito"]==1 || $_SESSION["rol"]==1){ //si ya está inscrito lo llevamos al index o es administrador
     header("location:index.php?action=index");
-}else{
+}else{  // La primera vez que entremos después de registrarnos, nos pedirá que 
+        //nos matriculemos en un curso
     echo '<h1>Inscripción a un nuevo curso</h1>';
     ?>
 <form method="POST">

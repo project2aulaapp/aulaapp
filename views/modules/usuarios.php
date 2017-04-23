@@ -15,7 +15,7 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 ?>
 
 
-<h1>USUARIOS</h1>
+<h1>USUARIOS POR AUTORIZAR</h1>
 
 	<table border="1">
 		

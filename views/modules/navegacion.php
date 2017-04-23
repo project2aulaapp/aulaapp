@@ -6,7 +6,7 @@ if (isset($_SESSION["validar"])) {
     
     if($_SESSION["rol"]==1){
         echo '<ul>			
-		<li><a href="index.php?action=usuarios">Usuarios</a></li>
+		<li><a href="index.php?action=usuarios">Autorización de Usuarios</a></li>
 		<li><a href="index.php?action=msg">Mensajes</a></li>		
 		<li><a href="index.php?action=asig">Añadir asignatura</a></li>	
                 <li><a href="index.php?action=nCurso">Añadir curso</a></li>

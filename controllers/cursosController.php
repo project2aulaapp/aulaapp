@@ -57,6 +57,9 @@ class CursosController extends MvcController {
         }
         
         
+        # Con esta función lo que hacemos es que nos inscribimos en un curso una 
+        # vez que nos hayamos registrado y nos hayan aprobado el registro
+        
         public function inscribirEnCursoController(){
             if(isset($_POST["idCurso"])){
                 $idCursoController = $_POST["idCurso"];
@@ -73,6 +76,7 @@ class CursosController extends MvcController {
             }
         }
         
+        # Función para borrar un curso
         
         public function borrarCursoController(){
 		if(isset($_GET["idCurso"])){
