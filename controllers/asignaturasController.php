@@ -62,8 +62,6 @@ class AsignaturasController extends MvcController {
                 //header("location:index.php");
                 echo "maaaaaaal!";
             }
-        }else{
-            echo "nada";
         }
        
     }
