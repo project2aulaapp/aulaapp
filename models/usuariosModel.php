@@ -143,6 +143,10 @@ class UsuariosModel extends Datos {
     }
     
     
+    # Función para inscribirse a un curso
+    
+    
+    
     
     
     

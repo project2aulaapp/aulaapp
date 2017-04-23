@@ -26,9 +26,9 @@ class CursosModel extends Datos {
         $stmt->close(); //cerramos la conexión cuando hemos terminado.
     }
 
-    public function listarCursosModel($tabla) {
+    public function listarCursosModel() {
 
-        $stmt = Conexion::conectar()->prepare("SELECT idCurso, nombreCurso FROM $tabla");
+        $stmt = Conexion::conectar()->prepare("SELECT idCurso, nombreCurso FROM curso");
 		
 
         $stmt->execute();
@@ -48,6 +48,21 @@ class CursosModel extends Datos {
             return "ko";
         }
         $stmt->close();
+    }
+    
+    public function inscribirEnCursosModel($idCursoModel, $idUsuarioModel){
+        $stmt = Conexion::conectar()->prepare("INSERT INTO usuariocurso(idUsuario, idCurso) VALUES ($idUsuarioModel,$idCursoModel)");
+        
+        if ($stmt->execute()) {
+            $inscrito = Conexion::conectar()->prepare("UPDATE usuario SET inscritoCurso = 1 WHERE id=$idUsuarioModel");
+            $inscrito->execute();
+           
+            return "ok";
+        } else {
+            return "ko";
+        }
+        $stmt->close(); 
+        $inscrito->close();
     }
 
   

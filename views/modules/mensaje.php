@@ -5,7 +5,8 @@ if (!isset($_SESSION)) {
 
 echo "datos de depuración:<br>";
 echo "userID: " . $_SESSION["userId"] . "<br>";
-echo "rolID: " . $_SESSION["rol"];
+echo "rolID: " . $_SESSION["rol"] ."<br>";
+echo "Inscrito: " . $_SESSION["inscrito"];
 
 if (!$_SESSION["validar"]) {
     header("location:index.php?action=ingresar");
