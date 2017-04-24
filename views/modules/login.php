@@ -11,6 +11,9 @@
 	</form>
 	<a href="index.php?action=registro">Aun no estoy registrado.</a>
 
+        <script type="text/javascript" src="javascript/validacionLogin/validacionSubmit.js"></script>
+        <script type="text/javascript" src="javascript/validacionLogin/validacionBlur.js"></script>
+        
 	<?php
 
 		$ingreso = new UsuariosController();
