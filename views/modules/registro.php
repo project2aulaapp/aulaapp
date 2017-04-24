@@ -44,8 +44,8 @@
             <button type="reset" value="Limpiar">LIMPIAR</button>
         </p>
     </form>
-    <script type="text/javascript" src="javascript/validacionSubmit.js"></script>
-    <script type="text/javascript" src="javascript/validacionBlur.js"></script>
+    <script type="text/javascript" src="src/javascript/validacionSubmit.js"></script>
+    <script type="text/javascript" src="src/javascript/validacionBlur.js"></script>
 
 <?php
 

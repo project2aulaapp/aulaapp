@@ -4,7 +4,7 @@
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
         <title>¡¡Pillo sitio!!</title>	
-        <link rel="stylesheet" type="text/css" href="styles/base.css">
+        <link rel="stylesheet" type="text/css" href="src/styles/base.css">
     </head>
 
     <body>
@@ -37,7 +37,7 @@
             </header>
 
             <nav>
-                <a href="index.php"><img src="img/logotipo.jpeg"></a>
+                <a href="index.php"><img src="src/img/logotipo.jpeg"></a>
                 <?php include "modules/navegacion.php"; ?>      
             </nav>
 
