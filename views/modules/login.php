@@ -1,19 +1,24 @@
-<h1>Login</h1>
+	<h1>LOGIN</h1>
 
-	<form method="post">
-		
-		<input type="text" placeholder="Usuario" name="usuarioIngreso" required>
+    <form method="post" id="myForm">
+        <p>
+            <input type="text" name="usuarioIngreso" id="userName" placeholder="Nombre de usuario" title="nombre de usuario">
+            <span></span>
+        </p>
+        <p>
+            <input type="password" name="passwordIngreso" id="password" placeholder="Contraseña" title="contraseña">
+            <span></span>
+        </p>
+        <p>
+            <button type="submit" value="Enviar">ENVIAR</button>
+            <button type="reset" value="Limpiar">LIMPIAR</button>
+        </p>
+    </form>
+    <script type="text/javascript" src="src/javascript/validacionLogin/validacionSubmit.js"></script>
+    <script type="text/javascript" src="src/javascript/validacionLogin/validacionBlur.js"></script>
 
-		<input type="password" placeholder="Contraseña" name="passwordIngreso" required>
-
-		<input type="submit" value="Enviar">
-
-	</form>
 	<a href="index.php?action=registro">Aun no estoy registrado.</a>
 
-        <script type="text/javascript" src="src/javascript/validacionLogin/validacionSubmit.js"></script>
-        <script type="text/javascript" src="src/javascript/validacionLogin/validacionBlur.js"></script>
-        
 	<?php
 
 		$ingreso = new UsuariosController();
@@ -24,7 +29,5 @@
 				echo "Fallo al hacer login.";
 			}
 		}
-
-
 
 	?>
