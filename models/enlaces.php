@@ -24,6 +24,12 @@ class Paginas{
 		
 		}
                 
+                 else if($enlaces == "subirArchivo"){
+
+			$module =  "views/modules/nuevoArchivo.php";
+		
+		}
+                
                 else if($enlaces == "matricular"){
 
 			$module =  "views/modules/matricularEnCurso.php";

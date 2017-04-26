@@ -10,5 +10,4 @@ if (!$_SESSION["validar"]) {
 <?php
     $perfil = new UsuariosController();
     $perfil -> verPerfilUsuarioController();
-
 ?>

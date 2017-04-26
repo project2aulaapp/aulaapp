@@ -65,11 +65,15 @@ class AsignaturaModel extends Datos {
         
         if ($stmt->execute()){ 
             $_SESSION["asignaturasElegidas"]=true; // si ya ha elegido asignaturas se crea esta variable de sesión para que no pueda volver a elegirlas
+            
+            $actualizacion = Conexion::conectar()->prepare('UPDATE usuario set inscritoAsignaturas=1 WHERE id='.$id);//y actualizamos que ya ha elegido asignaturas
+            $actualizacion->execute();
             return "ok";
         } else {
             return "ko";
         }
         $stmt->close();
+        $actualizacion->close();
          
          
     }
