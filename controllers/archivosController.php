@@ -1,6 +1,6 @@
 <?php
 
-class ArchivosController extends MvcController {
+class ArchivosController {
 
         public function archivoNuevoController() {
        

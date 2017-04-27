@@ -30,10 +30,27 @@ class AsignaturaModel extends Datos {
 // fin asgignaturaNuevaModel()
     
     
-     public function listarAsignaturasModel(){
-         $stmt = Conexion::conectar()->prepare("SELECT * FROM asignatura WHERE curso=2");
+    #   Función que recibe el id del alumno para obtener el id del curso al que pertenece
+    
+    public function asignaturasCursoModel($idAlumno){
+        $stmt = Conexion::conectar()->prepare("SELECT idCurso FROM usuariocurso WHERE idUsuario=$idAlumno");
+        //var_dump($idAlumno);
+        $stmt->execute();
+        //var_dump($stmt);
+        return $stmt->fetch();
+        
+        $stmt-close();
+    }
+    
+    
+    
+    #   Función que recibe el id del curso para obtener una lista de asignaturas que correspondan a un curso concreto
+        public function listarAsignaturasModel($idCurso){
+        //var_dump($idCurso);
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM asignatura WHERE curso=$idCurso");
          
         $stmt->execute();
+        //var_dump($stmt);
         
         return $stmt->fetchAll();
         

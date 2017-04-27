@@ -80,7 +80,7 @@ class MensajesModel extends Datos {
 // fin función borrarMensajes
 
     public function listarDestinatariosModel() {
-        $stmt = Conexion::conectar()->prepare("SELECT id, nombre, apellido1, apellido2 FROM usuario WHERE id!=".$_SESSION["userId"]);
+        $stmt = Conexion::conectar()->prepare("SELECT id,user, nombre, apellido1, apellido2 FROM usuario WHERE id!=".$_SESSION["userId"]);
         //listará todos los usuarios menos el propio usuario que manda el mensaje
         $stmt->execute();
 
