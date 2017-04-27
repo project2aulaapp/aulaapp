@@ -13,9 +13,6 @@ if(isset($_SESSION["asignaturasElegidas"])){
     $asignaturas->listarAsignaturasController();
     $asignaturas->elegirAsignaturasController();
 ?>
-    
-    
-    
 </form>
 
 

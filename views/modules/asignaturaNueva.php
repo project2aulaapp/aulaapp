@@ -4,10 +4,6 @@ if(!isset($_SESSION)){
 	session_start();
 }
 
-echo "datos de depuración:<br>";
-echo "userID: ".$_SESSION["userId"]."<br>";
-echo "rolID: ". $_SESSION["rol"];
-
 if (!$_SESSION["validar"]) { //Esto es, si no está autenticado, lo lleva fuera y no puede editar
 	header("location:index.php?action=login");
 	exit(); //usando el método exit() hacemos que nadie pueda, de ninguna forma continuar el script y alterarlo. 
