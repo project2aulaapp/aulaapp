@@ -30,7 +30,7 @@ class CursosController extends MvcController {
 
 		foreach ($respuesta as $fila => $item) {
 			echo'<tr>
-				<td>'.utf8_encode($item["nombreCurso"]).'</td>				
+				<td>'.$item["nombreCurso"].'</td>				
 				<td><a href="index.php?action=editarCurso&idCurso='.$item["idCurso"].'"><button>Editar</button></a></td>
 				<td><a href="index.php?action=lCursos&idCurso='.$item["idCurso"].'"><button>Borrar</button></a></td>
 			</tr>';
@@ -47,7 +47,7 @@ class CursosController extends MvcController {
         echo '<select name="idCurso">'; 
         foreach ($respuesta as $fila => $item) 
             {                   
-              echo '<option  value="'.$item["idCurso"].'">'.utf8_encode($item["nombreCurso"]).'</option>';       
+              echo '<option  value="'.$item["idCurso"].'">'.$item["nombreCurso"].'</option>';       
             }
         echo '</select><input type="submit" value="Matricular">
             </form> ';

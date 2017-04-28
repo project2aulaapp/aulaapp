@@ -8,7 +8,7 @@
 			/* para comprobar si funciona hacemos un var_dump*/
 			// var_dump($link);
 			/* Y nos debe salir esto: object(PDO)#2 (0) { }, que quiere decir que la conexión se realizó con éxito. Sino, saldría un error*/
-
+                        $link->exec("set names utf8");
 			return $link;
 
 		}

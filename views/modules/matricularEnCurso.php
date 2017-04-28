@@ -5,7 +5,11 @@ if (!$_SESSION["validar"]) {
 }
 
 if ($_SESSION["inscrito"] == 1 || $_SESSION["rol"] == 1) { //si ya está inscrito o es administrador lo llevamos al index    
-    header("location:index.php?action=index");
+    if ($_SESSION["inscritoAsignaturas"] < 1) {
+        header("location:index.php?action=seleccionAsignaturas");
+    } else {
+        header("location:index.php?action=index");
+    }
 } else {  // La primera vez que entremos después de registrarnos, nos pedirá que 
     //nos matriculemos en un curso
     echo '<h1>Inscripción a un nuevo curso</h1>';
@@ -19,5 +23,5 @@ if ($_SESSION["inscrito"] == 1 || $_SESSION["rol"] == 1) { //si ya está inscrit
     </form>
 
 
-<?php }
-?>
+    <?php }
+    ?>

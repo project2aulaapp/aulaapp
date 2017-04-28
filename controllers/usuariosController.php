@@ -51,13 +51,14 @@ class UsuariosController extends MvcController {
                 $_SESSION["usuario"] = $respuesta["user"];
                 $_SESSION["notificaciones"] = $respuesta["notificaciones"]; //esto quizá haya que quitarlo al hacerse con ajax
                 $_SESSION["inscrito"] = $respuesta["inscritoCurso"];
+                $_SESSION["inscritoAsignaturas"] = $respuesta["inscritoAsignaturas"];
                 /*
                  * Me va a hacer falta también el curso   
                  * las asignaturas? en un array
                  * 
                  * 
                  */
-                
+               
                 
                 
                 

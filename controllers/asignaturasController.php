@@ -34,7 +34,7 @@ class AsignaturasController extends MvcController {
             $respuesta = AsignaturaModel::listarAsignaturasModel($idCurso["idCurso"]);           
             //var_dump($respuesta);
             foreach ($respuesta as $fila => $item) {//aquí los recorro, como quiero una lista de inputs tipo checkbox pues lo hago así
-                echo '<input type="checkbox" value="'.$item["id"].'" name="asignaturas[]">'.$item["nombre"].'<br>';
+                echo '<input type="checkbox" value="'.$item["id"].'" name="asignaturas[]" title="'.$item["descripcion"].'">'.$item["nombre"].'<br>';
             }
             echo '<input type="submit" value="Enviar">';
     }
@@ -47,7 +47,7 @@ class AsignaturasController extends MvcController {
     
     
     public function elegirAsignaturasController(){
-            if (isset($_POST["asignaturas"])) {
+            if (isset($_POST["asignaturas"]) && $_POST["asignaturas"]>0) {
                        
             $datosController=$_POST['asignaturas'];    
                               
@@ -62,9 +62,12 @@ class AsignaturasController extends MvcController {
                 //echo "Asignaturas elegidas!";
             } else {
                 //header("location:index.php");
-                echo "maaaaaaal!";
-            }
+               
+                    }
         }
+        
+                
+                echo "<script> alert('Debes elegir al menos una asignatura'); </script>";
        
     }
 

@@ -44,7 +44,7 @@
             echo "rolID: " . $_SESSION["rol"] . "<br>";
             echo "Usuario: " . $_SESSION["usuario"] . "<br>";
             echo "Matriculado: " . $_SESSION["inscrito"].'<br>';
-            echo "Inscrito en asignaturas ".$_SESSION["inscrito"];
+            echo "Inscrito en asignaturas: ".$_SESSION["inscritoAsignaturas"];
             }
             ?>
             </div>

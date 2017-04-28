@@ -48,7 +48,7 @@ class AsignaturaModel extends Datos {
         public function listarAsignaturasModel($idCurso){
         //var_dump($idCurso);
         $stmt = Conexion::conectar()->prepare("SELECT * FROM asignatura WHERE curso=$idCurso");
-         
+        
         $stmt->execute();
         //var_dump($stmt);
         
