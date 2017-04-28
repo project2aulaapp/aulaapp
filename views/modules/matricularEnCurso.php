@@ -5,7 +5,7 @@ if (!$_SESSION["validar"]) {
 }
 
 if ($_SESSION["inscrito"] == 1 || $_SESSION["rol"] == 1) { //si ya está inscrito o es administrador lo llevamos al index    
-    if ($_SESSION["inscritoAsignaturas"] < 1) {
+    if ($_SESSION["inscritoAsignaturas"] < 1 && (!$_SESSION["rol"] == 1 || !$_SESSION["rol"] == 2 )) {
         header("location:index.php?action=seleccionAsignaturas");
     } else {
         header("location:index.php?action=index");

@@ -18,6 +18,8 @@ if (isset($_SESSION["validar"])) {
 	</ul>';
     }else if($_SESSION["rol"]==2){ //profesor
         echo '<ul><li><a href="#">Vista de profesor</a></li>
+              <li><a href="index.php?action=msg">Mensajes</a></li>
+              <li><a href="index.php?action=verMensajes">Ver mensajes</a></li>
               <li><a href="index.php?action=perfil">Ver tu perfil de usuario</a></li>
               <li><a href="index.php?action=subirArchivo">Subir apuntes al servidor</a></li>
               <ul>';
