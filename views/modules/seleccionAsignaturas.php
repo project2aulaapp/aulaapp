@@ -10,12 +10,9 @@ if(isset($_SESSION["asignaturasElegidas"])){
 <form method="POST">
     <?php
     $asignaturas = new AsignaturasController();
-    $asignaturas->listarAsignaturasController();
+    $asignaturas->listarAsignaturasController($_SESSION["userId"]);
     $asignaturas->elegirAsignaturasController();
 ?>
-    
-    
-    
 </form>
 
 

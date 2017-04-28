@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="src/styles/base.css">
     </head>
 
-    <body>
+    <body>        
         <main> <!-- Contenedor de la web -->
             <header> <!-- Para las notificaciones, botón de login y logout -->
                 <?php
@@ -35,6 +35,19 @@
                 ?> 
 
             </header>
+            
+            <div style="color:red;">
+            <?php 
+            if (isset($_SESSION["validar"])) {
+            echo 'Datos de depuración:<br>';
+            echo "userID: " . $_SESSION["userId"] . "<br>";
+            echo "rolID: " . $_SESSION["rol"] . "<br>";
+            echo "Usuario: " . $_SESSION["usuario"] . "<br>";
+            echo "Matriculado: " . $_SESSION["inscrito"].'<br>';
+            echo "Inscrito en asignaturas ".$_SESSION["inscrito"];
+            }
+            ?>
+            </div>
 
             <nav>
                 <a href="index.php"><img src="src/img/logotipo.jpeg"></a>

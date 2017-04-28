@@ -2,12 +2,6 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-
-echo "datos de depuración:<br>";
-echo "userID: " . $_SESSION["userId"] . "<br>";
-echo "rolID: " . $_SESSION["rol"] ."<br>";
-echo "Inscrito: " . $_SESSION["inscrito"];
-
 if (!$_SESSION["validar"]) {
     header("location:index.php?action=ingresar");
     exit(); //usando el método exit() hacemos que nadie pueda, de ninguna forma continuar el script y alterarlo. 

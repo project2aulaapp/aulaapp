@@ -39,7 +39,7 @@ class UsuariosController extends MvcController {
             //var_dump($respuesta);
 
 
-            if ($respuesta["user"] == $_POST["usuarioIngreso"] &&
+            if (strtolower($respuesta["user"]) == strtolower($_POST["usuarioIngreso"]) &&
                     $respuesta["password"] == sha1($_POST["passwordIngreso"])) {
 
                 //para que iniciemos sesion y continuemos logueados
@@ -49,8 +49,18 @@ class UsuariosController extends MvcController {
                 $_SESSION["userId"] = $respuesta["id"];
                 $_SESSION["rol"] = $respuesta["rolID"];
                 $_SESSION["usuario"] = $respuesta["user"];
-                $_SESSION["notificaciones"] = $respuesta["notificaciones"];
+                $_SESSION["notificaciones"] = $respuesta["notificaciones"]; //esto quizá haya que quitarlo al hacerse con ajax
                 $_SESSION["inscrito"] = $respuesta["inscritoCurso"];
+                /*
+                 * Me va a hacer falta también el curso   
+                 * las asignaturas? en un array
+                 * 
+                 * 
+                 */
+                
+                
+                
+                
 
                 header("location:index.php?action=matricular");
             } else {

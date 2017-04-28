@@ -19,6 +19,8 @@ require_once "models/asignaturaModel.php";
 require_once "models/mensajesModel.php";
 require_once "models/cursosModel.php";
 require_once "controllers/cursosController.php";
+require_once 'controllers/archivosController.php';
+require_once 'models/archivosModel.php';
 
 
 $mvc = new MvcController();
