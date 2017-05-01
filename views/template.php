@@ -4,7 +4,8 @@
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
         <title>¡¡Pillo sitio!!</title>	
-        <link rel="stylesheet" type="text/css" href="src/styles/base.css">
+        <link rel="stylesheet" type="text/css" href="src/styles/baseOld.css">
+       <!-- <link rel="stylesheet" type="text/css" href="src/styles/index/maestro.css">-->
     </head>
 
     <body>        
