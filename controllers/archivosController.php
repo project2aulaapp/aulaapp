@@ -25,8 +25,14 @@ class ArchivosController {
                 echo "maaaaaaal!";
             } 
             }
-            
-           
+    }
+    
+    
+    public function listarArchivosController($idAsignatura){
+        
+       $respuesta = ArchivosModel::listarArchivosModel($idAsignatura);
+        
+       print_r($respuesta);
         
     }
     

@@ -126,6 +126,27 @@ class AsignaturaModel extends Datos {
         $actualizacion->close();
 
     }
+    
+    
+    
+    
+    public function cargarAsignaturasModel($id){
+        
+        
+        $stmt = Conexion::conectar()->prepare("SELECT * from asignatura,alumnoasignatura WHERE asignatura.id=alumnoasignatura.idAsignatura AND alumnoasignatura.idAlumno=$id");
+        
+        
+        if($stmt->execute()){
+            return $stmt->fetchAll();
+        }else{
+            return false;
+        }
+        
+        $stmt->close();
+        
+    }
+    
+    
 
 }
 

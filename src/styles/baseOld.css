@@ -140,15 +140,15 @@ footer{
 
 .contenedor-asignaturas{
     display: flex;
-    align-items: center;
+    flex-wrap:wrap;    
 }
 
 .btn-asignatura{
     background: lightgrey;
     color: green;
     border: 1px solid black;
-    flex: 1;
-    width: 50%;
+    flex: 3;
     padding: 10px;
     border-radius: 5px;
+    margin: .5em;
 }

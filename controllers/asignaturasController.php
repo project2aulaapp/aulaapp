@@ -106,6 +106,23 @@ class AsignaturasController extends MvcController {
     }
     
     
+    public function cargarAsignaturasController($id){
+        
+        $respuesta = AsignaturaModel::cargarAsignaturasModel($id);
+        
+       foreach ($respuesta as $fila => $item) {
+                echo '<div class="btn-asignatura">';
+                echo '<h1>'.ucfirst($item["nombre"]).'</h1>';
+                echo '<p>'.$item["descripcion"].'</p>';
+                echo'<center><button><a href=index.php?action=contenidos&id='.$item["id"].'>Acceder</a></button></center>';
+                echo '</div>';
+            }
+              
+               
+    }
+    
+    
+   
     
     
     

@@ -10,5 +10,13 @@ class ArchivosModel {
             return "ko";
         }
     }
+    
+    public function listarArchivosModel($id){
+        $directorio = 'archivos';
+        $ficheros1  = scandir($directorio);
+
+        return $ficheros1;
+        
+    }
 
 }
