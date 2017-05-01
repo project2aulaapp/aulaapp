@@ -42,7 +42,7 @@ class AsignaturaModel extends Datos {
 
     #   Función que recibe el id del curso para obtener una lista de asignaturas que correspondan a un curso concreto
 
-    public function listarAsignaturasModel($idCurso) {
+    public function listarAsignaturasModel($idCurso) { 
         //var_dump($idCurso);
         $stmt = Conexion::conectar()->prepare("SELECT * FROM asignatura WHERE curso=$idCurso");
 
@@ -54,29 +54,34 @@ class AsignaturaModel extends Datos {
         $stmt - close();
     }
 
-    public function eleccionAsignaturasModel($datosModel, $id) {
+    public function eleccionAsignaturasModel($datosModel, $id) { //alumno tiene que seleccionar asignaturas para ver su contenido
 
-        $values = '';
+        $values = ' ';     
+        
+        
         $longitud = count($datosModel);
 
         for ($i = 0; $i < $longitud; $i++) {
-            if ($i < ($longitud - 1)) {
-                $values = ',(' . $datosModel[$i] . ', ' . $id . ')' . $values;
-            } else {
-                $values = '(' . $datosModel[$i] . ', ' . $id . ')' . $values;
-            }
+           if ($i == ($longitud-1)) {
+           $values = $values.'('.$datosModel[$i].', '.$id.')';
+           }else{
+            $values = $values.'('.$datosModel[$i].', '.$id.'),';
+           }
+           
         }
+        
 
-        //echo $values;
+        echo $values;
 
-        $stmt = Conexion::conectar()->prepare("INSERT INTO alumnoasignatura (idAsignatura, idAlumno) VALUES $values");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO alumnoasignatura (idAsignatura, idAlumno) VALUES ". $values.';');
 
 
         if ($stmt->execute()) {
             $_SESSION["asignaturasElegidas"] = true; // si ya ha elegido asignaturas se crea esta variable de sesión para que no pueda volver a elegirlas
-
+            
             $actualizacion = Conexion::conectar()->prepare('UPDATE usuario set inscritoAsignaturas=1 WHERE id=' . $id); //y actualizamos que ya ha elegido asignaturas
             $actualizacion->execute();
+            $_SESSION["asignaturasElegidas"] = 1;
             return "ok";
         } else {
             return "ko";
@@ -110,12 +115,15 @@ class AsignaturaModel extends Datos {
         
             $stmt = Conexion::conectar()->prepare("UPDATE asignatura SET IDprofesor=$id WHERE id in ($cadena)");
         
-        if ($stmt->execute()) {           
+        if ($stmt->execute()) {
+            
+            $actualizacion = Conexion::conectar()->prepare('UPDATE usuario set inscritoAsignaturas=1 WHERE id=' . $id); //y actualizamos que ya ha elegido asignaturas
+            $actualizacion->execute();
             return "ok";
         } else {
             return "ko";
         }
-        
+        $actualizacion->close();
 
     }
 

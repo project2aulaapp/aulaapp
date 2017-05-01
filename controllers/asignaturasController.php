@@ -45,7 +45,7 @@ class AsignaturasController extends MvcController {
     
     
     
-    public function elegirAsignaturasController(){
+    public function elegirAsignaturasController(){ //seleccion de asignaturas del alumno
             if (isset($_POST["asignaturas"]) && $_POST["asignaturas"]>0) {
                        
             $datosController=$_POST['asignaturas'];    
@@ -61,7 +61,7 @@ class AsignaturasController extends MvcController {
                 //echo "Asignaturas elegidas!";
             } else {
                 //header("location:index.php");
-               
+               echo 'errorrr';
                     }
         }
         

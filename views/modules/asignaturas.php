@@ -1,4 +1,5 @@
-<h1>Asignaturas disponibles</h1>
+<h1>Ir a una asignatura</h1>
+<p>Haz clic en una de las asignaturas para acceder a su contenido</p>
 
 <div class="contenedor-asignaturas">
     <div class="btn-asignatura">
