@@ -40,8 +40,7 @@ class AsignaturasController extends MvcController {
     }
     
     
-    /* Esto no funciona aún, elegirAsignaturasController
-    */
+    
     
     
     
@@ -70,6 +69,45 @@ class AsignaturasController extends MvcController {
                 echo "<script> alert('Debes elegir al menos una asignatura'); </script>";
        
     }
+    
+    #   Función para que un profesor se apunte a sus asignaturas
+    
+    public function profesorAsignaturasController(){
+        $respuesta = AsignaturaModel::listadoAsignaturasProfesorModel();           
+            
+            foreach ($respuesta as $fila => $item) {//aquí los recorro, como quiero una lista de inputs tipo checkbox pues lo hago así
+                echo '<input type="checkbox" value="'.$item["id"].'" name="asignaturas[]" title="'.$item["descripcion"].'">'.$item["nombre"].'<br>';
+            }
+            echo '<input type="submit" value="Enviar">';
+    }
+    
+    
+    
+    public function elegirAsignaturasProfesorController($id){
+            if (isset($_POST["asignaturas"]) && $_SESSION["rol"]=2) {
+                       
+            $datosController=$_POST['asignaturas'];    
+                              
+            
+            //var_dump($datosController);
+            $respuesta = AsignaturaModel::eleccionAsignaturasProfesorModel($datosController, $_SESSION["userId"]);
+
+
+            //var_dump($respuesta);
+            if ($respuesta == "ok") {
+                header("location:index.php?action=index");
+                //echo "Asignaturas elegidas!";
+            } else {
+                //header("location:index.php");
+               
+                    }
+        } 
+    }
+    
+    
+    
+    
+    
 
 }//fin clase
 ?>
