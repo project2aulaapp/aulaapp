@@ -94,9 +94,10 @@ class AsignaturasController extends MvcController {
 
 
             //var_dump($respuesta);
-            if ($respuesta == "ok") {
-                header("location:index.php?action=index");
-                //echo "Asignaturas elegidas!";
+            if ($respuesta == "ok") {                
+                echo "<script>alert('Asignaturas elegidas!'); window.location='index.php?action=index';</script>";
+                
+                //header("location:index.php?action=index");
             } else {
                 //header("location:index.php");
                
