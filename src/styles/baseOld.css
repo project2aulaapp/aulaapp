@@ -1,3 +1,10 @@
+#depuracion{
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: red;
+}
+
 span{
     color: red;
 }
@@ -27,36 +34,48 @@ header a{
 }
 
 
-nav{
-
-    position:relative;
-    margin:auto;
-    width:100%;
-    height:auto;
+nav{    
+   
     background:black;
     color:white;
     border-radius: 5px;   
-    margin-top: 7em;
+    
+}
+nav a{
+    color: white;
+    
 }
 
-nav ul{
-    position:relative;
-    margin:auto;
-    width:50%;
-    text-align: center;
+
+/*Menú del aside*/
+
+aside ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f1f1f1;
 }
 
-nav ul li{
-    display:inline-block;
-    width:24%;
-    line-height: 50px;
-    list-style: none;
-}
-
-nav ul li a{
-    color:white;
+aside li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
     text-decoration: none;
 }
+
+
+aside li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+/*Fin menú aside*/
+
 
 section{
     float:left;
@@ -117,4 +136,19 @@ article>img{
 
 footer{
     clear:left;
+}
+
+.contenedor-asignaturas{
+    display: flex;
+    align-items: center;
+}
+
+.btn-asignatura{
+    background: lightgrey;
+    color: green;
+    border: 1px solid black;
+    flex: 1;
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
 }

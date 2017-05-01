@@ -17,6 +17,11 @@ class Paginas{
 		
 		}
                 
+                else if($enlaces == "asignaturas"){
+
+			$module =  "views/modules/asignaturas.php";		
+		}
+                
                 
                 else if($enlaces == "seleccionAsignaturas"){
 

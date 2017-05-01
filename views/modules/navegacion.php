@@ -28,6 +28,7 @@ if (isset($_SESSION["validar"])) {
         <li><a href="index.php?action=msg">Mensajes</a></li><ul>
         <li><a href="index.php?action=verMensajes">Ver mensajes</a>
         <li><a href="index.php?action=perfil">Ver tu perfil de usuario</a></li>
+        <li><a href="index.php?action=asignaturas">Ver tus asignaturas</a></li>
         </li>';
     }else if($_SESSION["rol"]==4){ //Por autorizar
         echo '<ul><li><a href="#">vista de usuario sin autorizar</a></li><ul>';

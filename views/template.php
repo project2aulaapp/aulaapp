@@ -5,15 +5,33 @@
 
         <title>¡¡Pillo sitio!!</title>	
         <link rel="stylesheet" type="text/css" href="src/styles/baseOld.css">
-       <!-- <link rel="stylesheet" type="text/css" href="src/styles/index/maestro.css">-->
+        <!-- <link rel="stylesheet" type="text/css" href="src/styles/index/maestro.css">-->
     </head>
 
-    <body>        
+    <body> 
+        
+        <?php
+            session_start();
+        ?>        
         <main> <!-- Contenedor de la web -->
-            <header> <!-- Para las notificaciones, botón de login y logout -->
-                <?php
-                session_start();
+            
 
+            <div id="depuracion">
+                <?php
+                if (isset($_SESSION["validar"])) {
+                    echo 'Datos de depuración:<br>';
+                    echo "userID: " . $_SESSION["userId"] . " --||-- ";
+                    echo "rolID: " . $_SESSION["rol"] . "<br>";
+                    echo "Usuario: " . $_SESSION["usuario"] . " --||--  ";
+                    echo "Matriculado: " . $_SESSION["inscrito"] . '<br>';
+                    echo "Inscrito en asignaturas: " . $_SESSION["inscritoAsignaturas"];
+                }
+                ?>
+            </div>
+
+            <nav>
+                <a href="index.php"><img src="src/img/logotipo.jpeg"></a>
+                <?php
                 if (!isset($_SESSION["validar"])) {
 
                     /* Navegación para cuando no estemos logueados o registrados */
@@ -21,11 +39,11 @@
                           <a href="index.php?action=registro">Registro</a>';
 
                     //exit(); //usando el método exit() hacemos que nadie pueda, de ninguna forma continuar el script y alterarlo. 
-                }  
+                }
 
                 if (isset($_SESSION["usuario"])) {
                     echo '<p>Bienvenido ';
-                    echo ucfirst($_SESSION["usuario"]) . '      </p>';                    
+                    echo ucfirst($_SESSION["usuario"]) . '      </p>';
                     echo '<a href="index.php?action=salir">Salir</a>';
                     if ($_SESSION["notificaciones"] > 0) {
                         echo '<p>Tienes ' . $_SESSION["notificaciones"] . ' <a href="index.php?action=verMensajes">mensajes</a></p>';
@@ -33,100 +51,32 @@
                         /* Esta parte es mejor hacerla con ajax para que se vean las actualizaciones en tiempo real */
                     }
                 }
-                ?> 
-
-            </header>
-            
-            <div style="color:red;">
-            <?php 
-            if (isset($_SESSION["validar"])) {
-            echo 'Datos de depuración:<br>';
-            echo "userID: " . $_SESSION["userId"] . "<br>";
-            echo "rolID: " . $_SESSION["rol"] . "<br>";
-            echo "Usuario: " . $_SESSION["usuario"] . "<br>";
-            echo "Matriculado: " . $_SESSION["inscrito"].'<br>';
-            echo "Inscrito en asignaturas: ".$_SESSION["inscritoAsignaturas"];
-            }
-            ?>
-            </div>
-
-            <nav>
-                <a href="index.php"><img src="src/img/logotipo.jpeg"></a>
-                <?php include "modules/navegacion.php"; ?>      
+                ?>
             </nav>
 
 
             <section>
-                
-                <?php
-                $mvc = new MvcController();
-                $mvc->enlacesPaginasController();
-                ?>
+
+<?php
+$mvc = new MvcController();
+$mvc->enlacesPaginasController();
+?>
 
             </section>
 
-            <?php if (isset($_SESSION["validar"])) { ?>
+<?php if (isset($_SESSION["validar"])) { ?>
 
                 <aside>
-                    <article>
-
-                        <h1>Esto es un ejemplo</h1> 
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>                       
-                    </article>
-
-                    <article>
-
-                        <h1>Esto es un ejemplo</h1> 
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>                       
-                    </article>
-
-                    <article>
-
-                        <h1>Esto es un ejemplo</h1> 
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>                       
-                    </article>
+                <?php include "modules/navegacion.php"; ?>   
 
                 </aside>
 
 
-            <?php } ?>
+<?php } ?>
 
 
             <footer>
-                <?php include "modules/footer.php"; ?>
+<?php include "modules/footer.php"; ?>
 
             </footer>
         </main>
