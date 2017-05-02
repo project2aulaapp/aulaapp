@@ -19,7 +19,7 @@ class ArchivosController extends MvcController {
             if(isset($_FILES["fichero_usuario"])){
                 $datosController = $_FILES["fichero_usuario"];
                 $idAsignatura= $_POST["idAsignatura"];
-            $asignatura = ($idAsignatura < 10 ) ? '0'.$idAsignatura : $idAsignatura;
+            $asignatura = ($idAsignatura < 10 ) ? '0'.$idAsignatura : $idAsignatura;//esto habrá que cambiarlo a códigos de 3 números
             $respuesta = ArchivosModel::archivoNuevoModel($datosController, $asignatura);
 
 
@@ -40,7 +40,7 @@ class ArchivosController extends MvcController {
        $respuesta = ArchivosModel::listarArchivosModel();
         
        $valor =' ';
-       $asignatura = ($idAsignatura < 10 ) ? '0'.$idAsignatura : $idAsignatura;
+       $asignatura = ($idAsignatura < 10 ) ? '0'.$idAsignatura : $idAsignatura;//esto habrá que cambiarlo a códigos de 3 números
        
        echo $asignatura.'<br>';
        
