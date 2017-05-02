@@ -12,7 +12,7 @@ class ArchivosController extends MvcController {
             Enviar este fichero: <input name="fichero_usuario" type="file"/> ';
             echo 'Selecciona la asignatura';
             foreach ($listadoAsignaturas as $fila => $item) {
-            echo '<input type="radio" name="idAsignatura" value="'.$item["id"].'">'.$item["nombre"].'</input>';
+            echo '<input type="radio" name="idAsignatura" value="'.$item["id"].'" checked>'.$item["nombre"].'</input>';
             }
             echo '<input type="submit" value="Enviar fichero" />';   
             
