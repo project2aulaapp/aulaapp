@@ -26,7 +26,7 @@
 
 		if(isset($_GET["action"])){
 			if ($_GET["action"] == "fallo") {
-				echo "Fallo al hacer login.";
+				echo "Fallo al hacer login.";                                
 			}
 		}
 

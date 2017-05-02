@@ -31,7 +31,7 @@ class UsuariosModel extends Datos {
     #------------------------------------
 
     public function ingresoUsuarioModel($datosModel, $tabla) {
-        //$stmt = Conexion::conectar()->prepare("SELECT id, user, password,rolID FROM $tabla WHERE user = :usuario");
+        
         $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE user = :usuario");
 
 
@@ -39,17 +39,14 @@ class UsuariosModel extends Datos {
 
 
         if ($stmt->execute()) {
-            //var_dump($stmt->fetch()["password"]);
             if ($stmt->fetch()["password"] != sha1($datosModel["password"])) {
                 $contador = Conexion::conectar()->prepare("UPDATE usuario SET contador_fallo_login=contador_fallo_login+1 WHERE user='" . $datosModel["user"] . "'"); //si login ko suma 1 al contador
                 $contador->execute();
-                return false;
+                return;
             } 
                 $contador = Conexion::conectar()->prepare("UPDATE usuario SET contador_fallo_login=0 WHERE user='" . $datosModel["user"] . "'"); //si login ok contador a 0
                 $contador->execute();
-                
-            
-           //var_dump($stmt->fetch());
+           
            $stmt->execute(); // la ejecuto de nuevo porque me daba error y no entraba al login
            return $stmt->fetch(); 
            $stmt->close(); //cerramos la conexión cuando hemos terminado.

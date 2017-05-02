@@ -35,13 +35,9 @@ class UsuariosController extends MvcController {
                 "password" => $_POST["passwordIngreso"]);
 
             $respuesta = UsuariosModel::ingresoUsuarioModel($datosController, "usuario");
-
-            //var_dump($respuesta);
-
-
-            if (strtolower($respuesta["user"]) == strtolower($_POST["usuarioIngreso"]) &&
-                    $respuesta["password"] == sha1($_POST["passwordIngreso"]) && $respuesta["contador_fallo_login"]<4) {
-
+            
+            if ((strtolower($respuesta["user"]) == strtolower($_POST["usuarioIngreso"])) &&
+                    ($respuesta["password"] == sha1($_POST["passwordIngreso"]))) {
                 //para que iniciemos sesion y continuemos logueados
                 session_start();
 
@@ -52,25 +48,16 @@ class UsuariosController extends MvcController {
                 $_SESSION["notificaciones"] = $respuesta["notificaciones"]; //esto quizá haya que quitarlo al hacerse con ajax
                 $_SESSION["inscrito"] = $respuesta["inscritoCurso"];
                 $_SESSION["inscritoAsignaturas"] = $respuesta["inscritoAsignaturas"];
+                $_SESSION["fallosLogin"] = $respuesta["contador_fallo_login"];
                 /*
                  * Me va a hacer falta también el curso   
                  * las asignaturas? en un array
                  * 
                  * 
                  */
-               
-                
-                
-                
-
                 header("location:index.php?action=matricular");
             } else {
-                if($respuesta["contador_fallo_login"]==3){
-                    echo 'Demasiados errores';
-                }else{
-                    header("location:index.php?action=fallo");
-                }
-                
+                header("location:index.php?action=fallo");
             }
         }
     }
@@ -221,8 +208,6 @@ class UsuariosController extends MvcController {
 			</tr>';
         }
     }
-
-    
 
 }
 

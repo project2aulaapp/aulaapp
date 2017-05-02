@@ -24,7 +24,8 @@
                     echo "rolID: " . $_SESSION["rol"] . "<br>";
                     echo "Usuario: " . $_SESSION["usuario"] . " --||--  ";
                     echo "Matriculado: " . $_SESSION["inscrito"] . '<br>';
-                    echo "Inscrito en asignaturas: " . $_SESSION["inscritoAsignaturas"];
+                    echo "Inscrito en asignaturas: " . $_SESSION["inscritoAsignaturas"].'--||-- ';
+                    echo "Fallos login: ".$_SESSION["fallosLogin"];
                 }
                 ?>
             </div>
