@@ -152,3 +152,10 @@ footer{
     border-radius: 5px;
     margin: .5em;
 }
+
+.contenido-asignatura{
+    border: solid 1px blue;
+    border-radius: 5px;
+    background: lightgrey;
+    padding: 1em;
+}
