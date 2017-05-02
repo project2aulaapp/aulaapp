@@ -12,7 +12,10 @@ class ArchivosModel {
     }
     
     public function listarArchivosModel($id){
-        $directorio = 'archivos';
+        
+        
+        
+        $directorio =  'archivos';
         $ficheros1  = scandir($directorio);
 
         return $ficheros1;

@@ -40,7 +40,7 @@ class UsuariosController extends MvcController {
 
 
             if (strtolower($respuesta["user"]) == strtolower($_POST["usuarioIngreso"]) &&
-                    $respuesta["password"] == sha1($_POST["passwordIngreso"])) {
+                    $respuesta["password"] == sha1($_POST["passwordIngreso"]) && $respuesta["contador_fallo_login"]<4) {
 
                 //para que iniciemos sesion y continuemos logueados
                 session_start();
@@ -65,7 +65,12 @@ class UsuariosController extends MvcController {
 
                 header("location:index.php?action=matricular");
             } else {
-                header("location:index.php?action=fallo");
+                if($respuesta["contador_fallo_login"]==3){
+                    echo 'Demasiados errores';
+                }else{
+                    header("location:index.php?action=fallo");
+                }
+                
             }
         }
     }

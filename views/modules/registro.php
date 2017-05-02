@@ -9,6 +9,12 @@
             <input type="password" name="passwordRegistro" id="password" placeholder="Contraseña" title="contraseña">
             <span></span>
         </p>
+        
+        <p>
+            <input type="password" name="" id="rePassword" placeholder="Repite contraseña" title="Repite contraseña">
+            <span></span>
+        </p>        
+        
         <p>
             <input type="text" name="nombreRegistro" id="userNameReal" placeholder="Nombre" title="nombre">
             <span></span>
@@ -26,7 +32,7 @@
             <span></span>
         </p>
         <p>
-            <select name="preguntaRegistro" id="questions" title="pregunta">
+            <select name="preguntaRegistro" id="questions" title="Elige una pregunta para recuperar tu cuenta si olvidas tu contraseña">
                 <option value="" selected hidden>Selecciona una pregunta</option>
                 <option value="1">Mascota</option>
                 <option value="2">Instituto</option>

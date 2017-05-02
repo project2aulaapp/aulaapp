@@ -1,6 +1,6 @@
 <?php
 	
-	require_once "models/conexion.php";
+	require_once "conexion.php";
 
 	class Datos extends Conexion{
 	
