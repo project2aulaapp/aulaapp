@@ -11,7 +11,7 @@
     <body> 
         
         <?php
-            session_start();
+            session_start();                    
         ?>        
         <main> <!-- Contenedor de la web -->
             

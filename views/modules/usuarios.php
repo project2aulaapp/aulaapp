@@ -36,8 +36,10 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){
 
 				$vistaUsuario = new UsuariosController();
 				$vistaUsuario -> vistaUsuariosController();
-                                $vistaUsuario -> autorizarUsuarioController();
-				$vistaUsuario -> borrarUsuarioController();
+                                $vistaUsuario -> autorizarUsuarioAlumnoController();
+                                $vistaUsuario -> autorizarUsuarioProfesorController();
+                                $vistaUsuario -> autorizarUsuarioAdminController();
+				$vistaUsuario -> borrarUsuarioController();                                
 			?>
 			
 

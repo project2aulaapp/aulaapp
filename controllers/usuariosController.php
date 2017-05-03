@@ -73,7 +73,9 @@ class UsuariosController extends MvcController {
             echo'<tr>
 				<td>' . $item["user"] . '</td>
 				<td>' . $item["email"] . '</td>
-				<td><a href="index.php?action=usuarios&idAutorizar=' . $item["id"] . '"><button>Autorizar usuario</button></a></td>
+				<td><a href="index.php?action=usuarios&idAutorizarAlumno=' . $item["id"] . '"><button>Autorizar usuario como alumno</button></a><br>
+                                    <a href="index.php?action=usuarios&idAutorizarProfesor=' . $item["id"] . '"><button>Autorizar usuario como profesor</button></a><br>
+                                    <a href="index.php?action=usuarios&idAutorizarAdmin=' . $item["id"] . '"><button>Autorizar usuario como administrador</button></a></td>
 				<td><a href="index.php?action=usuarios&idBorrar=' . $item["id"] . '"><button>Borrar</button></a></td>
 			</tr>';
         }
@@ -166,14 +168,48 @@ class UsuariosController extends MvcController {
 
     #   Función para autorizar usuarios que se han dado de alta en la aplicación
 
-    public function autorizarUsuarioController() {
+    public function autorizarUsuarioAlumnoController() {
 
-        if (isset($_GET["idAutorizar"])) {
-            $datosController = $_GET["idAutorizar"]; //para enviarle al modelo para modificar
+        if (isset($_GET["idAutorizarAlumno"])) {
+            $datosController = $_GET["idAutorizarAlumno"]; //para enviarle al modelo para modificar
 
 
 
-            $respuesta = UsuariosModel::autorizarUsuarioModel($datosController, "usuario");
+            $respuesta = UsuariosModel::autorizarUsuarioAlumnoModel($datosController, "usuario");
+
+            if ($respuesta == "ok") {
+                header("location:index.php?action=usuarios");
+            } else {
+                echo "error, no se pudo autorizar el usuario :( ";
+            }
+        }
+    }
+    
+        public function autorizarUsuarioProfesorController() {
+
+        if (isset($_GET["idAutorizarProfesor"])) {
+            $datosController = $_GET["idAutorizarProfesor"]; //para enviarle al modelo para modificar
+
+
+
+            $respuesta = UsuariosModel::autorizarUsuarioProfesorModel($datosController, "usuario");
+
+            if ($respuesta == "ok") {
+                header("location:index.php?action=usuarios");
+            } else {
+                echo "error, no se pudo autorizar el usuario :( ";
+            }
+        }
+    }
+    
+            public function autorizarUsuarioAdminController() {
+
+        if (isset($_GET["idAutorizarAdmin"])) {
+            $datosController = $_GET["idAutorizarAdmin"]; //para enviarle al modelo para modificar
+
+
+
+            $respuesta = UsuariosModel::autorizarUsuarioAdminModel($datosController, "usuario");
 
             if ($respuesta == "ok") {
                 header("location:index.php?action=usuarios");

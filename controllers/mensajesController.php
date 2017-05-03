@@ -37,7 +37,6 @@ class MensajesController extends MvcController {
 				<td>' . $item["asunto"] . '</td>
 				<td>' . $item["cuerpoMensaje"] . '</td>
                                 <td>' . $item["fecha_envio"] . '</td>
-                                <td>' . $item["IDDestinatario"] . '</td>
 				<td><a href="index.php?action=verMensajes&idBorrar=' . $item["id"] . '"><button>Borrar</button></a></td>
 			</tr>';
         }

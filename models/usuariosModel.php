@@ -3,7 +3,7 @@
 class UsuariosModel extends Datos {
     #registro de usuarios
     #------------------------------------
-
+    
     public function registroUsuarioModel($datosModel, $tabla) {
         $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (user, password, nombre, apellido1, apellido2, email, frase_recuperacion, respuesta_frase_recuperacion) VALUES (:user, :password, :nombre, :apellido1, :apellido2, :email, :frase_recuperacion, :respuesta_frase_recuperacion)");
 
@@ -112,9 +112,36 @@ class UsuariosModel extends Datos {
         $stmt->close();
     }
 
-    public function autorizarUsuarioModel($datosModel, $tabla) {
+    public function autorizarUsuarioAlumnoModel($datosModel, $tabla) {
 
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET autorizado=1 , rolID=3 WHERE id=$datosModel");
+
+        if ($stmt->execute()) {
+            return "ok";
+        } else {
+            return "ko";
+        }
+
+        $stmt->close();
+    }
+    
+    #Función para autorizar a usuarios como administradores rol 1
+        public function autorizarUsuarioAdminModel($datosModel, $tabla) {
+
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET autorizado=1 ,rolID=1 WHERE id=$datosModel");
+
+        if ($stmt->execute()) {
+            return "ok";
+        } else {
+            return "ko";
+        }
+
+        $stmt->close();
+    }
+    #Función para añadir a usuarios como profesores rol 2
+    public function autorizarUsuarioProfesorModel($datosModel, $tabla) {
+
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET autorizado=1 ,rolID=2 WHERE id=$datosModel");
 
         if ($stmt->execute()) {
             return "ok";

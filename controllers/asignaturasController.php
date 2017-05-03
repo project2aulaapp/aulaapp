@@ -114,7 +114,7 @@ class AsignaturasController extends MvcController {
                 echo '<div class="btn-asignatura">';
                 echo '<h1>'.ucfirst($item["nombre"]).'</h1>';
                 echo '<p>'.$item["descripcion"].'</p>';
-                echo'<center><button><a href=index.php?action=contenidos&id='.$item["id"].'>Acceder</a></button></center>';
+                echo'<center><a href=index.php?action=contenidos&id='.$item["id"].'>Acceder</a></center>';
                 echo '</div>';
             }
               
