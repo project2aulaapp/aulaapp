@@ -14,25 +14,17 @@ main{
     margin:0 auto;
 }
 
-header{
-    position: fixed;
-    top:.5em;
-    right: 15px;
-    color: white;
-    background: black;
-    height: 6em;
-    width: 60%;
-    margin-bottom: .5em;
-    z-index: 1;
-    border-radius: 5px; 
-    text-align: right;    
-}
-
-header a{
+header{    
+   
+    background:black;
     color:white;
-    padding: .5em;   
+    border-radius: 5px;   
+    
 }
-
+header a{
+    color: white;
+    
+}
 
 nav{    
    
@@ -136,6 +128,7 @@ article>img{
 
 footer{
     clear:left;
+    margin-top: 3em;
 }
 
 .contenedor-asignaturas{

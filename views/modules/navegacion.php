@@ -22,6 +22,7 @@ if (isset($_SESSION["validar"])) {
               <li><a href="index.php?action=verMensajes">Ver mensajes</a></li>
               <li><a href="index.php?action=perfil">Ver tu perfil de usuario</a></li>
               <li><a href="index.php?action=subirArchivo">Subir apuntes al servidor</a></li>
+              <li><a href="index.php?action=borrarArchivos">Borrar archivos</a></li>
               <li><a href="index.php?action=asignaturasProfesor">Asignaturas profesor</a></li>
               <ul>';
     }else if($_SESSION["rol"]==3){ //alumnos

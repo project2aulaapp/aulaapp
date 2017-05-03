@@ -60,7 +60,7 @@ class UsuariosModel extends Datos {
 
     public function vistaUsuariosModel($tabla) {
 
-        $stmt = Conexion::conectar()->prepare("SELECT id,user,email FROM $tabla where autorizado=0");
+        $stmt = Conexion::conectar()->prepare("SELECT id,user,nombre, apellido1, apellido2 FROM $tabla where autorizado=0");
 
 
         $stmt->execute();

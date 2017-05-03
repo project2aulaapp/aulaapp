@@ -27,6 +27,11 @@ class Paginas{
 
 			$module =  "views/modules/asignaturas.php";		
 		}
+               
+                else if($enlaces == "borrarArchivos"){
+
+			$module =  "views/modules/borrarArchivos.php";		
+		}
                 
                 else if($enlaces == "asignaturasProfesor"){
 

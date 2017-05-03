@@ -16,7 +16,7 @@
         <main> <!-- Contenedor de la web -->
             
 
-            <div id="depuracion">
+            <div id="depuracion"><!-- esto desaparecerá, pero hay que conservar en el css las instrucciones para el id=depuracion -->
                 <?php
                 if (isset($_SESSION["validar"])) {
                     echo 'Datos de depuración:<br>';
@@ -30,7 +30,7 @@
                 ?>
             </div>
 
-            <nav>
+            <header>
                 <a href="index.php"><img src="src/img/logotipo.jpeg"></a>
                 <?php
                 if (!isset($_SESSION["validar"])) {
@@ -53,7 +53,7 @@
                     }
                 }
                 ?>
-            </nav>
+            </header>
 
 
             <section>
