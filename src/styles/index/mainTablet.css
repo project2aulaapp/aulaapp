@@ -1,0 +1,41 @@
+@media  (min-width: 800px){
+	article:hover{
+		background-color: #1c63b2;
+	}
+
+	aside{
+		width:100%;
+		display:flex;
+		background-color: #ff690d;
+	}
+
+	aside div{
+		display:none; 
+	}
+
+	aside ul{
+		display:flex;
+		width: 100%;
+		justify-content: space-around;
+	}
+
+	aside ul li{
+		list-style: none;
+		padding:0;
+
+	}
+
+	aside ul li a{
+		text-decoration: none;
+		margin: 0;
+		color :black;
+		border: 2px solid red;
+	    width: 15%;
+	    line-height: 25px;
+	}
+
+	aside ul li:focus{
+		background-color: tomato;
+	}
+	
+}

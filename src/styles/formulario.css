@@ -1,0 +1,8 @@
+form{
+    text-align: center;
+}
+
+form input,select{
+    width:200px;
+    height:30px;
+}

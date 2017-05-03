@@ -1,0 +1,47 @@
+@media  (min-width: 1024px){
+    section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    section aside{
+        width:25%;
+    }
+
+    section aside ul{
+        display: flex;
+        flex-direction:column;
+    }
+
+    aside ul li{
+        width:100%;
+        border-bottom: 1px solid red;
+    }
+
+    aside ul li a {
+        border:0;
+    }
+
+    article{
+        border-bottom: solid 2px;
+        border-color:white;
+    }
+
+
+}
+
+@media  (min-width: 1224px){
+    body{
+        background-color: #1c63d8;
+
+    }
+
+    main{
+        width:1024px;
+    }
+
+    header{
+
+    }
+
+}

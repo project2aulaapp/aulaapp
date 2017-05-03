@@ -4,12 +4,14 @@
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
         <title>¡¡Pillo sitio!!</title>	
-        <link rel="stylesheet" type="text/css" href="src/styles/base.css">
+        <!--<link rel="stylesheet" type="text/css" href="src/styles/base.css">-->
+        <link rel="stylesheet" type="text/css" href="src/styles/maestro.css">
     </head>
 
     <body>
         <main> <!-- Contenedor de la web -->
             <header> <!-- Para las notificaciones, botón de login y logout -->
+                <a href="index.php"><img src="src/img/logotipo.png"></a>
                 <?php
                 session_start();
 
@@ -36,12 +38,6 @@
 
             </header>
 
-            <nav>
-                <a href="index.php"><img src="src/img/logotipo.jpeg"></a>
-                <?php include "modules/navegacion.php"; ?>      
-            </nav>
-
-
             <section>
                 
                 <?php
@@ -54,57 +50,7 @@
             <?php if (isset($_SESSION["validar"])) { ?>
 
                 <aside>
-                    <article>
-
-                        <h1>Esto es un ejemplo</h1> 
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>                       
-                    </article>
-
-                    <article>
-
-                        <h1>Esto es un ejemplo</h1> 
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>                       
-                    </article>
-
-                    <article>
-
-                        <h1>Esto es un ejemplo</h1> 
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>
-                        <p>Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto
-                            Texto texto texto lorem texto texto texto</p>                       
-                    </article>
-
+                    <?php include "modules/navegacion.php"; ?> 
                 </aside>
 
 

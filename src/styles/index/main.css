@@ -1,0 +1,113 @@
+main *{
+    box-sizing:border-box;
+}
+
+main{
+    width:100%;
+    background-color:#2ba9f2;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+header{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    background-color:#1c63d8;
+    align-items:flex-end;
+    flex-wrap:wrap;
+}
+
+header a, section a{
+    text-decoration: none;
+    font-weight: bold;
+    color:#ff690d;
+}
+
+header a:visited, section a:visited{
+    color:#ff690d;
+}
+
+header img{
+    width:230px;
+}
+
+aside{
+    display: none;
+}
+
+section{
+    width:100%;
+}
+
+section article{
+    width:100%;
+}
+
+section h1{
+    text-align: center;
+}
+
+article img{
+    width:300px;
+    margin-left: 40%;
+}
+
+footer{
+    width:100%;
+    background-color:#1c63d8;
+}
+
+/*Animación del menú*/
+
+div{
+    width:60px;
+    height: 45px;
+    position: relative;
+    margin:0 auto;
+}
+span{
+    left:0;
+    display: block;
+    position: absolute;
+    background: orange;
+    width: 100%;
+    height: 9px;
+    border-radius: 10px;
+    opacity: 1;
+    /*Esto es la transicion*/
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out, width 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out;
+}
+
+span:nth-of-type(1){
+    top:0px;
+}
+
+span:nth-of-type(2){
+    top:18px;
+}
+
+span:nth-of-type(3){
+    top:36px;
+}
+span:nth-of-type(1),span:nth-of-type(3){
+    transform-origin: left center;
+}
+
+/*Rotamos la barra del medio*/
+div:hover span:nth-of-type(1){
+    transform: rotate(30deg);
+    top:18px;
+    width:50%;
+}
+
+/*Gira la barra escondida*/
+div:hover span:nth-of-type(3){
+    transform: rotate(-30deg);
+    top:18px;
+    width:50%;
+}
+
