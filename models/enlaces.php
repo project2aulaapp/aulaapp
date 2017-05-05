@@ -23,6 +23,12 @@ class Paginas{
 		
 		}
                 
+                else if($enlaces == "pizarra"){
+
+			$module =  "views/modules/pizarra.php";
+		
+		}
+                
                 else if($enlaces == "calendario"){
 
 			$module =  "views/modules/calendario.php";
