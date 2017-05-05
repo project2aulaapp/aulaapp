@@ -1,41 +1,56 @@
 @media  (min-width: 800px){
-	article:hover{
-		background-color: #1c63b2;
-	}
 
-	aside{
-		width:100%;
-		display:flex;
-		background-color: #ff690d;
-	}
+    section{
+        display:flex;
+        flex-direction:column-reverse;
+    }
 
-	aside div{
-		display:none; 
-	}
+    article:hover{
+        background-color: #1c63b2;
+    }
 
-	aside ul{
-		display:flex;
-		width: 100%;
-		justify-content: space-around;
-	}
+    aside{
+        width:100%;
+        display:flex;
+        background-color: #ff690d;
+    }
 
-	aside ul li{
-		list-style: none;
-		padding:0;
+    aside div{
+        display:none; 
+    }
 
-	}
+    aside ul{
+        display:flex;
+        width: 100%;
+    }
 
-	aside ul li a{
-		text-decoration: none;
-		margin: 0;
-		color :black;
-		border: 2px solid red;
-	    width: 15%;
-	    line-height: 25px;
-	}
+    aside ul li{
+        list-style: none;
+        display: inline-block;
+        padding: 0;
+        text-align: center;
+        width: 15%;
 
-	aside ul li:focus{
-		background-color: tomato;
-	}
-	
+    }
+
+    aside ul li a{
+        display:block;
+        text-decoration: none;
+        margin: 0;
+        color :black;
+        width: 25%;
+        line-height: 25px;
+    }
+
+    aside ul li a:visited,aside ul li a:focus{
+        color:black;
+        margin:5px auto;
+    }
+
+    aside ul li:hover{
+        border-left: 2px solid red;
+        border-right:  2px solid red;
+        background-color:#ff693a; 
+    }
+
 }

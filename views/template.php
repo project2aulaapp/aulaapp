@@ -31,7 +31,7 @@
             </div>
 
             <header>
-                <a href="index.php"><img src="src/img/logotipo.jpeg"></a>
+                <a href="index.php"><img src="src/img/logotipo.png"></a>
                 <?php
                 if (!isset($_SESSION["validar"])) {
 
@@ -58,7 +58,7 @@
                 ?>
             </header>
 
-
+            <section>
             <section>
 
 <?php
@@ -74,7 +74,7 @@ $mvc->enlacesPaginasController();
                 <?php include "modules/navegacion.php"; ?>   
 
                 </aside>
-
+            </section>
 
 <?php } ?>
 
