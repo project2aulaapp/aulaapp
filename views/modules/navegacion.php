@@ -25,6 +25,7 @@ if (isset($_SESSION["validar"])) {
               <li><a href="index.php?action=borrarArchivos">Borrar archivos</a></li>
               <li><a href="index.php?action=asignaturasProfesor">Asignaturas profesor</a></li>
               <li><a href="index.php?action=calendario">Ver calendario</a></li>
+              <li><a href="index.php?action=pizarra">Iniciar pizarra</a></li>
               <ul>';
     }else if($_SESSION["rol"]==3){ //alumnos
         echo '<ul><li><a href="#">Vista de alumno</a></li>
@@ -33,7 +34,7 @@ if (isset($_SESSION["validar"])) {
         <li><a href="index.php?action=perfil">Ver tu perfil de usuario</a></li>
         <li><a href="index.php?action=asignaturas">Ver tus asignaturas</a></li>
         <li><a href="index.php?action=calendario">Ver calendario</a></li>
-        </li>';
+        </ul>';
     }else if($_SESSION["rol"]==4){ //Por autorizar
         echo '<ul><li><a href="#">vista de usuario sin autorizar</a></li><ul>';
     }        

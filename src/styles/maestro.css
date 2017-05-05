@@ -3,3 +3,7 @@
 @import "index/mainDesktop.css";
 @import "formulario.css";
 @import "tablas.css";
+
+#depuracion{
+    display: none;
+}
