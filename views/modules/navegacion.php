@@ -4,8 +4,7 @@
 if (isset($_SESSION["validar"])) {   
     
     if($_SESSION["rol"]==1){//administrador
-        echo '<ul>	
-                <ul><li><a href="#">Vista de administrador</a></li>
+        echo '<ul><li><a href="#">Vista de administrador</a></li>
 		<li><a href="index.php?action=usuarios">Autorización de Usuarios</a></li>
 		<li><a href="index.php?action=msg">Enviar mensajes</a></li>		
 		<li><a href="index.php?action=asig">Añadir asignatura</a></li>	
