@@ -1,0 +1,9 @@
+tres primeros caracteres idProfesor, tres siguientes idAsignatura
+
+ejemplo:
+
+tres primeros caracteres idProfesor, tres siguientes idAsignatura
+
+ejemplo:
+
+012001Nombrearchivo.extension

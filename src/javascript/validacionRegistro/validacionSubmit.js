@@ -12,6 +12,7 @@ function main() {
 
         valido = validarNombreUsuario(myForm.userName);
         valido &= validarContra(myForm.password);
+        valido &= comprobarContra(myForm.rePassword);
         valido &= validarNombreApellidos(myForm.userNameReal);
         valido &= validarNombreApellidos(myForm.firstSurname);
         valido &= validarNombreApellidos(myForm.secondSurname);
@@ -23,9 +24,9 @@ function main() {
         e.preventDefault();
     }
 
-    function limpiarSpans(){
+    function limpiarSpans() {
         var spans = document.getElementsByTagName("span");
-        for(var i=0; i<spans.length; i++){
+        for (var i = 0; i < spans.length; i++) {
             spans[i].textContent = "";
         }
     }
@@ -33,7 +34,7 @@ function main() {
     function validarNombreUsuario(nombre) {
         nombre.nextElementSibling.textContent = "";
         if (nombre.value.trim().match(/^[A-Za-z0-9]{4,15}$/) == null) {
-            nombre.nextElementSibling.textContent = "Introduce " + nombre.title + " correcto";
+            nombre.nextElementSibling.textContent = "Introduce " + nombre.title + " entre 4 y 15 carácteres alfanúmericos";
             return false;
         }
         return true;
@@ -41,8 +42,17 @@ function main() {
 
     function validarContra(contra) {
         contra.nextElementSibling.textContent = "";
-        if (contra.value.trim().match(/^[\w]{6,15}$/) == null) {
-            contra.nextElementSibling.textContent = "Introduce " + contra.title + " correcta";
+        if (contra.value.trim().match(/^[A-Za-z0-9]{6,15}$/) == null) {
+            contra.nextElementSibling.textContent = "Introduce " + contra.title + " entre 6 y 15 carácteres alfanúmericos";
+            return false;
+        }
+        return true;
+    }
+
+    function comprobarContra(contra) {
+        contra.nextElementSibling.textContent = "";
+        if (contra.value != myForm.password.value) {
+            contra.nextElementSibling.textContent = "Las contraseñas no coinciden";
             return false;
         }
         return true;
@@ -50,17 +60,18 @@ function main() {
 
     function validarNombreApellidos(cadena) {
         cadena.nextElementSibling.textContent = "";
-        if (cadena.value.trim().match(/^([A-ZÑÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]?)+$/) == null) {
-            cadena.nextElementSibling.textContent = "Introduce " + cadena.title + " correcto";
+        if (cadena.value.trim().match(/^([A-ZÑÁÉÍÓÚa-zñáéíóú]+[\s]?)+$/) == null) {
+            cadena.nextElementSibling.textContent = "Introduce " + cadena.title + ", solo carácteres alfabéticos";
             return false;
         }
+        cadena.value = cadena.value.charAt(0).toUpperCase() + cadena.value.slice(1);
         return true;
     }
 
     function validarEmail(email) {
         email.nextElementSibling.textContent = "";
         if (email.value.trim().match(/^[a-z0-9](\.?[a-z0-9_-]){0,}@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/) == null) {
-            email.nextElementSibling.textContent = "Introduce " + email.title + " correcto";
+            email.nextElementSibling.textContent = "Introduce " + email.title + " válido, hola@mundo.com";
             return false;
         }
         return true;
@@ -69,7 +80,7 @@ function main() {
     function validarPregunta(pregunta) {
         pregunta.nextElementSibling.textContent = "";
         if (pregunta.selectedIndex == null || pregunta.selectedIndex == 0) {
-            pregunta.nextElementSibling.textContent = "Selecciona una " + pregunta.title;
+            pregunta.nextElementSibling.textContent = "Selecciona una " + pregunta.title + " para recuperar tu cuenta si olvidas tu contraseña";
             return false;
         }
         return true;
@@ -78,7 +89,7 @@ function main() {
     function validarRespuesta(respuesta) {
         respuesta.nextElementSibling.textContent = "";
         if (respuesta.value.trim().length <= 0 || respuesta.value.trim().length > 20) {
-            respuesta.nextElementSibling.textContent = "Introduce " + respuesta.title + " correcto";
+            respuesta.nextElementSibling.textContent = "Responde la " + respuesta.title + " seleccionada";
             return false;
         }
         return true;

@@ -20,7 +20,6 @@ if (!$_SESSION["validar"]) {
             <th>Asunto</th>
             <th>Mensaje</th>
             <th>Fecha de envío</th>
-            <th>Destinatario</th>
             <th>Acciones</th>
 
         </tr>

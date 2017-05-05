@@ -23,7 +23,7 @@ if (!$_SESSION["validar"]) {
 
     <input type="text" placeholder="Asunto" name="asunto" required>
 
-    <textarea placeholder="Escribe aquí tu mensaje" name="cuerpo"  rows="8" cols="100" required>	</textarea>
+    <textarea placeholder="Escribe aquí tu mensaje" name="cuerpo"  rows="8" cols="50" required>	</textarea>
 
     <input type="submit" value="Enviar">
     <input type="reset" value="Limpiar">

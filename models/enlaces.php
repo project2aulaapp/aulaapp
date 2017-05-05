@@ -17,6 +17,33 @@ class Paginas{
 		
 		}
                 
+                else if($enlaces == "contenidos"){
+
+			$module =  "views/modules/contenidosAsignaturas.php";
+		
+		}
+                
+                else if($enlaces == "calendario"){
+
+			$module =  "views/modules/calendario.php";
+		
+		}
+                
+                else if($enlaces == "asignaturas"){
+
+			$module =  "views/modules/asignaturas.php";		
+		}
+               
+                else if($enlaces == "borrarArchivos"){
+
+			$module =  "views/modules/borrarArchivos.php";		
+		}
+                
+                else if($enlaces == "asignaturasProfesor"){
+
+			$module =  "views/modules/listadoAsignaturasProfesor.php";		
+		}
+                
                 
                 else if($enlaces == "seleccionAsignaturas"){
 

@@ -9,6 +9,12 @@
             <input type="password" name="passwordRegistro" id="password" placeholder="Contraseña" title="contraseña">
             <span></span>
         </p>
+        
+        <p>
+            <input type="password" name="rePasswordRegistro" id="rePassword" placeholder="Repite contraseña" title="contraseña">
+            <span></span>
+        </p>        
+        
         <p>
             <input type="text" name="nombreRegistro" id="userNameReal" placeholder="Nombre" title="nombre">
             <span></span>
@@ -28,10 +34,10 @@
         <p>
             <select name="preguntaRegistro" id="questions" title="pregunta">
                 <option value="" selected hidden>Selecciona una pregunta</option>
-                <option value="1">Mascota</option>
-                <option value="2">Instituto</option>
-                <option value="3">Madre</option>
-                <option value="4">Padre</option>
+                <option value="1">¿Nombre de tu mascota?</option>
+                <option value="2">¿Nombre de tu instituto?</option>
+                <option value="3">¿Nombre de tu madre?</option>
+                <option value="4">¿Nombre de tu padre?</option>
             </select>
             <span></span>
         </p>
@@ -46,6 +52,7 @@
     </form>
     <script type="text/javascript" src="src/javascript/validacionRegistro/validacionSubmit.js"></script>
     <script type="text/javascript" src="src/javascript/validacionRegistro/validacionBlur.js"></script>
+    <script type="text/javascript" src="src/javascript/ajax/compruebaUsuario.js"></script>
 
 <?php
 

@@ -22,10 +22,10 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){
 		<thead>
 			
 			<tr>
-				<th>Usuario</th>				
-				<th>Email</th>
+				<th>Nombre de usuario</th>				
+				<th>Nombre y apellidos</th>
                                 <th>Autorizar</th>
-				<th>Borrar</th>
+				<th>Borrar Usuario</th>
 
 			</tr>
 
@@ -36,8 +36,10 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){
 
 				$vistaUsuario = new UsuariosController();
 				$vistaUsuario -> vistaUsuariosController();
-                                $vistaUsuario -> autorizarUsuarioController();
-				$vistaUsuario -> borrarUsuarioController();
+                                $vistaUsuario -> autorizarUsuarioAlumnoController();
+                                $vistaUsuario -> autorizarUsuarioProfesorController();
+                                $vistaUsuario -> autorizarUsuarioAdminController();
+				$vistaUsuario -> borrarUsuarioController();                                
 			?>
 			
 

@@ -37,7 +37,6 @@ class MensajesController extends MvcController {
 				<td>' . $item["asunto"] . '</td>
 				<td>' . $item["cuerpoMensaje"] . '</td>
                                 <td>' . $item["fecha_envio"] . '</td>
-                                <td>' . $item["IDDestinatario"] . '</td>
 				<td><a href="index.php?action=verMensajes&idBorrar=' . $item["id"] . '"><button>Borrar</button></a></td>
 			</tr>';
         }
@@ -60,7 +59,7 @@ class MensajesController extends MvcController {
         echo 'Destinatario: <select name="destinatario">'; 
         foreach ($respuesta as $fila => $item) 
             {                   
-              echo '<option value="'.$item["id"].'">'.$item["user"].' - '.utf8_encode(ucfirst($item["nombre"])).' '.utf8_encode($item["apellido1"]).' '.utf8_encode($item["apellido2"]).'</option>';       
+              echo '<option value="'.$item["id"].'">'.$item["user"].' - '.ucfirst($item["nombre"]).' '.$item["apellido1"].' '.$item["apellido2"].'</option>';       
             }
         echo '</select>';
     }

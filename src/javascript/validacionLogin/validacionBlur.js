@@ -10,7 +10,7 @@ function main() {
     function validarNombreUsuario(nombre) {
         nombre.target.nextElementSibling.textContent = "";
         if (nombre.target.value.trim().match(/[A-Za-z0-9]{4,15}/) == null) {
-            nombre.target.nextElementSibling.textContent = "Introduce " + nombre.target.title + " correcto";
+            nombre.target.nextElementSibling.textContent = "Introduce " + nombre.target.title + " entre 4 y 15 carácteres alfanúmericos";
             return false;
         }
         return true;
@@ -18,8 +18,8 @@ function main() {
 
     function validarContra(contra) {
         contra.target.nextElementSibling.textContent = "";
-        if (contra.target.value.trim().match(/^[\w]{6,15}$/) == null) {
-            contra.target.nextElementSibling.textContent = "Introduce " + contra.target.title + " correcta";
+        if (contra.target.value.trim().match(/^[A-Za-z0-9]{6,15}$/) == null) {
+            contra.target.nextElementSibling.textContent = "Introduce " + contra.target.title + " entre 6 y 15 carácteres alfanúmericos";
             return false;
         }
         return true;

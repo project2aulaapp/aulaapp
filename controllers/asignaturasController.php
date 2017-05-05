@@ -34,20 +34,19 @@ class AsignaturasController extends MvcController {
             $respuesta = AsignaturaModel::listarAsignaturasModel($idCurso["idCurso"]);           
             //var_dump($respuesta);
             foreach ($respuesta as $fila => $item) {//aquí los recorro, como quiero una lista de inputs tipo checkbox pues lo hago así
-                echo '<input type="checkbox" value="'.$item["id"].'" name="asignaturas[]">'.$item["nombre"].'<br>';
+                echo '<input type="checkbox" value="'.$item["id"].'" name="asignaturas[]" title="'.$item["descripcion"].'">'.$item["nombre"].'<br>';
             }
             echo '<input type="submit" value="Enviar">';
     }
     
     
-    /* Esto no funciona aún, elegirAsignaturasController
-    */
     
     
     
     
-    public function elegirAsignaturasController(){
-            if (isset($_POST["asignaturas"])) {
+    
+    public function elegirAsignaturasController(){ //seleccion de asignaturas del alumno
+            if (isset($_POST["asignaturas"]) && $_POST["asignaturas"]>0) {
                        
             $datosController=$_POST['asignaturas'];    
                               
@@ -62,11 +61,71 @@ class AsignaturasController extends MvcController {
                 //echo "Asignaturas elegidas!";
             } else {
                 //header("location:index.php");
-                echo "maaaaaaal!";
-            }
+               echo 'errorrr';
+                    }
         }
+        
+                
+                echo "<script> alert('Debes elegir al menos una asignatura'); </script>";
        
     }
+    
+    #   Función para que un profesor se apunte a sus asignaturas
+    
+    public function profesorAsignaturasController(){
+        $respuesta = AsignaturaModel::listadoAsignaturasProfesorModel();           
+            
+            foreach ($respuesta as $fila => $item) {//aquí los recorro, como quiero una lista de inputs tipo checkbox pues lo hago así
+                echo '<input type="checkbox" value="'.$item["id"].'" name="asignaturas[]" title="'.$item["descripcion"].'">'.$item["nombre"].'<br>';
+            }
+            echo '<input type="submit" value="Enviar">';
+    }
+    
+    
+    
+    public function elegirAsignaturasProfesorController($id){
+            if (isset($_POST["asignaturas"]) && $_SESSION["rol"]=2) {
+                       
+            $datosController=$_POST['asignaturas'];    
+                              
+            
+            //var_dump($datosController);
+            $respuesta = AsignaturaModel::eleccionAsignaturasProfesorModel($datosController, $_SESSION["userId"]);
+
+
+            //var_dump($respuesta);
+            if ($respuesta == "ok") {                
+                echo "<script>alert('Asignaturas elegidas!'); window.location='index.php?action=index';</script>";
+                
+                //header("location:index.php?action=index");
+            } else {
+                //header("location:index.php");
+               
+                    }
+        } 
+    }
+    
+    
+    public function cargarAsignaturasController($id){
+        
+        $respuesta = AsignaturaModel::cargarAsignaturasModel($id);
+        
+       foreach ($respuesta as $fila => $item) {
+                echo '<div class="btn-asignatura">';
+                echo '<h1>'.ucfirst($item["nombre"]).'</h1>';
+                echo '<p>'.$item["descripcion"].'</p>';
+                echo'<center><a href=index.php?action=contenidos&id='.$item["id"].'>Acceder</a></center>';
+                echo '</div>';
+            }
+              
+               
+    }
+    
+    
+   
+    
+    
+    
 
 }//fin clase
 ?>
