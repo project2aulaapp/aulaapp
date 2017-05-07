@@ -4,6 +4,8 @@
 @import "formulario.css";
 @import "tablas.css";
 
+@import "ventanaModal/style.css";
+
 #depuracion{
     display: none;
 }

@@ -6,6 +6,7 @@
         <title>¡¡Pillo sitio!!</title>	
         <!--<link rel="stylesheet" type="text/css" href="src/styles/baseOld.css">-->
          <link rel="stylesheet" type="text/css" href="src/styles/maestro.css">
+         <script src="src/javascript/ventanaModal/app.js"></script>
     </head>
 
     <body> 
@@ -83,6 +84,20 @@ $mvc->enlacesPaginasController();
 <?php include "modules/footer.php"; ?>
 
             </footer>
+            
+            <div id="myModal" class="modal-content">
+                <div class="modal-body">
+                    <p id="infoCookies">
+                        Utilizamos cookies propias y de terceros para ofrecerte un mejor servicio. Si continúas navegando, consideramos que aceptas
+                        expresamente su utilización. Puedes obtener más información de cómo gestionar y configurar las cookies en
+                        nuestra <a href="">Política de Cookies</a>.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button id="accept" class="btn">Aceptar</button>
+                </div>
+            </div>
+
         </main>
     </body>
   <?php if (isset($_SESSION["validar"])) {  //si no está logueado, no carga el script
