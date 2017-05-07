@@ -36,6 +36,7 @@
     aside ul li a{
         text-decoration: none;
         margin: 0;
+        padding:10px;
         color :black;
         width: 25%;
         line-height: 25px;

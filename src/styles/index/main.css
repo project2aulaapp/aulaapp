@@ -17,7 +17,7 @@ header{
     display:flex;
     justify-content:space-between;
     background-color:#1c63d8;
-    align-items:flex-end;
+    align-items:baseline;
     flex-wrap:wrap;
 }
 

@@ -76,7 +76,7 @@ class AsignaturasController extends MvcController {
         $respuesta = AsignaturaModel::listadoAsignaturasProfesorModel();           
             
             foreach ($respuesta as $fila => $item) {//aquí los recorro, como quiero una lista de inputs tipo checkbox pues lo hago así
-                echo '<input type="checkbox" value="'.$item["id"].'" name="asignaturas[]" title="'.$item["descripcion"].'">'.$item["nombre"].'<br>';
+                echo '<div><input type="checkbox" value="'.$item["id"].'" name="asignaturas[]" title="'.$item["descripcion"].'"><label>'.$item["nombre"].'</label></div><br>';
             }
             echo '<input type="submit" value="Enviar">';
     }
