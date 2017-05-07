@@ -142,14 +142,18 @@ class UsuariosModel extends Datos {
     public function autorizarUsuarioProfesorModel($datosModel, $tabla) {
 
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET autorizado=1 ,rolID=2 WHERE id=$datosModel");
-
+        
         if ($stmt->execute()) {
+                /*Este reset se hace por si a la hora de registrarse eligió como si fuera un alumno */
+            $reset = $stmt = Conexion::conectar()->prepare("UPDATE usuario SET autorizado=1 ,rolID=2, inscritoCurso=0, inscritoAsignaturas=0  WHERE id=$datosModel");
+            $reset->execute();
             return "ok";
         } else {
             return "ko";
         }
 
         $stmt->close();
+        $reset->close();
     }
 
     #BORRAR USUARIO

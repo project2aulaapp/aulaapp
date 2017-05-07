@@ -55,7 +55,7 @@ class PracticasController extends MvcController {
 
         foreach ($respuesta as $fila => $item) {
             //var_dump($item);
-            if ($item != '.' && $item != '..' ) {// (substr($item, 0, 2)==$asignatura) si los 2 número de caracteres desde el principio(0) coinciden con la asignatura, se muestran
+            if ($item != '.' && $item != '..' && $item != '.htaccess' && substr($item,0,3) === str_pad($_SESSION["userId"], 3, '0', STR_PAD_LEFT)) {
                 $valor = substr($item, 6);
                 $resultado = utf8_encode($valor);
                 $direccion = 'practicas/' . utf8_encode($item);
@@ -63,6 +63,7 @@ class PracticasController extends MvcController {
                 echo "<p><a href='$direccion'>Descargar $resultado </a></p>";
                 echo '</div>';
             }
+            
         }
     }
 
@@ -72,14 +73,12 @@ class PracticasController extends MvcController {
 
 
         $valor = ' ';
-        $profesor = str_pad($idProfesor, 3, '0', STR_PAD_LEFT);
-
-
-        //echo $asignatura.'<br>';
-
+        $profesor = str_pad($idProfesor, 3, '0', STR_PAD_LEFT);        
+        
         foreach ($respuesta as $fila => $item) {
             $direccion = ' ';
-            if ($item != '.' && $item != '..' && $item != '.htaccess' && (substr($item, 0, 3) == $profesor)) {// (substr($item, 0, 2)==$asignatura) si los 2 número de caracteres desde el principio(0) coinciden con la asignatura, se muestran
+            if ($item != '.' && $item != '..' && $item != '.htaccess' && (substr($item, 0, 3) == $profesor)) {
+                // esto (substr($item, 0, 3) == $profesor) quiere decir que el archivo corresponda con el id del profesor
                 $valor = utf8_encode(substr($item, 6));
                 $direccion = 'archivos/' . utf8_encode($item);
 

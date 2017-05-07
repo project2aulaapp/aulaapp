@@ -60,7 +60,7 @@ class AsignaturaModel extends Datos {
         
         
         $longitud = count($datosModel);
-
+        #este bucle es para preparar la sentencia del insert en alumnoasignatura
         for ($i = 0; $i < $longitud; $i++) {
            if ($i == ($longitud-1)) {
            $values = $values.'('.$datosModel[$i].', '.$id.')';
@@ -71,7 +71,7 @@ class AsignaturaModel extends Datos {
         }
         
 
-        echo $values;
+        //echo $values;
 
         $stmt = Conexion::conectar()->prepare("INSERT INTO alumnoasignatura (idAsignatura, idAlumno) VALUES ". $values.';');
 
