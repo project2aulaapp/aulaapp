@@ -35,9 +35,10 @@ class MensajesController extends MvcController {
             echo'<tr>
 				<td>' . $remitente["nombre"] . ' ' . $remitente["apellido1"] . ' ' . $remitente["apellido2"] . '</td>
 				<td>' . $item["asunto"] . '</td>
-				<td>' . $item["cuerpoMensaje"] . '</td>
+				<td>' . substr($item["cuerpoMensaje"],0,25) . '</td>
                                 <td>' . $item["fecha_envio"] . '</td>
 				<td><a href="index.php?action=verMensajes&idBorrar=' . $item["id"] . '"><button>Borrar</button></a></td>
+                                <td><a href="index.php?action=verDetalle&id=' . $item["id"] . '"><button>Ver en detalle</button></a></td>
 			</tr>';
         }
     }
@@ -62,6 +63,30 @@ class MensajesController extends MvcController {
               echo '<option value="'.$item["id"].'">'.$item["user"].' - '.ucfirst($item["nombre"]).' '.$item["apellido1"].' '.$item["apellido2"].'</option>';       
             }
         echo '</select>';
+    }
+    
+    
+    public function verMensajeDetalleController(){
+        $respuesta = MensajesModel::verMensajeDetalleModel($_GET["id"]);
+        $remitente = MensajesModel::remitenteModel("usuario", $respuesta["IDRemitente"]);
+        /*
+         * var_dump($respuesta);
+         * echo '<br>';
+         * var_dump($remitente);
+         * 
+         */
+        echo'<div id="mensajeEnDetalle">';
+            echo '<h1>Asunto: '.$respuesta["asunto"].'</h1>';
+            echo '<p>Fecha y hora de envío: '.$respuesta["fecha_envio"].'</p>';
+            echo '<p>Mensaje: '.
+                    $respuesta["cuerpoMensaje"]                    
+                .' </p>';
+            echo '<a href="index.php?action=verMensajes&idBorrar=' . $respuesta["id"] . '"><button>Borrar mensaje</button></a>';
+            echo '<a href="index.php?action=verMensajes"><button>Volver a los mensajes</button></a>';        
+        
+        
+        
+        echo '</div>';
     }
     
 }

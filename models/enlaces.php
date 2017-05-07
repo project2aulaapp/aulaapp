@@ -16,6 +16,12 @@ class Paginas{
 			$module =  "views/modules/inicio.php";
 		
 		}
+		
+                else if($enlaces == "verDetalle"){
+
+			$module =  "views/modules/detalleMensaje.php";
+		
+		}
                 
                 else if($enlaces == "contenidos"){
 

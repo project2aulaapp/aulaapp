@@ -21,6 +21,8 @@ require_once "models/cursosModel.php";
 require_once "controllers/cursosController.php";
 require_once 'controllers/archivosController.php';
 require_once 'models/archivosModel.php';
+require_once 'controllers/practicasController.php';
+require_once 'models/practicasModel.php';
 
 
 $mvc = new MvcController();

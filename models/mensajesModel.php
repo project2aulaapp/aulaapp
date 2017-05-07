@@ -88,6 +88,14 @@ class MensajesModel extends Datos {
         $stmt->close();
     }
     
+    public function verMensajeDetalleModel($idMensaje){
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM mensaje WHERE id=$idMensaje");
+        $stmt->execute();
+
+        return $stmt->fetch(); 
+        $stmt->close();
+    }
+    
 
 
 }
