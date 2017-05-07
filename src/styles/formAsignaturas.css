@@ -1,0 +1,12 @@
+#asigProfe form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#asigProfe form div{
+    width:50%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
