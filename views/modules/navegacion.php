@@ -27,6 +27,7 @@ if (isset($_SESSION["validar"])) {
               <li><a href="index.php?action=pizarra">Iniciar pizarra</a></li>
               <li><a href="index.php?action=msg">Enviar Mensajes</a></li>
               <li><a href="index.php?action=verMensajes">Ver mensajes</a></li>
+              <li><a href="index.php?action=practicasAlumnos">Descargar prácticas de alumnos</a></li>
               <li><a href="index.php?action=perfil">Ver tu perfil de usuario</a></li>
               <li><a href="index.php?action=calendario">Calendario</a></li>
               <ul>';
@@ -36,6 +37,8 @@ if (isset($_SESSION["validar"])) {
         <li><a href="index.php?action=msg">Enviar mensajes</a></li><ul>
         <li><a href="index.php?action=verMensajes">Ver mensajes</a>
         <li><a href="index.php?action=perfil">Tu perfil</a></li>
+        <li><a href="index.php?action=practicas">Ver practicas</a></li>
+        <li><a href="index.php?action=entregar">Entregar Prácticas</a></li>
         <li><a href="index.php?action=calendario">Calendario</a></li>
         </ul>';
     }else if($_SESSION["rol"]==4){ //Por autorizar

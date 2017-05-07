@@ -23,6 +23,24 @@ class Paginas{
 		
 		}
                 
+                else if($enlaces == "practicasAlumnos"){
+
+			$module =  "views/modules/seleccionarPracticasAlumno.php";
+		
+		}
+                
+                else if($enlaces == "descargarPracticasAlumnos"){
+
+			$module =  "views/modules/practicasAlumnosDescargar.php";
+		
+		}
+                
+                else if($enlaces == "entregar"){
+
+			$module =  "views/modules/entregarPracticasAlumno.php";
+		
+		}
+                
                 else if($enlaces == "practicas"){
 
 			$module =  "views/modules/listarPracticas.php";

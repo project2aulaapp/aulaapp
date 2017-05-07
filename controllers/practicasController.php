@@ -67,7 +67,7 @@ class PracticasController extends MvcController {
         }
     }
 
-    public function listarPracticaBorrarController($idProfesor) {
+    public function listarPracticaBorrarController($idProfesor) {//función para que el profesor pueda listar las prácticas suyas y borrar las que quiera pulsando en borrar
         $respuesta = PracticassModel::listarPracticasModel();
 
 
@@ -91,7 +91,7 @@ class PracticasController extends MvcController {
         }
     }
 
-    public function borrarPracticaController() {
+    public function borrarPracticaController() { //cuando hacemos clic en el botón borrar, ejecutamos esta función 
         if (isset($_GET["nbArchivo"])) {
 
             $datosController = $_GET["nbArchivo"];
@@ -102,4 +102,99 @@ class PracticasController extends MvcController {
         }
     }
 
+    public function subirPracticaAlumnoController(){ //función con la que el alumno subirás sus prácticas, se guardará su id de alumno
+        //las tres primeras cifras, el id de la asignatura en los otros tres siguientes y la fecha/hora en las 10 cifras siguientes (hora del servidor)y el nombre del archivo
+        
+        $listadoAsignaturas = PracticasModel::listarAsignaturasAlumnoModel($_SESSION["userId"]);
+
+        //var_dump($listadoAsignaturas);
+        echo '<input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+            Enviar este fichero: <input name="fichero_usuario" type="file"/> ';
+        echo 'Selecciona la asignatura';
+        foreach ($listadoAsignaturas as $fila => $item) {
+            echo '<input type="radio" name="idAsignatura" value="' . $item["id"] . '" checked>' . $item["nombre"] . '</input>';
+        }
+        echo '<input type="submit" value="Enviar fichero" />';
+
+        if (isset($_FILES["fichero_usuario"])) {
+            $datosController = $_FILES["fichero_usuario"];
+            $idAsignatura = $_POST["idAsignatura"];
+
+            $asignatura = str_pad($idAsignatura, 3, '0', STR_PAD_LEFT);
+            
+            
+            $respuesta = PracticasModel::subirPracticaAlumnoModel($datosController, $asignatura);
+
+
+            //var_dump($respuesta);
+            if ($respuesta == "ok") {
+                //header("location:index.php?action=ok");
+                echo "Tu práctica ha sido entregada correctamente.";
+            } else {
+                //header("location:index.php");
+                echo "maaaaaaal!";
+            }
+        }
+    }
+    
+    public function listarAsignaturasController(){
+        $listadoAsignaturas = PracticasModel::listarAsignaturasModel($_SESSION["userId"]);
+        foreach ($listadoAsignaturas as $fila => $item) {
+            $id= $item["id"];
+            echo "<p><a href='index.php?action=practicasAlumnos&id=$id'>Elegir asignatura --> <strong>'".$item["nombre"]."'</strong></a></p>";
+             
+        } 
+        
+      //var_dump($listadoAsignaturas);
+        
+    }
+    
+    
+    public function listarPracticasDeAlumnosController(){//funcion en la que el profesor podrá listar las prácticas según el alumno, para descargarlas y evaluarlas
+    //seleccionar alumno
+        
+        
+        
+        if(isset($_GET["id"])){
+            //echo '<script> alert("'.$_GET["id"].'");</script>';
+            $idAsignatura = $_GET["id"];
+            $alumnos = PracticasModel::listarAlumnosAsignaturaModel($_SESSION["userId"], $idAsignatura);
+        
+        
+        //var_dump($alumnos);
+        
+       
+            
+            
+        foreach ($alumnos as $fila => $item) {
+            echo '<a href="index.php?action=descargarPracticasAlumnos&idUsuario='.$item["uid"].'&idAsignatura='.$item["aid"].'"><button>'.$item["unom"].' '.$item["uape1"].' '.$item["uape2"].'</button></a>'; 
+        }
+            
+            
+            
+            
+       /*echo '<form>';
+       echo '<select name="alumnos">';
+   
+
+         foreach ($alumnos as $fila => $item) {
+            echo '<option value="'. $item["uid"].'">'.$item["unom"].' '.$item["uape1"].' '.$item["uape2"].'</option>';
+           //var_dump($item);
+        }
+       echo ' </select>';
+       echo '<input type="submit" value="Consultar prácticas">';
+       echo '</form>';   
+        
+        }*/
+        
+        
+            
+        }
+        
+    
+        
+    //ver practicas de ese alumno    
+    }
+    
+    
 }

@@ -43,5 +43,61 @@ class PracticasModel extends Datos {
             return "ko";
         }
     }
+    
+    public function subirPracticaAlumnoModel($datosModel,$idAsignatura){
+        
+        $alumno = str_pad($_SESSION["userId"], 3, '0', STR_PAD_LEFT);
+        //time() devuelve un numero de 10 cifras, donde podemos sacar la fecha
+        if (move_uploaded_file($datosModel['tmp_name'], 'practicas/' . $alumno . $idAsignatura . time() . utf8_decode($datosModel['name']))) {// de uno en uno, de momento
+            #si todo va bien, sería un código de 6 números, alumno+asignatura+fecha10numero+nombrearchivo.extension
+            return "ok";
+        } else {
+            return "ko";
+        }
+    }
+    
+    
+    
+    /*<?php
+        echo time();
+        echo '<br>';
+        echo date("d-m-y H:m:s",1494180705);
+        echo '<br>';
+        echo date("d-m-y H:m:s",time());
+        ?>      */
+    
+    
+    
 
+    public function listarAsignaturasAlumnoModel($idAlumno){
+        $datosAsignaturas = Conexion::conectar()->prepare("select asignatura.nombre, asignatura.id "
+                . "from usuario,alumnoasignatura,asignatura "
+                . "where usuario.id=alumnoasignatura.idAlumno "
+                . "AND asignatura.id=alumnoasignatura.idAsignatura "
+                . "AND usuario.id=$idAlumno");
+        $datosAsignaturas->execute();
+
+        return $datosAsignaturas->fetchAll();
+        $datosAsignaturas->close();
+    }
+    
+    public function listarAlumnosAsignaturaModel($idProfesor, $idAsignatura){
+        $listaAlumnos = Conexion::conectar()->prepare("select usuario.id as uid, usuario.nombre unom, usuario.apellido1 uape1, usuario.apellido2 uape2, asignatura.id aid, asignatura.nombre anom "
+                . "from usuario,alumnoasignatura,asignatura "
+                . "where usuario.id=alumnoasignatura.idAlumno "
+                . "AND asignatura.id=alumnoasignatura.idAsignatura "
+                . "AND asignatura.IDprofesor=$idProfesor AND asignatura.id=$idAsignatura");
+        $listaAlumnos->execute();
+        
+        
+        return $listaAlumnos->fetchAll();              
+        $listaAlumnos->close();
+    }
+    
+    
+    
+    
+    public function listarPracticasDeAlumnoModel(){
+        
+    }
 }

@@ -7,14 +7,24 @@ if (!$_SESSION["validar"]) {
 	header("location:index.php?action=login");
 	exit(); //usando el método exit() hacemos que nadie pueda, de ninguna forma continuar el script y alterarlo. 
 }
+
+
 ?>
 
-<h1>Contenidos de la asignatura</h1>
 
-<?php
-    
-    $contenidos = new ArchivosController();
-    $contenidos-> listarArchivosController($_GET["id"]);
+
+<h1>Entrega de prácticas</h1>
+
+
+<form enctype="multipart/form-data"  method="POST">
+    <?php
+
+$practicas = new PracticasController();
+
+$practicas->subirPracticaAlumnoController($_SESSION["userId"]);
+
 ?>
+</form>
 
-<a href="index.php?action=asignaturas">Volver a asignaturas</a>
+
+
