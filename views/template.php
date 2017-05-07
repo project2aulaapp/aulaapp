@@ -6,7 +6,9 @@
         <title>¡¡Pillo sitio!!</title>	
         <!--<link rel="stylesheet" type="text/css" href="src/styles/baseOld.css">-->
          <link rel="stylesheet" type="text/css" href="src/styles/maestro.css">
+	<link rel="shortcut icon" href="src/img/favicon.png"/>
          <script src="src/javascript/ventanaModal/app.js"></script>
+         <script src="src/javascript/cambiarId.js"></script>
     </head>
 
     <body> 
@@ -59,7 +61,7 @@
                 ?>
             </header>
 
-            <section>
+            <section id="contenedor">
             <section>
 
 <?php
