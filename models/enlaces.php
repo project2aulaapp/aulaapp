@@ -23,6 +23,18 @@ class Paginas{
 		
 		}
                 
+                else if($enlaces == "practicas"){
+
+			$module =  "views/modules/listarPracticas.php";
+		
+		}
+                
+                else if($enlaces == "nPracticas"){
+
+			$module =  "views/modules/nuevaPractica.php";
+		
+		}
+                
                 else if($enlaces == "contenidos"){
 
 			$module =  "views/modules/contenidosAsignaturas.php";

@@ -10,8 +10,9 @@ class ArchivosModel extends Datos {
 
 
 
-        if (move_uploaded_file($datosModel['tmp_name'], 'archivos/' . $profesor . $idAsignatura . $datosModel['name'])) {// de uno en uno, de momento
-            #si todo va bien, sería un código de 6 números, profesor+asignatura+nombrearchivo.extension
+        if (move_uploaded_file($datosModel['tmp_name'], 'archivos/' . $profesor . $idAsignatura . utf8_decode($datosModel['name']))) {// de uno en uno, de momento
+        # el utf8_decode() es para que si el archivo tiene tildes u otros caracteres latinos, los coja como tal    
+        #si todo va bien, sería un código de 6 números, profesor+asignatura+nombrearchivo.extension
             return "ok";
         } else {
             return "ko";

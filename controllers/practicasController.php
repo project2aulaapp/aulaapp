@@ -2,7 +2,7 @@
 
 class PracticasController extends MvcController {
 
-    public function practicaNuevaController() {
+    public function practicaNuevaController() { //profesor puede subir una nueva práctica
         $listadoAsignaturas = PracticasModel::listarAsignaturasModel($_SESSION["userId"]);
 
         //var_dump($listadoAsignaturas);
@@ -21,13 +21,13 @@ class PracticasController extends MvcController {
             $idAsignatura = $_POST["idAsignatura"];
 
             $asignatura = str_pad($idAsignatura, 3, '0', STR_PAD_LEFT);
-            $respuesta = ArchivosModel::archivoNuevoModel($datosController, $asignatura);
+            $respuesta = PracticasModel::practicaNuevaModel($datosController, $asignatura);
 
 
             //var_dump($respuesta);
             if ($respuesta == "ok") {
                 //header("location:index.php?action=ok");
-                echo "Archivo cargado correctamente.";
+                echo "Archivo de práctica cargado correctamente.";
             } else {
                 //header("location:index.php");
                 echo "maaaaaaal!";
@@ -43,10 +43,10 @@ class PracticasController extends MvcController {
      * @return no retorna nada
      * @param int $idAsignatura id de la asignatura de los apuntes
      */
-    public function listarArchivosController($idAsignatura) {
-
-        $respuesta = ArchivosModel::listarArchivosModel();
-
+    public function listarPracticasController($idAsignatura) {
+        //echo 'hola';
+        $respuesta = PracticasModel::listarPracticasModel();
+        //var_dump($respuesta);
         $valor = ' ';
         $asignatura = str_pad($idAsignatura, 3, '0', STR_PAD_LEFT);
 
@@ -54,19 +54,20 @@ class PracticasController extends MvcController {
         //echo $asignatura.'<br>';
 
         foreach ($respuesta as $fila => $item) {
-
-            if ($item != '.' && $item != '..' && (substr($item, 3, 3) == $asignatura)) {// (substr($item, 0, 2)==$asignatura) si los 2 número de caracteres desde el principio(0) coinciden con la asignatura, se muestran
-                $valor = utf8_encode(substr($item, 6));
-                $direccion = 'archivos/' . utf8_encode($item);
-                echo '<div class="contenido-asignatura">';
-                echo "<p><a href='$direccion'>Descargar $valor</a></p>";
+            //var_dump($item);
+            if ($item != '.' && $item != '..' ) {// (substr($item, 0, 2)==$asignatura) si los 2 número de caracteres desde el principio(0) coinciden con la asignatura, se muestran
+                $valor = substr($item, 6);
+                $resultado = utf8_encode($valor);
+                $direccion = 'practicas/' . utf8_encode($item);
+                echo '<div class="contenido-practica">';
+                echo "<p><a href='$direccion'>Descargar $resultado </a></p>";
                 echo '</div>';
             }
         }
     }
 
-    public function listarArchivoBorrarController($idProfesor) {
-        $respuesta = ArchivosModel::listarArchivosModel();
+    public function listarPracticaBorrarController($idProfesor) {
+        $respuesta = PracticassModel::listarPracticasModel();
 
 
 
@@ -91,13 +92,13 @@ class PracticasController extends MvcController {
         }
     }
 
-    public function borrarArchivoController() {
+    public function borrarPracticaController() {
         if (isset($_GET["nbArchivo"])) {
 
             $datosController = $_GET["nbArchivo"];
-            $respuesta = ArchivosModel::borrarArchivoModel($datosController);
+            $respuesta = PracticasModel::borrarPracticaModel($datosController);
             if ($respuesta == "ok") {
-                header("location:index.php?action=borrarArchivos");
+                header("location:index.php?action=borrarPractica");
             }
         }
     }
