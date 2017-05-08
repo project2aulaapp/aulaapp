@@ -1,10 +1,15 @@
 @import "index/main.css";
 @import "index/mainTablet.css";
 @import "index/mainDesktop.css";
-@import "formulario.css";
-@import "tablas.css";
-@import "formAsignaturas.css";
+@import "ids/formulario.css";
+@import "ids/tablas.css";
+@import "ids/formProfesor.css";
 
+/*Vista del administrador*/
+@import "ids/formAdmin.css";
+
+
+/*Llamamos el estilo de la ventana de la cookies*/
 @import "ventanaModal/style.css";
 
 #depuracion{

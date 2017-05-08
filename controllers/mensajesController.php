@@ -57,7 +57,7 @@ class MensajesController extends MvcController {
 
     public function listarDestinatariosController() {
         $respuesta = MensajesModel::listarDestinatariosModel();
-        echo 'Destinatario: <select name="destinatario">'; 
+        echo '<label>Destinatario:</label><select name="destinatario"> '; 
         foreach ($respuesta as $fila => $item) 
             {                   
               echo '<option value="'.$item["id"].'">'.$item["user"].' - '.ucfirst($item["nombre"]).' '.$item["apellido1"].' '.$item["apellido2"].'</option>';       
