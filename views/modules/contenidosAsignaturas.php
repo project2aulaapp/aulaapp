@@ -9,6 +9,7 @@ if (!$_SESSION["validar"]) {
 }
 ?>
 
+<section id="contenidosAsignaturas">
 <h1>Contenidos de la asignatura</h1>
 
 <?php
@@ -18,3 +19,4 @@ if (!$_SESSION["validar"]) {
 ?>
 
 <a href="index.php?action=asignaturas">Volver a asignaturas</a>
+</section>

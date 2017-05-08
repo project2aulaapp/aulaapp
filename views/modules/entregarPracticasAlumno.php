@@ -11,7 +11,7 @@ if (!$_SESSION["validar"]) {
 
 ?>
 
-
+<section id="entregarPracticas">
 
 <h1>Entrega de prácticas</h1>
 
@@ -27,4 +27,4 @@ $practicas->subirPracticaAlumnoController($_SESSION["userId"]);
 </form>
 
 
-
+</section>

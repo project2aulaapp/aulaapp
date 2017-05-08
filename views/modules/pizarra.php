@@ -20,7 +20,8 @@ $datos->fetch();*/
     //Mañana seguiré    
 ?>
 
-
+<section id="pizarra">
+         
 <h1>Pizarra</h1>
 
 
@@ -32,3 +33,4 @@ $datos->fetch();*/
 
 
 <script type="text/javascript" src="src/javascript/ajax/pizarra.js"></script>
+</section>

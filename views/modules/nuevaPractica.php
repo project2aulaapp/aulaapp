@@ -17,6 +17,7 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 
 ?>
 
+<section id="practicaNueva">
 
 <h1>Subida de prácticas al servidor</h1>
 
@@ -29,3 +30,4 @@ $practicas -> practicaNuevaController();
 ?>
 </form>
 
+</section>

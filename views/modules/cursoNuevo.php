@@ -16,7 +16,7 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 }
 
 ?>
-
+<section id="cursoNuevo">
 <h1>Añadir curso</h1>
 
 <form method="post">
@@ -40,3 +40,5 @@ if(isset($_GET["action"])){
 
 
 ?>
+
+</section>

@@ -1,4 +1,5 @@
-	<h1>REGISTRO DE USUARIO</h1>
+<section id="registroUsuario">
+<h1>REGISTRO DE USUARIO</h1>
 
     <form method="post" id="myForm">
         <p>
@@ -67,3 +68,4 @@ if(isset($_GET["action"])){
 
 
 ?>
+</section>

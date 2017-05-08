@@ -8,7 +8,7 @@ if (!$_SESSION["validar"]) {
     exit(); //usando el método exit() hacemos que nadie pueda, de ninguna forma continuar el script y alterarlo. 
 }
 ?>
-
+<section id="listaMensajes">
 <h1>Mensajes</h1>
 
 <table border="1">
@@ -45,3 +45,4 @@ if (isset($_GET["action"])) {
     }
 }
 ?>
+</section>

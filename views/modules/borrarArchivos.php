@@ -15,7 +15,7 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 }
 
 ?>
-
+<section id="borrarArchivos">
 <h1>Borrar archivos</h1>
 
 <?php
@@ -25,3 +25,5 @@ $archivos->listarArchivoBorrarController($_SESSION["userId"]);
 $archivos->borrarArchivoController();
 
 ?>
+
+</section>

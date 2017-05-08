@@ -17,7 +17,7 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 
 ?>
 
-
+<section id="archivoNuevo">
 <h1>Subida de archivos al servidor</h1>
 
 <form enctype="multipart/form-data"  method="POST">
@@ -30,3 +30,4 @@ $archivo ->archivoNuevoController();
 </form>
 
 
+</section>

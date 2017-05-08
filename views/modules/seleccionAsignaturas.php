@@ -10,6 +10,7 @@ if(isset($_SESSION["asignaturasElegidas"]) && $_SESSION["asignaturasElegidas"] =
 }
 
 ?>
+<section id="seleccionAsignaturas">
 <h1>Selecciona tus asignaturas</h1>
 <p>Para ver la descripción de cada asignatura pasa el ratón por cada checkbox</p>
 <form method="POST">
@@ -19,7 +20,7 @@ if(isset($_SESSION["asignaturasElegidas"]) && $_SESSION["asignaturasElegidas"] =
     $asignaturas->elegirAsignaturasController();
 ?>
 </form>
-
+</section>
 
 
 

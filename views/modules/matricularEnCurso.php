@@ -18,12 +18,14 @@ if ($_SESSION["inscrito"] == 1 && $_SESSION["rol"] != 1 && $_SESSION["rol"] != 2
 } else {  // La primera vez que entremos después de registrarnos, nos pedirá que 
     //nos matriculemos en un curso
     if ($_SESSION["rol"] != 1 && $_SESSION["rol"] != 2) {
+        echo '<section id="inscribirEnCurso">';
         echo '<h1>Inscripción a un nuevo curso</h1>';
         echo '<form method="POST">';
         $curso = new CursosController();
         $curso->desplegableCursosController();
         $curso->inscribirEnCursoController();
-        echo '</form>';
+        echo '</form></section>';
+        
     } else {
         header("location:index.php?action=index");
     }

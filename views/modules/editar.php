@@ -5,7 +5,7 @@ if (!$_SESSION["validar"]) {
 	exit(); //usando el método exit() hacemos que nadie pueda, de ninguna forma continuar el script y alterarlo. 
 }
 ?>
-
+<section id="editarUsuario">
 <h1>EDITAR USUARIO</h1>
 
 <form method="post" action="">
@@ -17,3 +17,4 @@ $editarUsuario->actualizarUsuarioController();
 </form>
 
 
+</section>

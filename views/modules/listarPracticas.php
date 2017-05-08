@@ -8,7 +8,7 @@ if (!$_SESSION["validar"]) {
 	exit(); //usando el método exit() hacemos que nadie pueda, de ninguna forma continuar el script y alterarlo. 
 }
 ?>
-
+<section id="listarPracticas"
 <h1>Prácticas de la asignatura [Poner aquí nombre de la asignatura]</h1>
 
 <?php
@@ -17,3 +17,4 @@ if (!$_SESSION["validar"]) {
     $contenidos-> listarPracticasController($_SESSION["userId"]);   
 
 ?>
+</section>

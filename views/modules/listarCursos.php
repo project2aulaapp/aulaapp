@@ -16,7 +16,7 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){
 
 ?>
 
-
+<section id="listadoCursos">
 <h1>Listado de cursos</h1>
 
 	<table border="1">
@@ -55,3 +55,5 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){
 
 
 ?>
+
+</section>

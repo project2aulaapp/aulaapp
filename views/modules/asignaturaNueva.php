@@ -16,7 +16,7 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 }
 
 ?>
-
+<section id="asigNueva">
 <h1>Nueva Asignatura</h1>
 
 <form method="post">
@@ -34,7 +34,8 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 	<input type="submit" value="Enviar">
 	<input type="reset" value="Limpiar">
 
-</form>
+</form></section>
+
 
 
 

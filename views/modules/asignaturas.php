@@ -9,7 +9,7 @@ if (!$_SESSION["validar"]) {
 }
 ?>
 
-
+<section id="listaAsignaturas">
 
 <h1>Ir a una asignatura</h1>
 <p>Haz clic en una de las asignaturas para acceder a su contenido</p>
@@ -56,5 +56,5 @@ if (!$_SESSION["validar"]) {
 </div>
 
 
-
+</section>
 

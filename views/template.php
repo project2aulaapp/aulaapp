@@ -62,14 +62,14 @@
             </header>
 
             <section id="contenedor">
-            <section>
+            
 
 <?php
 $mvc = new MvcController();
 $mvc->enlacesPaginasController();
 ?>
 
-            </section>
+           
 
 <?php if (isset($_SESSION["validar"])) { ?>
 

@@ -1,4 +1,5 @@
-	<h1>LOGIN</h1>
+<section id="login">
+<h1>LOGIN</h1>
 
     <form method="post" id="myForm">
         <p>
@@ -31,3 +32,4 @@
 		}
 
 	?>
+</section>

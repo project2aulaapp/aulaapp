@@ -9,6 +9,10 @@ if (!$_SESSION["validar"]) { //Esto es, si no está autenticado, lo lleva fuera 
 	exit(); //usando el método exit() hacemos que nadie pueda, de ninguna forma continuar el script y alterarlo. 
 }
 
-
+?>
+<section id="detalleMensaje">
+<?php
 $detalleMensaje = new MensajesController();
 $detalleMensaje->verMensajeDetalleController();
+?>
+</section>

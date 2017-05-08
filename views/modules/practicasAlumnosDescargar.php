@@ -17,7 +17,7 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 
 ?>
 
-
+<section id="practicasAlumnos">
 <h1>Listado de las prácticas de alumno</h1>
 
 
@@ -26,3 +26,4 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 // aquí llegaremos cuando seleccionen un alumno para ver las prácticas que tiene hechas
 
 ?>
+</section>
