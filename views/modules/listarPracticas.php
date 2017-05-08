@@ -17,8 +17,13 @@ if (!$_SESSION["validar"]) {
     if($_SESSION["rol"]==2){      
       $contenidos-> listarPracticasAsigntauraProfesorController($_SESSION["userId"]);    
     }else if($_SESSION["rol"]==3){
-      $contenidos->seleccionarAsignaturaController($_SESSION["userId"]);
-      $contenidos->listarPracticasController(null, $_SESSION["userId"]);
+        $contenidos->seleccionarAsignaturaController($_SESSION["userId"]);
+        if(isset($_GET["idAsig"])){
+        $contenidos->listarPracticasController($_GET["idAsig"], $_GET["idProfe"]);
+        }
+        
+      
+      
     }else{
         
     }  

@@ -216,15 +216,13 @@ class PracticasController extends MvcController {
     
     
     public function seleccionarAsignaturaController($idAlumno){
-        $consulta = "select asignatura.nombre as nomasig,asignatura.id as idasig "
-                . "from asignatura,alumnoasignatura,usuario "
-                . "where asignatura.id=alumnoasignatura.idAsignatura "
-                . "AND alumnoasignatura.idAlumno=usuario.id "
-                . "and usuario.id=46";
-        $asignaturas = Datos::conectar()->prepare($consulta);
-        $asignaturas->execute();
-        $asignaturas->fetchAll();
-        var_dump($asignaturas);
-    }
+        $resultado = PracticasModel::seleccionarAsignaturaModel($idAlumno);
+        echo '<p>Selecciona una asignatura para ver las prácticas de cada una:</p>';
+        foreach ($resultado as $fila => $item) {
+            //echo '<input type="radio" name="idAsignatura" value="' . $item["idasig"] . '" checked>' . $item["nomasig"] . '</input>';
+            echo '<a href="index.php?action=practicas&idAsig=' . $item["idasig"] . '&idProfe=' . $item["idprofe"] . '"><button>'. $item["nomasig"] . '</button></a>';
+   
+        }
+         }
 
 }

@@ -111,9 +111,20 @@ class PracticasModel extends Datos {
         $listaAlumnos->close();
     }
     
-    
-    
-    
+   
+    public function seleccionarAsignaturaModel($idAlumno) {
+        $consulta = "select asignatura.nombre as nomasig,asignatura.id as idasig, asignatura.IDprofesor as idprofe "
+                . "from asignatura,alumnoasignatura,usuario "
+                . "where asignatura.id=alumnoasignatura.idAsignatura "
+                . "AND alumnoasignatura.idAlumno=usuario.id "
+                . "and usuario.id=$idAlumno";
+        $asignaturas = Datos::conectar()->prepare($consulta);
+        $asignaturas->execute();
+        $asignaturas_array = $asignaturas->fetchAll();
+        return($asignaturas_array);
+        $asignaturas->close();
+    }
+
     public function listarPracticasDeAlumnoModel(){
         
     }
