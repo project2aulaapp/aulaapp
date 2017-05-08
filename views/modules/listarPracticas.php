@@ -9,12 +9,19 @@ if (!$_SESSION["validar"]) {
 }
 ?>
 <section id="listarPracticas"
-<h1>Prácticas de la asignatura [Poner aquí nombre de la asignatura]</h1>
+<h1>Prácticas de la asignatura</h1>
 
 <?php
-    
     $contenidos = new PracticasController();
-    $contenidos-> listarPracticasController($_SESSION["userId"]);   
+    
+    if($_SESSION["rol"]==2){      
+      $contenidos-> listarPracticasAsigntauraProfesorController($_SESSION["userId"]);    
+    }else if($_SESSION["rol"]==3){
+      $contenidos->seleccionarAsignaturaController($_SESSION["userId"]);
+      $contenidos->listarPracticasController(null, $_SESSION["userId"]);
+    }else{
+        
+    }  
 
 ?>
 </section>

@@ -31,6 +31,10 @@ class PracticasModel extends Datos {
         return $datosAsignatura->fetchAll();
         $datosAsignatura->close();
     }
+    
+     
+    
+ 
 
     public function borrarPracticaModel($practica) {
         //var_dump($practica);
@@ -87,6 +91,19 @@ class PracticasModel extends Datos {
                 . "where usuario.id=alumnoasignatura.idAlumno "
                 . "AND asignatura.id=alumnoasignatura.idAsignatura "
                 . "AND asignatura.IDprofesor=$idProfesor AND asignatura.id=$idAsignatura");
+        $listaAlumnos->execute();
+        
+        
+        return $listaAlumnos->fetchAll();              
+        $listaAlumnos->close();
+    }
+    
+        public function listarAlumnosPracticasModel($idAlumno){
+        $listaAlumnos = Conexion::conectar()->prepare("select usuario.id as uid, usuario.nombre unom, usuario.apellido1 uape1, usuario.apellido2 uape2, asignatura.id aid, asignatura.nombre anom "
+                . "from usuario,alumnoasignatura,asignatura "
+                . "where usuario.id=alumnoasignatura.idAlumno "
+                . "AND asignatura.id=alumnoasignatura.idAsignatura "
+                . "AND usuario.id=$idAlumno");
         $listaAlumnos->execute();
         
         

@@ -22,7 +22,8 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 
 
 <?php 
-
+    $practicas = new PracticasController();
+    $practicas->listarPracticasController($_GET["idAsignatura"], $_GET["idUsuario"]);
 // aquí llegaremos cuando seleccionen un alumno para ver las prácticas que tiene hechas
 
 ?>
