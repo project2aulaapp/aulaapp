@@ -33,7 +33,7 @@ function main() {
 
     function validarNombreUsuario(nombre) {
         nombre.nextElementSibling.textContent = "";
-        nombre.nextElementSibling.className = "";
+        nombre.nextElementSibling.className = "ok";
         if (nombre.value.trim().match(/^[A-Za-z0-9]{4,15}$/) == null) {
             nombre.nextElementSibling.className = "error";
             nombre.nextElementSibling.textContent = "Introduce " + nombre.title + " entre 4 y 15 carácteres alfanúmericos";
@@ -44,7 +44,9 @@ function main() {
 
     function validarContra(contra) {
         contra.nextElementSibling.textContent = "";
+        contra.nextElementSibling.className = "ok";
         if (contra.value.trim().match(/^[A-Za-z0-9]{6,15}$/) == null) {
+            contra.nextElementSibling.className = "error";
             contra.nextElementSibling.textContent = "Introduce " + contra.title + " entre 6 y 15 carácteres alfanúmericos";
             return false;
         }
@@ -53,7 +55,9 @@ function main() {
 
     function comprobarContra(contra) {
         contra.nextElementSibling.textContent = "";
+        contra.nextElementSibling.className = "ok";
         if (contra.value != myForm.password.value) {
+            contra.nextElementSibling.className = "error";
             contra.nextElementSibling.textContent = "Las contraseñas no coinciden";
             return false;
         }
@@ -62,7 +66,9 @@ function main() {
 
     function validarNombreApellidos(cadena) {
         cadena.nextElementSibling.textContent = "";
+        cadena.nextElementSibling.className = "ok";
         if (cadena.value.trim().match(/^([A-ZÑÁÉÍÓÚa-zñáéíóú]+[\s]?)+$/) == null) {
+            cadena.nextElementSibling.className = "error";
             cadena.nextElementSibling.textContent = "Introduce " + cadena.title + ", solo carácteres alfabéticos";
             return false;
         }
@@ -72,7 +78,9 @@ function main() {
 
     function validarEmail(email) {
         email.nextElementSibling.textContent = "";
+        email.nextElementSibling.className = "ok";
         if (email.value.trim().match(/^[a-z0-9](\.?[a-z0-9_-]){0,}@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/) == null) {
+            email.nextElementSibling.className = "error";
             email.nextElementSibling.textContent = "Introduce " + email.title + " válido, hola@mundo.com";
             return false;
         }
@@ -81,7 +89,9 @@ function main() {
 
     function validarPregunta(pregunta) {
         pregunta.nextElementSibling.textContent = "";
+        pregunta.nextElementSibling.className = "ok";
         if (pregunta.selectedIndex == null || pregunta.selectedIndex == 0) {
+            pregunta.nextElementSibling.className = "error";
             pregunta.nextElementSibling.textContent = "Selecciona una " + pregunta.title + " para recuperar tu cuenta si olvidas tu contraseña";
             return false;
         }
@@ -90,7 +100,9 @@ function main() {
 
     function validarRespuesta(respuesta) {
         respuesta.nextElementSibling.textContent = "";
+        respuesta.nextElementSibling.className = "ok";
         if (respuesta.value.trim().length <= 0 || respuesta.value.trim().length > 20) {
+            respuesta.nextElementSibling.className = "error";
             respuesta.nextElementSibling.textContent = "Responde la " + respuesta.title + " seleccionada";
             return false;
         }
