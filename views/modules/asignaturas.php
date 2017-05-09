@@ -20,39 +20,6 @@ if (!$_SESSION["validar"]) {
     $mensaje ->cargarAsignaturasController($_SESSION["userId"]);
     ?>
     
-    
-   
-<!--
-    <div class="btn-asignatura">
-        <h1>Asignatura2</h1>  
-        <p>Bla bla bla hablando de la asignatura</p>
-        <center><button>Acceder</button></center>
-    </div>
-
-    <div class="btn-asignatura">
-        <h1>Asignatura3</h1>  
-        <p>Bla bla bla hablando de la asignatura</p>
-        <center><button>Acceder</button></center>
-    </div>
-
-    <div class="btn-asignatura">
-        <h1>Asignatura4</h1> 
-        <p>Bla bla bla hablando de la asignatura</p>
-        <center><button>Acceder</button></center>
-    </div>
-
-    <div class="btn-asignatura">
-        <h1>Asignatura5</h1>   
-        <p>Bla bla bla hablando de la asignatura</p>
-        <center><button>Acceder</button></center>
-    </div>
-
-    <div class="btn-asignatura">
-        <h1>Asignatura6</h1> 
-        <p>Bla bla bla hablando de la asignatura</p>
-        <center><button>Acceder</button></center>
-    </div>
--->
 </div>
 
 
