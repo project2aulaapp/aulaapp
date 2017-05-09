@@ -124,8 +124,15 @@ class PracticasModel extends Datos {
         return($asignaturas_array);
         $asignaturas->close();
     }
-
-    public function listarPracticasDeAlumnoModel(){
-        
+    
+    
+    
+public function seleccionarAsignaturaProfeModel($idProfe) {
+        $consulta = "SELECT id,nombre from asignatura where IDprofesor=$idProfe";
+        $asignaturas = Datos::conectar()->prepare($consulta);
+        $asignaturas->execute();
+        $asignaturas_array = $asignaturas->fetchAll();
+        return($asignaturas_array);
+        $asignaturas->close();
     }
 }

@@ -35,30 +35,20 @@ class PracticasController extends MvcController {
         }
     }
 
-    #Lista los archivos que haya subido el profesor de esa asignatura, que se pasa como parámetro en la llamada a la función 
-
-    /**
-     * Lista los archivos que haya subido el profesor de esa asignatura, que se pasa como parámetro en la llamada a la función
-     *
-     * @return no retorna nada
-     * @param int $idAsignatura id de la asignatura de los apuntes
-     */
-    public function listarPracticasController($idAsignatura, $idAlumno) {
+    
+    public function listarPracticasController($idAsignatura) {
         //echo 'hola';
         $respuesta = PracticasModel::listarPracticasModel();
         //var_dump($respuesta);
         $valor = ' ';
         $asignatura = str_pad($idAsignatura, 3, '0', STR_PAD_LEFT);
-        $alumno = str_pad($idAlumno, 3, '0', STR_PAD_LEFT);
+        $alumno = str_pad($_SESSION["userId"], 3, '0', STR_PAD_LEFT);
 
         //echo $asignatura.'<br>';
 
         foreach ($respuesta as $fila => $item) {
-            //var_dump($item);
-            //echo substr($item,0,3).'  <br>';
-            //echo $alumno.'<br>';
-            //id de alumno las tres primeras cifras, el id de la asignatura en los otros tres siguientes 
-            if ($item != '.' && $item != '..' && $item != '.htaccess' && substr($item, 0, 3) == $alumno) {
+            
+            if ($item != '.' && $item != '..' && $item != '.htaccess' && substr($item, 3, 3) == $asignatura ) {
                 $valor = substr($item, 6);
                 $resultado = utf8_encode($valor);
                 $direccion = 'practicas/' . utf8_encode($item);
@@ -95,16 +85,16 @@ class PracticasController extends MvcController {
         }
     }
 
-    public function listarPracticasAsigntauraProfesorController($idProfesor) {
+    public function listarPracticasAsignaturaProfesorController($idProfesor,$idAsignatura) {
         $respuesta = PracticasModel::listarPracticasModel();
         //var_dump($respuesta);
         $valor = ' ';
-        $asignatura = str_pad($idProfesor, 3, '0', STR_PAD_LEFT);
-
+        $profesor = str_pad($idProfesor, 3, '0', STR_PAD_LEFT);
+        $asignatura = str_pad($idAsignatura, 3,'0',STR_PAD_LEFT);    
         foreach ($respuesta as $fila => $item) {
             //echo utf8_encode($item);;
             //id de alumno las tres primeras cifras, el id de la asignatura en los otros tres siguientes 
-            if ($item != '.' && $item != '..' && $item != '.htaccess' && substr($item, 0, 3) == $asignatura) {
+            if ($item != '.' && $item != '..' && $item != '.htaccess' && substr($item, 0, 3) == $profesor && substr($item, 3, 3) == $asignatura) {
                 $valor = substr($item, 6);
                 $resultado = utf8_encode($valor);
                 $direccion = 'practicas/' . utf8_encode($item);
@@ -224,5 +214,16 @@ class PracticasController extends MvcController {
    
         }
          }
+         
+         public function seleccionarAsignaturaProfeController($idProfe){
+        $resultado = PracticasModel::seleccionarAsignaturaProfeModel($idProfe);
+        echo '<p>Selecciona una asignatura para ver las prácticas de cada una:</p>';
+        foreach ($resultado as $fila => $item) {
+            //echo '<input type="radio" name="idAsignatura" value="' . $item["idasig"] . '" checked>' . $item["nomasig"] . '</input>';
+            echo '<a href="index.php?action=practicas&idAsig=' . $item["id"] .  '"><button>'. $item["nombre"] . '</button></a>';
+   
+        }
+         }
+
 
 }
