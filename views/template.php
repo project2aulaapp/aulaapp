@@ -74,7 +74,7 @@ $mvc->enlacesPaginasController();
 
 <?php if (isset($_SESSION["validar"])) { ?>
 
-                <aside>
+                <aside id="menuWeb">
                 <?php include "modules/navegacion.php"; ?>   
 
                 </aside>
