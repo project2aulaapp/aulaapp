@@ -33,7 +33,9 @@ function main() {
 
     function validarNombreUsuario(nombre) {
         nombre.nextElementSibling.textContent = "";
+        nombre.nextElementSibling.className = "";
         if (nombre.value.trim().match(/^[A-Za-z0-9]{4,15}$/) == null) {
+            nombre.nextElementSibling.className = "error";
             nombre.nextElementSibling.textContent = "Introduce " + nombre.title + " entre 4 y 15 carácteres alfanúmericos";
             return false;
         }
