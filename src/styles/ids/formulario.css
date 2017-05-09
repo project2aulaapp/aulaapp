@@ -8,3 +8,40 @@ form input,select{
     width:200px;
     height:30px;
 }
+
+#myForm{
+	display: flex;
+    flex-direction: column;
+	flex-wrap: wrap;
+    align-items: center;
+}
+
+#myForm>p{
+	display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#myForm>p>span{
+	display: none;
+	width: 100%;
+    margin-top: 10px;color:red;
+    background-color: antiquewhite;
+    border:1px solid red;
+    padding:5px;
+}
+
+#myForm>p:last-child{
+	display:flex;
+	flex-direction:row;
+	justify-content: space-between;
+    width: 200px;
+}
+
+.error{
+	color:red;
+    background-color: antiquewhite;
+    border:1px solid red;
+    padding:5px;
+}

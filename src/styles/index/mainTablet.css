@@ -3,6 +3,7 @@
     section{
         display:flex;
         flex-direction:column-reverse;
+        flex-wrap:wrap;
     }
 
     article:hover{
