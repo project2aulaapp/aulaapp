@@ -9,6 +9,7 @@
 	<link rel="shortcut icon" href="src/img/favicon.png"/>
          <script src="src/javascript/ventanaModal/app.js"></script>
          <script src="src/javascript/cambiarId.js"></script>
+         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
     <body> 

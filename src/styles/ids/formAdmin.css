@@ -1,0 +1,37 @@
+/*Ponemos el mismo formato a todos los formularios*/
+ #cursoNuevo form,  #asigNueva form, #enviarMsg form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/*Le damos formato a los elementos del formulario*/
+ #cursoNuevo form input[name='nbCurso']{
+	width: 50%;
+    margin: 10px 30%;
+}
+
+/*Todos los elementos del formulario deben de ser iguales*/
+ #asigNueva form input[type='text'], #asigNueva form input[type='number'], #asigNueva form textarea{
+	width: 50%;
+    margin: 10px 30%;
+}
+
+/*Separamos los botones del formulario*/
+ #cursoNuevo form input[type='submit'],  #asigNueva form input[type='submit'],  #cursoNuevo form input[type='reset'], #asigNueva form input[type='reset']{
+	margin:30px;
+}
+
+/*Separamos los elementos de este formulario*/
+#archivoNuevo form *{
+	margin: 25px;
+}
+
+#enviarMsg form [type='text'], #enviarMsg form textarea, #enviarMsg form label,#enviarMsg form select{
+	width: 50%;
+    margin: 10px 30%;
+}
+
+#enviarMsg form input[type='submit'],  #enviarMsg form input[type='reset']{
+	margin:30px;
+}
