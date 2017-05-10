@@ -48,7 +48,7 @@ class PracticasController extends MvcController {
 
         foreach ($respuesta as $fila => $item) {
             
-            if ($item != '.' && $item != '..' && $item != '.htaccess' && substr($item, 3, 3) == $asignatura ) {
+            if ($item != '.' && $item != '..' && $item != '.htaccess' && substr($item, 3, 3) == $asignatura && substr($item, 0, 3) != $alumno ) {
                 $valor = substr($item, 6);
                 $resultado = utf8_encode($valor);
                 $direccion = 'practicas/' . utf8_encode($item);
