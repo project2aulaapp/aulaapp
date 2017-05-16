@@ -3,7 +3,7 @@
 
     <form method="post" id="myForm">
         <p>
-            <input type="text" name="usuarioRegistro" id="userName" placeholder="Nombre de usuario" title="nombre de usuario">
+            <input type="text" name="usuarioRegistro" id="userName" placeholder="Nombre de usuario" title="nombre de usuario" autofocus>
             <span></span>
         </p>
         <p>
