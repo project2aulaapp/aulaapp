@@ -9,7 +9,7 @@ function(){
 	var segundoHijoID = contenedor.children[1].id;
 
 	if(segundoHijoID == "menuWeb"){
-		primerHijo.style.width = '75%';
+		primerHijo.style.width = '100%';
 	}else{
 		primerHijo.style.width = '100%';
 	}

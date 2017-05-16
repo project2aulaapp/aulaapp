@@ -1,7 +1,8 @@
 @media  (min-width: 1024px){
     
     section {
-        flex-direction:row;
+        flex-direction:column-reverse;
+        flex-wrap:wrap;
     }
     
     section section{
@@ -11,18 +12,19 @@
     }
     
     section aside{
-        width:25%;
+        width:100%;
     }
 
     section aside ul{
         display: flex;
-        flex-direction:column;
+        flex-direction:row;
+        align-items:center;
     }
 
     aside ul li{
         width:100%;   
         margin: 10px auto;
-        line-height: 60px;
+        line-height: 35px;
     }
 
     aside ul li a {

@@ -2,8 +2,12 @@
 
     section{
         display:flex;
-        flex-direction:column-reverse;
-        flex-wrap:wrap;
+        flex-direction:row;
+    }
+
+    section section{
+        display: flex;
+        flex-direction:column;
     }
 
     article:hover{
@@ -11,7 +15,7 @@
     }
 
     aside{
-        width:100%;
+        width:25%;
         display:flex;
         background-color: #4b279d;
     }
@@ -23,14 +27,16 @@
     aside ul{
         display:flex;
         width: 100%;
+        flex-direction:column;
     }
 
     aside ul li{
         list-style: none;
+        line-height: 45px;
         display: inline-block;
         padding: 0;
         text-align: center;
-        width: 15%;
+        width: 100%;
 
     }
 
