@@ -7,7 +7,7 @@ class UsuariosController extends MvcController {
     public function registroUsuarioController() {
         if (isset($_POST["usuarioRegistro"])) {
             $datosController = array("user" => $_POST["usuarioRegistro"],
-                "password" => $_POST["passwordRegistro"],
+              "password" => $_POST["passwordRegistro"],
                 "nombre" => $_POST["nombreRegistro"],
                 "apellido1" => $_POST["apellido1Registro"],
                 "apellido2" => $_POST["apellido2Registro"],

@@ -112,12 +112,10 @@ class AsignaturasController extends MvcController {
         
        foreach ($respuesta as $fila => $item) {
                 echo '<div class="btn-asignatura">';
-                echo '<fieldset>';
                 echo '<a href=index.php?action=contenidos&id='.$item["id"].'>';
                 echo '<h1>'.ucfirst($item["nombre"]).'</h1>';
                 echo '<p>'.$item["descripcion"].'</p>';
                 echo'</a>';
-                echo '</fieldset>';
                 echo '</div>';
             }
               
