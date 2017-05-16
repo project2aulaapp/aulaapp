@@ -49,8 +49,8 @@
                 if (isset($_SESSION["usuario"])) {
                     echo '<p>Bienvenido ';
                     echo ucfirst($_SESSION["usuario"]) . '      </p>';
-                    echo '<a href="index.php?action=salir">Salir</a>';
                     echo '<span id="notificaciones"></span>'; // aquí se insertarán las notificaciones, se puede mover donde sea.
+                    echo '<a href="index.php?action=salir">Salir</a>';
                 
                     
                     /*if ($_SESSION["notificaciones"] > 0) {
