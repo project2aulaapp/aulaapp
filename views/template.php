@@ -2,13 +2,19 @@
 <html lang="en">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>¡¡Pillo sitio!!</title>	
         <!--<link rel="stylesheet" type="text/css" href="src/styles/baseOld.css">-->
-         <link rel="stylesheet" type="text/css" href="src/styles/maestro.css">
-	<link rel="shortcut icon" href="src/img/favicon.png"/>
-         <script src="src/javascript/ventanaModal/app.js"></script>
-         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="src/styles/maestro.css">
+        <link rel="shortcut icon" href="src/img/favicon.png"/>
+        <script src="src/javascript/ventanaModal/app.js"></script>
+        <script src="src/javascript/paraIndex/cambiarTamaño.js"></script>
+
+         <!--Estos script son para el efecto del menú-->
+         <script src="src/javascript/efectoMenu/classie.js"></script>
+         <script src="src/javascript/efectoMenu/clipboard.min.js"></script>
+         <script src="src/javascript/efectoMenu/modernizr.js"></script>
     </head>
 
     <body> 
@@ -73,7 +79,7 @@ $mvc->enlacesPaginasController();
 
 <?php if (isset($_SESSION["validar"])) { ?>
 
-                <aside id="menuWeb">
+                <aside id="menuWeb" class="menu menu--viola">
                 <?php include "modules/navegacion.php"; ?>   
 
                 </aside>

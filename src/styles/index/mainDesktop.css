@@ -1,7 +1,7 @@
 @media  (min-width: 1024px){
     
     section {
-        flex-direction:column-reverse;
+        flex-direction:column;
         flex-wrap:wrap;
     }
     
@@ -24,7 +24,7 @@
     aside ul li{
         width:100%;   
         margin: 10px auto;
-        line-height: 35px;
+        line-height: 25px;
     }
 
     aside ul li a {
@@ -39,7 +39,7 @@
 
 }
 
-@media  (min-width: 1224px){
+@media  (min-width: 1324px){
     body{
         background-color: #225C95;
 

@@ -49,15 +49,6 @@
         line-height: 25px;
     }
 
-    aside ul li a:visited,aside ul li a:focus{
-        color:black;
-        margin:5px auto;
-    }
-
-    aside ul li:hover{
-        border-left: 2px solid red;
-        border-right:  2px solid red;
-        background-color:#ff693a; 
-    }
+   
 
 }
