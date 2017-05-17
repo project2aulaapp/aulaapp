@@ -36,9 +36,83 @@ header img{
     width:230px;
 }
 
-aside{
-    display: none;
+/*Boton menu*/
+@media  (max-width: 799px){
+
+    #btnMenu{
+        display:none;
+    }
+
+    #btnMenu + label {
+        background-image: url("../../img/menu.png");
+        background-size: 40px 40px;
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        z-index: 1001;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        display:flex;
+    }
+
+    #btnMenu:checked + label{
+        background-image: url("../../img/menu.png");
+        background-size: 40px 40px;
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        z-index: 1001;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        display:flex;
+    }
+
+    aside{
+        display: none;
+        height: 100%;
+        position: fixed;
+        top: 8px;
+        right: 8px;
+        background-color: lightgrey;
+        opacity: 0.7;
+        -webkit-animation-name: menuIn;
+        -webkit-animation-duration: 0.4s;
+        animation-name: menuIn;
+        animation-duration: 0.4s;
+        z-index: 1000;
+    }
+
+    #btnMenu:checked ~ aside {
+        display: flex;
+    }
+
+    @-webkit-keyframes menuIn {
+        from { 
+            right: -2000px; 
+            opacity: 0.2;
+        } 
+        to {
+            right: 8px; 
+            opacity: 0.7;
+        }
+    }
+
+    @keyframes menuIn {
+        from {
+            right: -2000px; 
+            opacity: 0.2;
+        }
+        to {
+            right: 8px; 
+            opacity: 0.7;
+        }
+    }
 }
+/*Boton Menu*/
 
 section{
     font-family: 'Roboto','Khula', sans-serif;

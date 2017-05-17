@@ -31,12 +31,12 @@ if (isset($_SESSION["validar"])) {
               <li  id="perfil" class="menu__item"><a class="menu__link" href="index.php?action=perfil">Ver tu perfil de usuario</a></li>
               <li  id="calendario" class="menu__item"><a class="menu__link" href="index.php?action=calendario">Calendario</a></li>
               <li class="menu__item"><a class="menu__link" href="index.php?action=practicasAlumnos">Descargar prácticas de alumnos</a></li>
-              <ul>';
+              </ul>';
     }else if($_SESSION["rol"]==3){ //alumnos
         echo '<ul class="menu__list">
                 <li><a class="menu__link" href="#">Vista de alumno</a></li>
                 <li class="menu__item"><a class="menu__link" href="index.php?action=asignaturas">Ver tus asignaturas</a></li>
-                <li class="menu__item"><a class="menu__link" href="index.php?action=msg">Enviar mensaje</a></li><ul>
+                <li class="menu__item"><a class="menu__link" href="index.php?action=msg">Enviar mensaje</a></li>
                 <li class="menu__item"><a class="menu__link" href="index.php?action=verMensajes">Ver mensajes</a>
                 <li class="menu__item"><a class="menu__link" href="index.php?action=perfil">Tu perfil</a></li>
                 <li class="menu__item"><a class="menu__link" href="index.php?action=practicas">Ver practicas</a></li>
@@ -44,7 +44,7 @@ if (isset($_SESSION["validar"])) {
                 <li class="menu__item"><a class="menu__link" href="index.php?action=calendario">Calendario</a></li>
               </ul>';
     }else if($_SESSION["rol"]==4){ //Por autorizar
-        echo '<ul><li><a class="menu__link" href="#">vista de usuario sin autorizar</a></li><ul>';
+        echo '<ul><li><a class="menu__link" href="#">vista de usuario sin autorizar</a></li></ul>';
     }        
     
     

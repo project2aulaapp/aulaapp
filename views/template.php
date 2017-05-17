@@ -79,6 +79,9 @@ $mvc->enlacesPaginasController();
 
 <?php if (isset($_SESSION["validar"])) { ?>
 
+                <input type="checkbox" id="btnMenu">
+                <label for="btnMenu"></label>
+
                 <aside id="menuWeb" class="menu menu--viola">
                 <?php include "modules/navegacion.php"; ?>   
 
