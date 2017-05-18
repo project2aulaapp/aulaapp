@@ -1,4 +1,3 @@
-
 <?php
 
 if(!isset($_SESSION)){
@@ -16,15 +15,12 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 }
 
 ?>
+<section id="borrarArchivos">
+<?php
 
-<section id="practicasAlumnos">
-<h1>Listado de las prácticas de alumno</h1>
-
-
-<?php 
-    $practicas = new PracticasController();
-    $practicas->listarPracticasController($_GET["idAsignatura"], $_GET["idUsuario"]);
-// aquí llegaremos cuando seleccionen un alumno para ver las prácticas que tiene hechas
+$practicas = new PracticasController();
+$practicas->borrarPracticaController($_GET["nbPractica"]);
 
 ?>
+
 </section>

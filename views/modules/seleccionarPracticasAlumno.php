@@ -20,9 +20,7 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 <h1>Descarga de prácticas de alumnos</h1>
 
 <?php
-$practicas = new PracticasController();
-$practicas->listarAsignaturasController();
-$practicas->listarPracticasDeAlumnosController();
+
 ?>
 
 

@@ -22,7 +22,7 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 <h1>Subida de prácticas al servidor</h1>
 
 <form enctype="multipart/form-data"  method="POST">
-    <?php
+<?php
 
 $practicas = new PracticasController();
 $practicas -> practicaNuevaController();

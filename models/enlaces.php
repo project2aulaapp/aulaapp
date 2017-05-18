@@ -29,11 +29,12 @@ class Paginas{
 		
 		}
                 
-                else if($enlaces == "descargarPracticasAlumnos"){
+                 else if($enlaces == "borrarPractica"){
 
-			$module =  "views/modules/practicasAlumnosDescargar.php";
+			$module =  "views/modules/borrarPractica.php";
 		
 		}
+              
                 
                 else if($enlaces == "entregar"){
 
