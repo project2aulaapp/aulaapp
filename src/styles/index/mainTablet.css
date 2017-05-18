@@ -2,7 +2,7 @@
 
     section{
         display:flex;
-        flex-direction:row;
+        flex-direction:row-reverse ;
     }
 
     section section{
@@ -28,6 +28,7 @@
         display:flex;
         width: 100%;
         flex-direction:column;
+        margin: 10px 0;
     }
 
     aside ul li{
@@ -49,6 +50,8 @@
         line-height: 25px;
     }
 
-   
+    #btnMenu{
+        display:none;
+    }
 
 }

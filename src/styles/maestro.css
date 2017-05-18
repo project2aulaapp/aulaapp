@@ -24,8 +24,3 @@
 
 /*Importamos las fuentes*/
 @import url('https://fonts.googleapis.com/css?family=Khula|Merriweather|Roboto|Roboto+Slab');
-
-/*Efectos del menu*/
-@import "efectoMenu/component.css";
-@import "efectoMenu/demo.css";
-@import "efectoMenu/normalize.css";

@@ -36,6 +36,10 @@ header img{
     width:230px;
 }
 
+aside ul{
+    margin-top: 60px;
+}
+
 /*Boton menu*/
 @media  (max-width: 799px){
 
@@ -58,7 +62,7 @@ header img{
     }
 
     #btnMenu:checked + label{
-        background-image: url("../../img/menu.png");
+        background-image: url("../../img/close.png");
         background-size: 40px 40px;
         background-repeat: no-repeat;
         width: 40px;
