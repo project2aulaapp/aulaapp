@@ -19,7 +19,7 @@ main{
 header{
     width:100%;
     display:flex;
-    justify-content:space-between;
+    justify-content:space-around;
     background-color:#225C95;
     align-items:baseline;
     flex-wrap:wrap;
@@ -145,8 +145,16 @@ footer{
     background-color:#225C95;
 }
 
+/*Menu login*/
+#login{
+    display: flex;
+    flex-direction: column;
+}
+
+/*Pagina perfil*/
 #verPerfil{
-    text-align: center;
+    display: flex;
+    align-items:center;
 }
 
 /*btn para editar perfil*/

@@ -154,14 +154,18 @@ class UsuariosController extends MvcController {
 
         $respuesta = UsuariosModel::verPerfilUsuarioModel($datosController, "usuario");
 
-        echo '<p><b>Nombre de usuario: </b>' . $respuesta["user"] . '</p>';
-        echo '<p><b>Nombre: </b>' . $respuesta["nombre"] . '</p>';
-        echo '<p><b>Primer apellido: </b>' . $respuesta["apellido1"] . '</p>';
-        echo '<p><b>Segundo apellido: </b>' . $respuesta["apellido2"] . '</p>';
-        echo '<p><b>Email: </b>' . $respuesta["email"] . '</p>';
-        echo '<p><b>Fecha de registro: </b>' . $respuesta["fecha_alta"] . '</p>';
+        echo '<div>';
+        echo '<div><b>Nombre de usuario: </b>' . $respuesta["user"] . '</div>';
+        echo '<div><b>Nombre: </b>' . $respuesta["nombre"] . '</div>';
+        echo '<div><b>Primer apellido: </b>' . $respuesta["apellido1"] . '</div>';
+        echo '<div><b>Segundo apellido: </b>' . $respuesta["apellido2"] . '</div>';
+        echo '<div><b>Email: </b>' . $respuesta["email"] . '</div>';
+        echo '<div><b>Fecha de registro: </b>' . $respuesta["fecha_alta"] . '</div>';
+
+        echo "</div>";
 
         echo '<a href="index.php?action=editarPerfil">Editar perfil</a>';
+
     }
 
     #   Función para autorizar usuarios que se han dado de alta en la aplicación
