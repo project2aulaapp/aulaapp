@@ -32,7 +32,7 @@
             <input type="text" name="emailRegistro" id="mail" placeholder="Correo electronico" title="e-mail">
             <span></span>
         </p>
-        <p>
+<!--        <p>
             <select name="preguntaRegistro" id="questions" title="pregunta">
                 <option value="" selected hidden>Selecciona una pregunta</option>
                 <option value="1">¿Nombre de tu mascota?</option>
@@ -45,7 +45,7 @@
         <p>
             <input type="text" name="respuestaRegistro" id="answer" placeholder="Respuesta" title="respuesta">
             <span></span>
-        </p>
+        </p>-->
         <p>
             <button type="submit" value="Enviar">ENVIAR</button>
             <button type="reset" value="Limpiar">LIMPIAR</button>

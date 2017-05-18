@@ -11,9 +11,7 @@ class UsuariosController extends MvcController {
                 "nombre" => $_POST["nombreRegistro"],
                 "apellido1" => $_POST["apellido1Registro"],
                 "apellido2" => $_POST["apellido2Registro"],
-                "email" => $_POST["emailRegistro"],
-                "pregunta" => $_POST["preguntaRegistro"],
-                "respuesta" => $_POST["respuestaRegistro"]
+                "email" => $_POST["emailRegistro"]
             );
 
             $respuesta = UsuariosModel::registroUsuarioModel($datosController, "usuario");

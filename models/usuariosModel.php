@@ -5,7 +5,7 @@ class UsuariosModel extends Datos {
     #------------------------------------
     
     public function registroUsuarioModel($datosModel, $tabla) {
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (user, password, nombre, apellido1, apellido2, email, frase_recuperacion, respuesta_frase_recuperacion) VALUES (:user, :password, :nombre, :apellido1, :apellido2, :email, :frase_recuperacion, :respuesta_frase_recuperacion)");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (user, password, nombre, apellido1, apellido2, email) VALUES (:user, :password, :nombre, :apellido1, :apellido2, :email)");
 
         $stmt->bindParam(":user", $datosModel["user"], PDO::PARAM_STR);
         $stmt->bindParam(":password", sha1($datosModel["password"]), PDO::PARAM_STR);
@@ -13,8 +13,7 @@ class UsuariosModel extends Datos {
         $stmt->bindParam(":apellido1", $datosModel["apellido1"], PDO::PARAM_STR);
         $stmt->bindParam(":apellido2", $datosModel["apellido2"], PDO::PARAM_STR);
         $stmt->bindParam(":email", $datosModel["email"], PDO::PARAM_STR);
-        $stmt->bindParam(":frase_recuperacion", $datosModel["pregunta"], PDO::PARAM_STR);
-        $stmt->bindParam(":respuesta_frase_recuperacion", $datosModel["respuesta"], PDO::PARAM_STR);
+        
 
 
         if ($stmt->execute()) {
