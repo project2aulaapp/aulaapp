@@ -34,9 +34,9 @@ class PracticasController extends MvcController {
     /*  -------------------------------------------------------------------------------------------------------------------------------------------     */
     
     /*  Función para ver el listado de las prácticas que ha subido el profesor, si la vista es profesor, desde ahí se le permitirá borrar esos archivos */
-    public function listarPracticasProfesorController() {
-        $listadoAsignaturas = PracticasModel::listarAsignaturasProfesorModel($_SESSION["userId"]);
-        
+    public function listarPracticasProfesorController($idProfe) {
+        $listadoAsignaturas = PracticasModel::listarAsignaturasProfesorModel($idProfe);
+        if(!isset($_POST["idAsignatura"])){
         echo 'Selecciona la asignatura de las que quires ver las prácticas';
         echo '<form method="POST">';
         foreach ($listadoAsignaturas as $fila => $item) {
@@ -44,6 +44,7 @@ class PracticasController extends MvcController {
         }
         echo '<input type="submit" value="Seleccionar" />';
         echo '</form>';
+        }
         if(isset($_POST["idAsignatura"])){
         if($_POST["idAsignatura"]!=null){
             $respuesta = PracticasModel::listarPracticasModel();
@@ -60,11 +61,11 @@ class PracticasController extends MvcController {
                 $direccion = 'practicas/' . utf8_encode($item);
                 $practica = utf8_encode($item);
                 echo '<div class="contenido-practica">';
-                echo "<p><a href='$direccion'>Descargar $resultado </a> <a style='color:red' href='index.php?action=borrarPractica&nbPractica=$practica'>Borrar práctica</a></p>";
-                echo '</div>';
-               // echo "<p><a href='index.php?action=borrarArchivos&nbArchivo=$direccion'>Borrar archivo --> <strong>$valor</strong></a></p>";
+                echo "<p><a href='$direccion'>Descargar--> $resultado </a> <a style='color:red' href='index.php?action=borrarPractica&nbPractica=$practica'>Borrar práctica</a></p>";
+               
             }
         }
+        echo '<p><a href="index.php?action=practicas">Volver</a></p></div>';
         }    
           
         }
@@ -83,17 +84,19 @@ class PracticasController extends MvcController {
     }
     
     /*  -------------------------------------------------------------------------------------------------------------------------------------------     */
-    
-    public function listarPracticasAlumnoController() {
-        $listadoAsignaturas = PracticasModel::listarAsignaturasAlumnoModel($_SESSION["userId"]);
-        
-        echo 'Selecciona la asignatura de las que quires ver las prácticas';
+    // Función para listar las prácticas que ha subido el profesor, esto lo verá el alumno
+    public function listarPracticasAlumnoController($idAlum) {
+        $listadoAsignaturas = PracticasModel::listarAsignaturasAlumnoModel($idAlum);
+        if(!isset($_POST["idAsignatura"])){
+            echo 'Selecciona la asignatura de las que quires ver las prácticas';
         echo '<form method="POST">';
         foreach ($listadoAsignaturas as $fila => $item) {
             echo '<input type="radio" name="idAsignatura" value="' . $item["id"] . '" checked>' . $item["nombre"] . '</input>';
         }
         echo '<input type="submit" value="Seleccionar" />';
         echo '</form>';
+        }
+        
         if(isset($_POST["idAsignatura"])){
         if($_POST["idAsignatura"]!=null){
             $respuesta = PracticasModel::listarPracticasModel();
@@ -110,11 +113,12 @@ class PracticasController extends MvcController {
                 $direccion = 'practicas/' . utf8_encode($item);
                 $practica = utf8_encode($item);
                 echo '<div class="contenido-practica">';
-                echo "<p><a href='$direccion'>Descargar $resultado </a></p>";
-                echo '</div>';
+                echo "<p><a href='$direccion'>Descargar--> $resultado </a></p>";
+                
                
             }
         }
+        echo '<p><a href="index.php?action=practicas">Volver</a></p></div>';
         }    
           
         }

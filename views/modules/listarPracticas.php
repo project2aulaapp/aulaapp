@@ -16,10 +16,12 @@ if (!$_SESSION["validar"]) {
     
     
    if($_SESSION["rol"]==2){
-      $contenidos->listarPracticasProfesorController();
+       echo '<p>profe</p>';
+      $contenidos->listarPracticasProfesorController($_SESSION["userId"]);
       }          
     if($_SESSION["rol"]==3){
-        $contenidos->listarPracticasAlumnoController();
+        echo '<p>alumno</p>';
+        $contenidos->listarPracticasAlumnoController($_SESSION["userId"]);
     }
 
 ?>
