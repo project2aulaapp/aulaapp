@@ -41,3 +41,9 @@ form input,select{
     border:1px solid red;
     padding:5px;
 }
+
+/*Apartado de editar usuario*/
+#editarUsuario *{
+    width: 50%;
+    margin:10px auto;
+}

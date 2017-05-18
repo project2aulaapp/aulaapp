@@ -33,7 +33,7 @@ header a, section a{
 
 
 header img{
-    width:230px;
+    width: 150px;
 }
 
 aside ul{
@@ -149,6 +149,34 @@ footer{
     text-align: center;
 }
 
+/*btn para editar perfil*/
+#verPerfil a{
+    padding: 10px 15px;
+    width:30%;
+    background: #157ed8;
+    color: #FF0;
+    text-decoration: none;
+    border-radius: 4px;
+    border: solid 1px #20538D;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.2s;
+    margin:10px auto;
+}
+
+#verPerfil a:hover{
+    background: #287fe9;
+    border: solid 1px #2A4E77;
+    text-decoration: none;
+}
+
+#verPerfil a:active{
+    background: #242fe9;
+    border: solid 1px #2A4E77;
+    text-decoration: none;
+}
+
+/*btn del header*/
 header a:nth-child(n+2), #login a {
     padding: 10px 15px;
     background: #1EB428;

@@ -12,8 +12,8 @@
 }
 
 /*Todos los elementos del formulario deben de ser iguales*/
- #asigNueva form input[type='text'], #asigNueva form input[type='number'], #asigNueva form textarea{
-	width: 50%;
+ #asigNueva form input[type='text'], #asigNueva form input[type='number'], #asigNueva form textarea, #asigNueva form select{
+	width: 60%;
     margin: 10px 30%;
 }
 

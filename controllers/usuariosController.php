@@ -154,12 +154,12 @@ class UsuariosController extends MvcController {
 
         $respuesta = UsuariosModel::verPerfilUsuarioModel($datosController, "usuario");
 
-        echo '<p>Nombre de usuario: ' . $respuesta["user"] . '</p>';
-        echo '<p>Nombre: ' . $respuesta["nombre"] . '</p>';
-        echo '<p>Primer apellido: ' . $respuesta["apellido1"] . '</p>';
-        echo '<p>Segundo apellido: ' . $respuesta["apellido2"] . '</p>';
-        echo '<p>Email: ' . $respuesta["email"] . '</p>';
-        echo '<p>Fecha de registro: ' . $respuesta["fecha_alta"] . '</p>';
+        echo '<p><b>Nombre de usuario: </b>' . $respuesta["user"] . '</p>';
+        echo '<p><b>Nombre: </b>' . $respuesta["nombre"] . '</p>';
+        echo '<p><b>Primer apellido: </b>' . $respuesta["apellido1"] . '</p>';
+        echo '<p><b>Segundo apellido: </b>' . $respuesta["apellido2"] . '</p>';
+        echo '<p><b>Email: </b>' . $respuesta["email"] . '</p>';
+        echo '<p><b>Fecha de registro: </b>' . $respuesta["fecha_alta"] . '</p>';
 
         echo '<a href="index.php?action=editarPerfil">Editar perfil</a>';
     }

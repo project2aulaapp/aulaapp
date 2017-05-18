@@ -3,7 +3,7 @@ color: #333;
 width: 640px;
 border-collapse:collapse; 
 border-spacing: 0;
-margin:0 auto;
+margin:10px auto;
 }
 
 td, th {
@@ -34,4 +34,10 @@ tr:nth-child(odd) td {
 
 table tbody tr:hover { 
     background-color: blue;  
+}
+
+table button{
+	margin: 5px;
+    width: 200px;
+    padding: 5px;
 }

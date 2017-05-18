@@ -5,7 +5,6 @@ if (isset($_SESSION["validar"])) {
     
     if($_SESSION["rol"]==1){//administrador
         echo '<ul class="menu__list">
-                <li><a class="menu__link" href="#">Vista de administrador</a></li>
 		            <li  id="autorizarU" class="menu__item"><a class="menu__link" href="index.php?action=usuarios">Autorizar Usuarios</a></li>
                 <li  id="listarU" class="menu__item"><a class="menu__link" href="index.php?action=lUsuarios">Listar usuarios</a></li>		
 		            <li  id="añadirU" class="menu__item"><a class="menu__link" href="index.php?action=asig">Añadir asignatura</a></li>	
@@ -19,7 +18,7 @@ if (isset($_SESSION["validar"])) {
                 
 	</ul>';
     }else if($_SESSION["rol"]==2){ //profesor
-        echo '<ul class="menu__list"><li><a class="menu__link" href="#">Vista de profesor</a></li>
+        echo '<ul class="menu__list">
               <li  id="subirApuntes" class="menu__item"><a class="menu__link" href="index.php?action=subirArchivo">Subir apuntes</a></li>
               <li  id="asignaturasProfe" class="menu__item"><a class="menu__link" href="index.php?action=asignaturasProfesor">Asignaturas profesor</a></li>
               <li  id="subirPracticas" class="menu__item"><a class="menu__link" href="index.php?action=nPracticas">Subir practicas</a></li>
@@ -34,7 +33,6 @@ if (isset($_SESSION["validar"])) {
               </ul>';
     }else if($_SESSION["rol"]==3){ //alumnos
         echo '<ul class="menu__list">
-                <li><a class="menu__link" href="#">Vista de alumno</a></li>
                 <li class="menu__item"><a class="menu__link" href="index.php?action=asignaturas">Ver tus asignaturas</a></li>
                 <li class="menu__item"><a class="menu__link" href="index.php?action=msg">Enviar mensaje</a></li>
                 <li class="menu__item"><a class="menu__link" href="index.php?action=verMensajes">Ver mensajes</a>

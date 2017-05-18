@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="src/styles/maestro.css">
         <link rel="shortcut icon" href="src/img/favicon.png"/>
         <script src="src/javascript/ventanaModal/app.js"></script>
+        <script src="src/javascript/btnMenu/btnMenuMovil.js"></script>
 
     </head>
 
@@ -63,28 +64,25 @@
             </header>
 
             <section id="contenedor">
-                
+<?php if (isset($_SESSION["validar"])) { ?>
             <input type="checkbox" id="btnMenu">
-                <label for="btnMenu"></label>
-    <aside id="menuWeb">
+            <label for="btnMenu"></label>
+            <aside id="menuWeb">
                 <?php include "modules/navegacion.php"; ?>   
 
-                </aside>
+            </aside>
+ <?php } ?>
+
+ 
 <?php
 $mvc = new MvcController();
 $mvc->enlacesPaginasController();
 ?>
 
-           
-
-<?php if (isset($_SESSION["validar"])) { ?>
-
-                
-
                 
             </section>
 
-<?php } ?>
+
 
 
             <footer>

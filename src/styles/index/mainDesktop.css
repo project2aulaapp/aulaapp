@@ -1,5 +1,9 @@
 @media  (min-width: 1024px){
     
+    header img{
+        width: 150px;
+    }
+
     section {
         flex-direction:column;
         flex-wrap:wrap;
