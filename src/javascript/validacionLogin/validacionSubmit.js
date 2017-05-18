@@ -17,16 +17,18 @@ function main() {
         e.preventDefault();
     }
 
-    function limpiarSpans(){
+    function limpiarSpans() {
         var spans = document.getElementsByTagName("span");
-        for(var i=0; i<spans.length; i++){
+        for (var i = 0; i < spans.length; i++) {
             spans[i].textContent = "";
         }
     }
 
     function validarNombreUsuario(nombre) {
         nombre.nextElementSibling.textContent = "";
+        nombre.nextElementSibling.className = "ok";
         if (nombre.value.trim().match(/^[A-Za-z0-9]{4,15}$/) == null) {
+            nombre.nextElementSibling.className = "error";
             nombre.nextElementSibling.textContent = "Introduce " + nombre.title + " entre 4 y 15 carácteres alfanúmericos";
             return false;
         }
@@ -35,7 +37,9 @@ function main() {
 
     function validarContra(contra) {
         contra.nextElementSibling.textContent = "";
+        contra.nextElementSibling.className = "ok";
         if (contra.value.trim().match(/^[A-Za-z0-9]{6,15}$/) == null) {
+            contra.nextElementSibling.className = "error";
             contra.nextElementSibling.textContent = "Introduce " + contra.title + " entre 6 y 15 carácteres alfanúmericos";
             return false;
         }
