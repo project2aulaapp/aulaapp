@@ -11,8 +11,6 @@ function main() {
     myForm.firstSurname.addEventListener("blur", validarNombreApellidos, false);
     myForm.secondSurname.addEventListener("blur", validarNombreApellidos, false);
     myForm.mail.addEventListener("blur", validarEmail, false);
-    myForm.questions.addEventListener("blur", validarPregunta, false);
-    myForm.answer.addEventListener("blur", validarRespuesta, false);
 
     function validarNombreUsuario(nombre) {
         nombre.target.nextElementSibling.textContent = "";
@@ -65,28 +63,6 @@ function main() {
         if (email.target.value.trim().match(/^[a-z0-9](\.?[a-z0-9_-]){0,}@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/) == null) {
             email.target.nextElementSibling.className = "error";
             email.target.nextElementSibling.textContent = "Introduce " + email.target.title + " válido, hola@mundo.com";
-            return false;
-        }
-        return true;
-    }
-
-    function validarPregunta(pregunta) {
-        pregunta.target.nextElementSibling.textContent = "";
-        pregunta.target.nextElementSibling.className = "ok";
-        if (pregunta.target.selectedIndex == null || pregunta.target.selectedIndex == 0) {
-            pregunta.target.nextElementSibling.className = "error";
-            pregunta.target.nextElementSibling.textContent = "Selecciona una " + pregunta.target.title + " para recuperar tu cuenta si olvidas tu contraseña";
-            return false;
-        }
-        return true;
-    }
-
-    function validarRespuesta(respuesta) {
-        respuesta.target.nextElementSibling.textContent = "";
-        respuesta.target.nextElementSibling.className = "ok";
-        if (respuesta.target.value.trim().length <= 0 || respuesta.target.value.trim().length > 20) {
-            respuesta.target.nextElementSibling.className = "error";
-            respuesta.target.nextElementSibling.textContent = "Responde la " + respuesta.target.title + " seleccionada";
             return false;
         }
         return true;

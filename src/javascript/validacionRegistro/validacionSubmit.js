@@ -17,8 +17,6 @@ function main() {
         valido &= validarNombreApellidos(myForm.firstSurname);
         valido &= validarNombreApellidos(myForm.secondSurname);
         valido &= validarEmail(myForm.mail);
-        valido &= validarPregunta(myForm.questions);
-        valido &= validarRespuesta(myForm.answer);
 
         if (valido) return;
         e.preventDefault();
@@ -83,28 +81,6 @@ function main() {
         if (email.value.trim().match(/^[a-z0-9](\.?[a-z0-9_-]){0,}@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/) == null) {
             email.nextElementSibling.className = "error";
             email.nextElementSibling.textContent = "Introduce " + email.title + " válido, hola@mundo.com";
-            return false;
-        }
-        return true;
-    }
-
-    function validarPregunta(pregunta) {
-        pregunta.nextElementSibling.textContent = "";
-        pregunta.nextElementSibling.className = "ok";
-        if (pregunta.selectedIndex == null || pregunta.selectedIndex == 0) {
-            pregunta.nextElementSibling.className = "error";
-            pregunta.nextElementSibling.textContent = "Selecciona una " + pregunta.title + " para recuperar tu cuenta si olvidas tu contraseña";
-            return false;
-        }
-        return true;
-    }
-
-    function validarRespuesta(respuesta) {
-        respuesta.nextElementSibling.textContent = "";
-        respuesta.nextElementSibling.className = "ok";
-        if (respuesta.value.trim().length <= 0 || respuesta.value.trim().length > 20) {
-            respuesta.nextElementSibling.className = "error";
-            respuesta.nextElementSibling.textContent = "Responde la " + respuesta.title + " seleccionada";
             return false;
         }
         return true;
