@@ -19,9 +19,7 @@ if (!$_SESSION["validar"]) {
 <form enctype="multipart/form-data"  method="POST">
     <?php
 
-$practicas = new PracticasController();
 
-$practicas->subirPracticaAlumnoController($_SESSION["userId"]);
 
 ?>
 </form>

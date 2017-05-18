@@ -37,7 +37,7 @@ class Paginas{
                 
                 else if($enlaces == "entregar"){
 
-			$module =  "views/modules/entregarPracticasAlumno.php";
+			$module =  "views/modules/entregarPracticas.php";
 		
 		}
                 

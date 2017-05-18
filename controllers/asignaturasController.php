@@ -19,7 +19,8 @@ class AsignaturasController extends MvcController {
             //var_dump($respuesta);
             if ($respuesta == "ok") {
                 //header("location:index.php?action=ok");
-                echo "Asignatura grabada!";
+                //echo "Asignatura grabada!";
+                echo '<div class="info"><div class="success">¡Asignatura grabada!</div></div>';
             } else {
                 //header("location:index.php");
                 echo "maaaaaaal!";
