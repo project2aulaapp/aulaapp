@@ -58,7 +58,7 @@ class PracticasController extends MvcController {
             if ($item != '.' && $item != '..' && $item != '.htaccess' && substr($item, 3, 3) == $asignatura && substr($item, 0, 3)== $profesor) {
                 $valor = substr($item, 6);
                 $resultado = utf8_encode($valor);
-                $direccion = 'practicas/' . utf8_encode($item);
+                $direccion = 'practicas/' . $item;
                 $practica = utf8_encode($item);
                 echo '<div class="contenido-practica">';
                 echo "<p><a href='$direccion'>Descargar--> $resultado </a> <a style='color:red' href='index.php?action=borrarPractica&nbPractica=$practica'>Borrar práctica</a></p>";
