@@ -185,11 +185,11 @@ class PracticasController extends MvcController {
     }
 
 
-      public function listarPracticasAlumnoController(){
+      /*public function listarPracticasAlumnoController(){
       $listadoAsignaturas = PracticasModel::listarAlumnosPracticasModel($_SESSION["userId"]);
       var_dump($listadoAsignaturas);
 
-      }
+      }*/
      
 
     public function listarPracticasDeAlumnosController() {//funcion en la que el profesor podrá listar las prácticas según el alumno, para descargarlas y evaluarlas

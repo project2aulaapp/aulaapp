@@ -10,7 +10,6 @@ class AsignaturasController extends MvcController {
             $datosController = array("nombre" => $_POST["nbAsignatura"],
                 "horas" => $_POST["horasAsignatura"],
                 "descripcion" => $_POST["descripcionAsignatura"],
-                "profesor" => $_POST["profesorAsignatura"],
                 "curso" => $_POST["cursoAsignatura"]
             );
 

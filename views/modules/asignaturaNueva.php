@@ -21,15 +21,15 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 
 <form method="post">
 	
-	<input type="text" placeholder="Nombre asignatura" name="nbAsignatura" required>
+    <input type="text" placeholder="Nombre asignatura" name="nbAsignatura" required autofocus>
 
 	<input type="number" placeholder="Horas asignatura" name="horasAsignatura" min="0">
 
 	<textarea placeholder="Descripción asignatura" name="descripcionAsignatura" required></textarea>
-
-	<input type="text" placeholder="Profesor Asignatura" name="profesorAsignatura" required>
-
-	<input type="text" placeholder="Curso Asignatura" name="cursoAsignatura" required>
+        <?php 
+        $cursos = new CursosController();
+        $cursos->listadoCursosController();
+        ?>
 
 	<input type="submit" value="Enviar">
 	<input type="reset" value="Limpiar">

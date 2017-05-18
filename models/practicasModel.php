@@ -41,7 +41,7 @@ class PracticasModel extends Datos {
 
 
         if (unlink($practica)) {// de uno en uno, de momento
-            #si todo va bien, sería un código de 6 números, profesor+asignatura+nombrepractica.extension
+            
             return "ok";
         } else {
             return "ko";
@@ -52,8 +52,8 @@ class PracticasModel extends Datos {
         
         $alumno = str_pad($_SESSION["userId"], 3, '0', STR_PAD_LEFT);
         //time() devuelve un numero de 10 cifras, donde podemos sacar la fecha
-        if (move_uploaded_file($datosModel['tmp_name'], 'practicas/' . $alumno . $idAsignatura . time() . utf8_decode($datosModel['name']))) {// de uno en uno, de momento
-            #si todo va bien, sería un código de 6 números, alumno+asignatura+fecha10numero+nombrearchivo.extension
+        if (move_uploaded_file($datosModel['tmp_name'], 'practicas/' . $alumno . $idAsignatura . time() .'0'. utf8_decode($datosModel['name']))) {// de uno en uno, de momento
+            #si todo va bien, sería un código de 6 números, alumno+asignatura+fecha10numeros+0+nombrearchivo.extension (el 0 hace que el alumno no pueda listar esas prácticas)
             return "ok";
         } else {
             return "ko";

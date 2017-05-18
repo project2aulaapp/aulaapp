@@ -57,6 +57,18 @@ class CursosController extends MvcController {
         }
         
         
+        public function listadoCursosController(){
+            $respuesta = CursosModel::listarCursosModel();
+        
+        echo '<select name="cursoAsignatura">'; 
+        foreach ($respuesta as $fila => $item) 
+            {                   
+              echo '<option  value="'.$item["idCurso"].'">'.$item["nombreCurso"].'</option>';       
+            }
+        echo '</select>';
+        }
+        
+        
         # Con esta función lo que hacemos es que nos inscribimos en un curso una 
         # vez que nos hayamos registrado y nos hayan aprobado el registro
         
