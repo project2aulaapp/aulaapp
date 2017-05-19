@@ -2,6 +2,10 @@
     box-sizing:border-box;
 }
 
+body, html {
+    height: 100%;
+}
+
 #depuracion{
     display: none;
 }
@@ -81,13 +85,24 @@ aside ul{
         position: fixed;
         top: 8px;
         right: 8px;
-        background-color: lightgrey;
-        opacity: 0.7;
+        background-color: purple;
+        opacity: 0.8;
         -webkit-animation-name: menuIn;
         -webkit-animation-duration: 0.4s;
         animation-name: menuIn;
         animation-duration: 0.4s;
         z-index: 1000;
+    }
+
+    aside ul li{
+        list-style: none;
+        line-height: 45px;        
+        padding: 0;
+        text-align: center;
+    }
+
+    aside ul li a{
+        color:white;
     }
 
     #btnMenu:checked ~ aside {
@@ -128,7 +143,20 @@ section section{
 }
 
 section article{
-    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+section article:nth-child(-n+3){
+    /*Cambiamos el hr por esta linea de separacion*/
+    border-bottom:2px white solid;
+}
+
+section article *{
+    margin:10px 15px;
 }
 
 section h1{
@@ -137,7 +165,6 @@ section h1{
 
 article img{
     width:300px;
-    margin-left: 35%;
 }
 
 footer{
@@ -230,3 +257,32 @@ div{
     margin:0 auto;
 }
 */
+
+/*Efecto parallax*/
+.parallax{
+    
+    background-attachment: scroll;
+
+    /* Damos medidas */
+    width: 90%;
+    height: 300px; 
+
+    /* Creamos el efecto */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Seleccionamos la imagen para cada div*/
+#parallax1{
+    background-image: url("../../img/daw.jpg");
+}
+
+#parallax2{
+    background-image: url("../../img/asir.jpg");
+}
+
+#parallax3{
+    background-image: url("../../img/dam.jpg");
+}
