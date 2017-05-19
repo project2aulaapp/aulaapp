@@ -9,10 +9,11 @@ if($_GET) {
     $respuesta->execute();  
     
     if ($respuesta->rowCount()>0) {
-        //echo '<div id="Error">Usuario ya existente</div>';
-        echo 'Usuario ya existente';
+        //Usuario ya existente
+        echo 0;
     }else{
-        echo 'Disponible';
+        //Disponible
+        echo 1;
     }    
     
 }
