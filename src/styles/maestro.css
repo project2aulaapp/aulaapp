@@ -18,6 +18,9 @@
 /*Llamamos el estilo de la ventana de la cookies*/
 @import "ventanaModal/style.css";
 
+/*Llamamos el estilo del timeoutMensaje*/
+@import "timeoutMensaje/timeoutMensaje.css";
+
 #depuracion{
     /*display: none;*/
 }
