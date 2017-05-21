@@ -12,12 +12,25 @@ function inicio() {
     xhr.send(null);
 
     xhr.onreadystatechange = function () {
-      var ESTADO = 4; 
-      var BIEN = 200; 
+      var ESTADO = 4;
+      var BIEN = 200;
       if (xhr.readyState === ESTADO) {
         if (xhr.status === BIEN) {
           console.log(xhr.responseText); // Respuesta del servidor
-          nombre.nextElementSibling.textContent = xhr.responseText;
+          if (xhr.responseText == 1) {
+            nombre.style.borderColor = "lime";
+            nombre.style.backgroundImage = "url('./src/img/ok.png')";
+            nombre.style.backgroundRepeat = "no-repeat";
+            nombre.style.backgroundSize = "25px 25px";
+            nombre.style.backgroundPosition = "center right";
+          }
+          else {
+            nombre.style.borderColor = "red";
+            nombre.style.backgroundImage = "url('./src/img/error.png')";
+            nombre.style.backgroundRepeat = "no-repeat";
+            nombre.style.backgroundSize = "25px 25px";
+            nombre.style.backgroundPosition = "center right";
+          }
         }
       } else {
         //console.log('Error: ' + xhr.status); 
