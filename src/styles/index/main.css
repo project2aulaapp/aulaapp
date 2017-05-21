@@ -12,7 +12,7 @@ body, html {
 
 main{
     width:100%;
-    background-color:#2ba9f2;
+    background-color:#ebe8c8;
     display:flex;
     flex-direction:column;
     align-items: center;
@@ -24,7 +24,7 @@ header{
     width:100%;
     display:flex;
     justify-content:space-around;
-    background-color:#225C95;
+    background: linear-gradient(#f0d9a5,#ebe8c8);
     align-items:baseline;
     flex-wrap:wrap;
 }
@@ -85,7 +85,7 @@ aside ul{
         position: fixed;
         top: 8px;
         right: 8px;
-        background-color: purple;
+        background-color: #de9c6a;
         opacity: 0.8;
         -webkit-animation-name: menuIn;
         -webkit-animation-duration: 0.4s;
@@ -140,6 +140,7 @@ section{
 
 section section{
     width: 100%;
+    background-color: #ebe8c8;
 }
 
 section article{
@@ -169,7 +170,7 @@ article img{
 
 footer{
     width:100%;
-    background-color:#225C95;
+    background: linear-gradient(#ebe8c8,#f0d9a5);
 }
 
 /*Menu login*/

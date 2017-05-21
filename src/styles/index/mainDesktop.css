@@ -6,6 +6,7 @@
 
     header{
         justify-content:space-between;
+        background: linear-gradient(#f0d9a5,#de9c6a);
     }
 
     section {
@@ -17,6 +18,7 @@
         display: flex;
         flex-direction: column;
         width:100%;
+        background-color: #ebe8c8;
     }
 
     section section article:nth-child(-n+2){
@@ -26,6 +28,7 @@
     
     section aside{
         width:100%;
+        background: linear-gradient(#de9c6a,#ebe8c8);
     }
 
     section aside ul{
@@ -54,7 +57,7 @@
 
 @media  (min-width: 1324px){
     body{
-        background-color: #225C95;
+        background: #f0d9a5;
 
     }
 

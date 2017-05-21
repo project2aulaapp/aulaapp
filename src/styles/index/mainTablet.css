@@ -16,13 +16,13 @@
     }
 
     article:hover{
-        background-color: #1c63b2;
+        background-color: #D6D3B7;
     }
 
     aside{
         width:25%;
         display:flex;
-        background-color: #4b279d;
+        background: linear-gradient(to left,#de9c6a,#ebe8c8);
     }
 
     aside ul{
