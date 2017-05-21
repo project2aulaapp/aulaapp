@@ -35,7 +35,7 @@
             </div>
 
             <header>
-                <a href="index.php"><img src="src/img/logotipo.png"></a>
+                <a href="index.php"><img src="src/img/logotipo_2.png"></a>
                 <?php
                 if (!isset($_SESSION["validar"])) {
 

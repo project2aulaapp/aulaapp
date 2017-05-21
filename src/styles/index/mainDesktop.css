@@ -18,6 +18,11 @@
         flex-direction: column;
         width:100%;
     }
+
+    section section article:nth-child(-n+2){
+    /*Cambiamos el hr por esta linea de separacion*/
+    border-bottom:2px white solid;
+}
     
     section aside{
         width:100%;
