@@ -10,6 +10,8 @@
         <link rel="shortcut icon" href="src/img/favicon.png"/>
         <script src="src/javascript/ventanaModal/app.js"></script>
         <script src="src/javascript/timeoutMensaje/timeoutMensaje.js"></script>
+        <script src="src/javascript/paraIndex/cambiarColor.js"></script>
+        <script src="src/javascript/paraIndex/menu.js"></script>
 
     </head>
 
@@ -48,7 +50,7 @@
                 }
 
                 if (isset($_SESSION["usuario"])) {
-                    echo '<p>Bienvenido ';
+                    echo '<p><b>Usuario: </b> ';
                     echo ucfirst($_SESSION["usuario"]) . '      </p>';
                     echo '<span id="notificaciones"></span>'; // aquí se insertarán las notificaciones, se puede mover donde sea.
                     echo '<a href="index.php?action=salir">Salir</a>';

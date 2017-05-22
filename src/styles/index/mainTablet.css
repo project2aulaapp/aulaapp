@@ -1,5 +1,5 @@
 @media  (min-width: 800px){
-    
+
     header img{
         width: 150px;
     }
@@ -16,13 +16,13 @@
     }
 
     article:hover{
-        background-color: #D6D3B7;
+        background-color: #d4d4d4;
     }
 
     aside{
         width:25%;
         display:flex;
-        background: linear-gradient(to left,#de9c6a,#ebe8c8);
+        background: #bcbcbc;
     }
 
     aside ul{
@@ -33,13 +33,17 @@
     }
 
     aside ul li{
-        list-style: none;
         line-height: 45px;
         display: inline-block;
         padding: 0;
-        text-align: center;
         width: 100%;
 
+    }
+
+
+    aside ul li:hover{
+        border-bottom: 2px solid black;
+        border-top: 2px solid black;
     }
 
     aside ul li a{

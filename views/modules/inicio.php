@@ -1,5 +1,4 @@
 <section id="contenidoInicio">
-<h1>Bienvenido a la página de inicio</h1>
 
 <article>
 	<h1>Desarrollo de Aplicaciones Web</h1>
