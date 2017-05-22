@@ -18,10 +18,10 @@ class MensajesController extends MvcController {
             //var_dump($respuesta);
             if ($respuesta == "ok") {
                 //header("location:index.php?action=ok");
-                echo "Mensaje enviado!";
+                echo "<div class='correct'>¡Mensaje enviado!</div>";
             } else {
                 //header("location:index.php");
-                echo "maaaaaaal!";
+                echo "<div class='incorrect'>Ha debido de ocurrir algún error y el mensaje no se envió</div>";
             }
         }
     }
@@ -31,8 +31,8 @@ class MensajesController extends MvcController {
 
 
         foreach ($respuesta as $fila => $item) {
-            $remitente = MensajesModel::remitenteModel("usuario", $item["IDRemitente"]);
-            echo'<tr>
+            $remitente = MensajesModel::remitenteModel("usuario", $item["IDRemitente"]);           
+                 echo'<tr>
 				<td>' . $remitente["nombre"] . ' ' . $remitente["apellido1"] . ' ' . $remitente["apellido2"] . '</td>
 				<td>' . $item["asunto"] . '</td>
 				<td>' . substr($item["cuerpoMensaje"],0,25) . '</td>
@@ -50,7 +50,7 @@ class MensajesController extends MvcController {
             if ($respuesta == "ok") {
                 header("location:index.php?action=verMensajes");
             } else {
-                echo 'no se borró el mensaje, ocurrió algún error';
+                echo '<div class="incorrect">No se borró el mensaje, ocurrió algún error.</div>';
             }
         }
     }
@@ -69,12 +69,7 @@ class MensajesController extends MvcController {
     public function verMensajeDetalleController(){
         $respuesta = MensajesModel::verMensajeDetalleModel($_GET["id"]);
         $remitente = MensajesModel::remitenteModel("usuario", $respuesta["IDRemitente"]);
-        /*
-         * var_dump($respuesta);
-         * echo '<br>';
-         * var_dump($remitente);
-         * 
-         */
+        
         echo'<div id="mensajeEnDetalle">';
             echo '<h1>Asunto: '.$respuesta["asunto"].'</h1>';
             echo '<p>Fecha y hora de envío: '.$respuesta["fecha_envio"].'</p>';
@@ -83,8 +78,6 @@ class MensajesController extends MvcController {
                 .' </p>';
             echo '<a href="index.php?action=verMensajes&idBorrar=' . $respuesta["id"] . '"><button>Borrar mensaje</button></a>';
             echo '<a href="index.php?action=verMensajes"><button>Volver a los mensajes</button></a>';        
-        
-        
         
         echo '</div>';
     }

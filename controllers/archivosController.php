@@ -12,10 +12,7 @@ class ArchivosController extends MvcController {
         $listadoAsignaturas = ArchivosModel::listarAsignaturasModel($_SESSION["userId"]);
 
         //var_dump($listadoAsignaturas);
-        echo '<!-- MAX_FILE_SIZE debe preceder al campo de entrada del fichero -->
-            <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
-            <!-- El nombre del elemento de entrada determina el nombre en el array $_FILES  añadir atributo multiple si quiero subir más de un archivo-->
-            Enviar este fichero: <input name="fichero_usuario" type="file"/> ';
+        echo 'Enviar este fichero: <input name="fichero_usuario" type="file"/> ';
         echo 'Selecciona la asignatura';
         foreach ($listadoAsignaturas as $fila => $item) {
             echo '<input type="radio" name="idAsignatura" value="' . $item["id"] . '" checked>' . $item["nombre"] . '</input>';
@@ -29,14 +26,11 @@ class ArchivosController extends MvcController {
             $asignatura = str_pad($idAsignatura, 3, '0', STR_PAD_LEFT);
             $respuesta = ArchivosModel::archivoNuevoModel($datosController, $asignatura);
 
-
-            //var_dump($respuesta);
             if ($respuesta == "ok") {
-                //header("location:index.php?action=ok");
-                echo "Archivo cargado correctamente.";
+                echo '<div class="correct">Archivo cargado correctamente.</div>';
             } else {
-                //header("location:index.php");
-                echo "maaaaaaal!";
+                 echo '<div class="incorrect">Debido a algún error el archivo no se cargó, vuelva a intentarlo.</div>';
+                
             }
         }
     }
@@ -56,9 +50,6 @@ class ArchivosController extends MvcController {
         $valor = ' ';
         $asignatura = str_pad($idAsignatura, 3, '0', STR_PAD_LEFT);
 
-
-        //echo $asignatura.'<br>';
-
         foreach ($respuesta as $fila => $item) {
 
             if ($item != '.' && $item != '..' && (substr($item, 3, 3) == $asignatura)) {// (substr($item, 0, 2)==$asignatura) si los 2 número de caracteres desde el principio(0) coinciden con la asignatura, se muestran
@@ -74,14 +65,8 @@ class ArchivosController extends MvcController {
     public function listarArchivoBorrarController($idProfesor) {
         $respuesta = ArchivosModel::listarArchivosModel();
 
-
-
         $valor = ' ';
         $profesor = str_pad($idProfesor, 3, '0', STR_PAD_LEFT);
-
-
-        //echo $asignatura.'<br>';
-
         foreach ($respuesta as $fila => $item) {
             $direccion = ' ';
             if ($item != '.' && $item != '..' && $item != '.htaccess' && (substr($item, 0, 3) == $profesor)) {// (substr($item, 0, 2)==$asignatura) si los 2 número de caracteres desde el principio(0) coinciden con la asignatura, se muestran

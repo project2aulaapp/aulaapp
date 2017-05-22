@@ -126,16 +126,49 @@ class PracticasController extends MvcController {
     }
     
     /*  -------------------------------------------------------------------------------------------------------------------------------------------     */
-    /*  -------------------------------------------------------------------------------------------------------------------------------------------     */
+    // Función para que el alumno pueda subir sus prácticas ya terminadas, deberá elegir a qué asignatura subir ese archivo para que luego el profesor
+    // pueda descargarlas y revisarlas.
+    public function entregarPracticaController($userId) {
 
-    
-    
-    
-    
-    
-    
-    
-    
+        $asignaturasAlumno = PracticasModel::listarAsignaturasAlumnoModel($_SESSION["userId"]);
+        if (!isset($_POST["idAsignatura"])) {
+            echo '<p>Elige la asignatura en la que quieras entregar prácticas</p>';
+            echo '<form method="POST">';
+            foreach ($asignaturasAlumno as $fila => $item) {
+                echo '<input type="radio" name="idAsignatura" value="' . $item["id"] . '">' . $item["nombre"] . '</input>';
+            }
+            echo '<input type="submit" value="Seleccionar" />';
+            echo '</form>';
+            
+        } else {
+            
+            if (!isset($_FILES['practica'])) {
+                if(isset($_POST["idAsignatura"])){
+                    $_SESSION["idAsig"] = $_POST["idAsignatura"];
+                    echo 'Enviar esta práctica: <form method="POST"><input name="practica" type="file"/> ';                    
+                    echo '<input type="submit" value="Enviar Practica" /></form>';
+                }
+                
+            }
+        }       
+        
+        if (isset($_FILES['practica'])) {
+            $datosController = $_FILES["practica"];            
+            
+            $respuesta = PracticasModel::entregarPracticaModel($datosController, $_SESSION["idAsig"]);
+            // var_dump($respuesta);
+            if ($respuesta == "ok") {
+                //header("location:index.php?action=ok");
+                echo "<div class='correct'>Archivo de práctica cargado correctamente.</div>";
+                
+            } else {
+                echo "<div class='incorrect'>El archivo no ha podido cargarse, comprueba que hiciste todo bien!</div>";
+            }
+        }
+
+    }
+
+    /*  -------------------------------------------------------------------------------------------------------------------------------------------     */
 }//Fin clase PracticasController
 
 

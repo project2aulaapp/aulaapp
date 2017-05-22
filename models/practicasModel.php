@@ -78,6 +78,25 @@ public function practicaNuevaModel($datosModel, $idAsignatura) {
         $asignaturas->close();
     }
     
+    /*  -------------------------------------------------------------------------------------------------------------------------------------------     */
+    // Función para que el alumno pueda subir sus prácticas ya terminadas, deberá elegir a qué asignatura subir ese archivo para que luego el profesor
+    // pueda descargarlas y revisarlas.
+    
+public function entregarPracticaModel($datosModel, $idAsignatura) {
+        #alumno tiene que ser una cifra de 3 dígitos. Con str_pad rellenamos por la izquierda a ceros (0) hasta completar los 3 dígitos
+        #Por ejemplo si el id del profesor es 15, rellenaremos sólo un cero, si es 3, dos ceros a la izquierda y así
+        $alumno = str_pad($_SESSION["userId"], 3, '0', STR_PAD_LEFT);
+        $asignatura = str_pad($idAsignatura, 3, '0', STR_PAD_LEFT);
+        if (move_uploaded_file($datosModel['tmp_name'], 'practicas/entregaPracticas/' . $alumno . $asignatura . utf8_decode($datosModel['name']))) {// archivos de uno en uno
+            #si todo va bien, sería un código de 6 números, profesor+asignatura+nombrearchivo.extension
+            return "ok";
+        } else {
+            return "ko";
+        }
+    }
+    
+    
+    
     
     
     

@@ -19,7 +19,8 @@ if (!$_SESSION["validar"]) {
 <form enctype="multipart/form-data"  method="POST">
     <?php
 
-
+    $practica = new PracticasController();
+    $practica->entregarPracticaController($_SESSION["userId"]);
 
 ?>
 </form>
