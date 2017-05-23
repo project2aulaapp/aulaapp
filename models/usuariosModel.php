@@ -146,6 +146,10 @@ class UsuariosModel extends Datos {
                 /*Este reset se hace por si a la hora de registrarse eligió como si fuera un alumno */
             $reset = $stmt = Conexion::conectar()->prepare("UPDATE usuario SET autorizado=1 ,rolID=2, inscritoCurso=0, inscritoAsignaturas=0  WHERE id=$datosModel");
             $reset->execute();
+            $bajaAlumnoAsignatura = Conexion::conectar()->prepare("DELETE FROM alumnoasignatura WHERE idAlumno=$datosModel");
+            $bajaAlumnoAsignatura->execute();
+            $bajaUsuarioCurso = Conexion::conectar()->prepare("DELETE FROM usuariocurso WHERE idUsuario=$datosModel");
+            $bajaUsuarioCurso->execute();
             return "ok";
         } else {
             return "ko";
@@ -160,7 +164,9 @@ class UsuariosModel extends Datos {
 
     public function borrarUsuarioModel($datosModel, $tabla) {
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id=$datosModel");
-
+        $bajaProfesor = Conexion::conectar()->prepare("UPDATE asignatura SET IDprofesor=null WHERE IDprofesor=$datosModel");
+        $bajaProfesor->execute();
+        
         if ($stmt->execute()) {
             return "ok";
         } else {

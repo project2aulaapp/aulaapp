@@ -47,12 +47,7 @@ class UsuariosController extends MvcController {
                 $_SESSION["inscrito"] = $respuesta["inscritoCurso"];
                 $_SESSION["inscritoAsignaturas"] = $respuesta["inscritoAsignaturas"];
                 $_SESSION["fallosLogin"] = $respuesta["contador_fallo_login"];
-                /*
-                 * Me va a hacer falta también el curso   
-                 * las asignaturas? en un array
-                 * 
-                 * 
-                 */
+                
                 header("location:index.php?action=matricular");
             } else {
                 header("location:index.php?action=fallo");
@@ -118,7 +113,6 @@ class UsuariosController extends MvcController {
     #------------------------------------
 
     public function actualizarUsuarioController() {
-//filter_var($_POST["usuarioRegistro"], FILTER_SANITIZE_STRING)
         if (isset($_POST["usuarioEditar"])) {
             $datosController = array(
                 "id" => $_SESSION["userId"],
