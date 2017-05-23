@@ -11,7 +11,6 @@
         <script src="src/javascript/ventanaModal/app.js"></script>
         <script src="src/javascript/timeoutMensaje/timeoutMensaje.js"></script>
         <script src="src/javascript/paraIndex/cambiarColor.js"></script>
-        <script src="src/javascript/paraIndex/menu.js"></script>
 
     </head>
 
@@ -43,17 +42,17 @@
                 if (!isset($_SESSION["validar"])) {
 
                     /* Navegación para cuando no estemos logueados o registrados */
-                    echo '<a href="index.php?action=login">Login</a>
-                          <a href="index.php?action=registro">Registro</a>';
+                    echo '<div><a href="index.php?action=login">Login</a>
+                          <a href="index.php?action=registro">Registro</a></div>';
 
                     //exit(); //usando el método exit() hacemos que nadie pueda, de ninguna forma continuar el script y alterarlo. 
                 }
 
                 if (isset($_SESSION["usuario"])) {
-                    echo '<p><b>Usuario: </b> ';
+                    echo '<div id="logueado"><p><b>Usuario: </b> ';
                     echo ucfirst($_SESSION["usuario"]) . '      </p>';
                     echo '<span id="notificaciones"></span>'; // aquí se insertarán las notificaciones, se puede mover donde sea.
-                    echo '<a href="index.php?action=salir">Salir</a>';
+                    echo '<a href="index.php?action=salir">Salir</a></div>';
                 
                     
                     /*if ($_SESSION["notificaciones"] > 0) {
@@ -109,6 +108,7 @@ $mvc->enlacesPaginasController();
     </body>
   <?php if (isset($_SESSION["validar"])) {  //si no está logueado, no carga el script
     echo '<script type="text/javascript" src="src/javascript/ajax/notificaciones.js"></script>';
+    echo  '<script src="src/javascript/paraIndex/menu.js"></script>';
   }
     ?>
 </html>

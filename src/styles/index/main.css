@@ -36,16 +36,22 @@ header{
     display:flex;
     justify-content:space-around;
     background: linear-gradient(#bcbcbc,#e9e9e9);
-    align-items:baseline;
     flex-wrap:wrap;
+    align-items: center;
 }
 
-header a, section a{
+header div a, section a{
     text-decoration: none;
     font-weight: bold;
 }
 
 
+header #logueado{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 
 header img{
     width: 150px;
@@ -171,6 +177,7 @@ section article{
 section article:nth-child(-n+3){
     /*Cambiamos el hr por esta linea de separacion*/
     border-bottom:2px white solid;
+    margin-bottom: 0px;
 }
 
 section article *{
@@ -190,6 +197,10 @@ footer{
     width:100%;
     background: linear-gradient(#e9e9e9,#bcbcbc);
     text-align: center;
+}
+
+footer h2{
+    margin-top:0;
 }
 
 /*Menu login*/
@@ -219,7 +230,7 @@ footer{
     border-radius: 4px;
     border: solid 1px #20538D;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset -1px 2px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
     transition-duration: 0.2s;
     margin:10px auto;
 }
@@ -237,7 +248,7 @@ footer{
 }
 
 /*btn del header*/
-header a:nth-child(n+2), #login a {
+header div a, #login a {
     padding: 10px 15px;
     background: #4479BA;
     color: #FFf;
@@ -247,7 +258,7 @@ header a:nth-child(n+2), #login a {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
     transition-duration: 0.2s;
-    margin:10px 0;
+    margin:10px 15px;
 }
 
 
@@ -256,12 +267,12 @@ header a:nth-child(n+2), #login a {
     text-align: center;
     margin: 5px;
 }
-header a:nth-child(n+2):hover,#login a:hover {
+header div a:hover,#login a:hover {
     background: #356094;
     border: solid 1px #2A4E77;
     text-decoration: none;
 }
-header a:nth-child(n+2):active,#login a:active {
+header div a:active,#login a:active {
     box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
     background: #2E5481;
     border: solid 1px #203E5F;

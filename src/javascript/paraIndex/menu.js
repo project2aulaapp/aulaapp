@@ -13,6 +13,7 @@ function(){
 		var actual = document.getElementsByClassName("actual")[0];
 		actual.removeAttribute("actual");
 
+		alert('has hecho click')
 		e.target.className += "actual";
 	}
 

@@ -24,16 +24,17 @@ text-align: center;
 
 
 tr:nth-child(even) td { 
-    background-color: #20f9d4; 
+    background-color: #dedede; 
 }
 
 
 tr:nth-child(odd) td { 
-    background-color: #1cc7db;
+    background-color: #cacaca;
 }
 
-table tbody tr:hover { 
-    background-color: blue;  
+table tbody tr:hover td { 
+    background-color: grey; 
+    color:white; 
 }
 
 table button{
