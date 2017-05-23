@@ -172,7 +172,6 @@ class PracticasController extends MvcController {
     
     public function listarPracticasEntregadasController() {
         $respuesta = PracticasModel::listarPracticasAlumnoModel();
-        
         $asignaturasProfesor = AsignaturaModel::listarAsignaturasProfesor($_SESSION["userId"]);
         
         if(!isset($_POST["idAsignatura"])){
@@ -182,30 +181,33 @@ class PracticasController extends MvcController {
             echo '<input type="radio" name="idAsignatura" value="' . $item["idAsig"] . '">' . $item["nomAsig"] . '</input>';
         }
         echo '<input type="submit" value="Seleccionar" />';
-        echo '</form>';
+        echo '</form>';        
         }
-        $idAsignatura = str_pad($_POST["idAsignatura"], 3, '0', STR_PAD_LEFT);
-        
-              $idAlumno = AsignaturaModel::listarAlumnosAsignaturaModel($idAsignatura);
-         
        
+        // tomo la variable de la asignatura, como se recarga página, la hago de sesión
+        if(isset($_POST["idAsignatura"])){
+            $_SESSION["asignatura"] = $_POST["idAsignatura"];
         
-        
-        
-        if(!isset($_POST["idAlumno"])){
+        // una vez seteada la variable, hago la llamada para ver el listado de alumnos de esa asignatura
+       
             
+            $idAlumno = AsignaturaModel::listarAlumnosAsignaturaModel($_SESSION["asignatura"]);
+            
+            echo 'Selecciona el alumno para descargar sus prácticas';
+            echo '<form method="POST">';
+            foreach ($idAlumno as $fila => $item) {
+                echo '<input type="radio" name="idAlumno" value="' . $item["userId"] . '">' . $item["user"] .' - '. $item["nombre"] .' '.$item["ape1"].' '.$item["ape2"].'</input>';
+            }
+            echo '<input type="submit" value="Seleccionar" />';
+            echo '</form>';     
+           
+        }
+            if(isset($_POST["idAlumno"])){
+            $_SESSION["alumno"] = $_POST["idAlumno"];
         }
         
-        $idAlumno = 032;
+        if(isset($_SESSION["alumno"]) && isset($_SESSION["asignatura"])){
         
-        
-        
-        
-        
-        if(isset($_POST["idAsignatura"]) && isset($_POST["idAlumno"])){
-            
-        
-        //echo $idAsignatura;
         foreach ($respuesta as $fila) {
             $alumno = substr($fila, 0,3);
             $asignatura = substr($fila, 3,3);
@@ -214,25 +216,16 @@ class PracticasController extends MvcController {
             if($fila!='.' 
                     && $fila!='..' 
                     && $fila!='.htaccess' 
-                    && $alumno = $idAlumno
-                    && $asignatura = $idAsignatura){
+                    && $alumno == $_SESSION["alumno"]
+                    && $asignatura == $_SESSION["asignatura"]){
                 $practica = utf8_encode($fila);
                echo "<a href='practicas/entregaPracticas/$practica'>".utf8_encode($valor).'</a><strong> entregado en fecha: '. date('d-m-y h:m:s', $fecha).' </strong>'; 
             }
-            
             
         }//fin foreach
         }
     }//fin listarPracticasEntregadasController
            
-    
-    
-    
-    
-    
-    
-    
-    
     
     /*  -------------------------------------------------------------------------------------------------------------------------------------------     */
     
