@@ -4,10 +4,10 @@
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>¡¡Pillo sitio!!</title>	
+        <title>¡AulaApp!</title>	
         <!--<link rel="stylesheet" type="text/css" href="src/styles/baseOld.css">-->
         <link rel="stylesheet" type="text/css" href="src/styles/maestro.css">
-        <link rel="shortcut icon" href="src/img/favicon.png"/>
+        <link rel="shortcut icon" href="src/img/logotipo_4.png"/>
         <script src="src/javascript/ventanaModal/app.js"></script>
         <script src="src/javascript/timeoutMensaje/timeoutMensaje.js"></script>
         <script src="src/javascript/paraIndex/cambiarColor.js"></script>
