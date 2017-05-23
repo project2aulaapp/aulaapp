@@ -169,6 +169,47 @@ class PracticasController extends MvcController {
     }
 
     /*  -------------------------------------------------------------------------------------------------------------------------------------------     */
+    
+    public function listarPracticasEntregadasController() {
+        $respuesta = PracticasModel::listarPracticasAlumnoModel();
+        $idAlumno = 032;
+        $idAsignatura = 001;
+        foreach ($respuesta as $fila) {
+            $alumno = substr($fila, 0,3);
+            $asignatura = substr($fila, 3,3);
+            $fecha = substr($fila, 6,10);
+            $valor = substr($fila, 16);
+            if($fila!='.' 
+                    && $fila!='..' 
+                    && $fila!='.htaccess' 
+                    && $alumno = $idAlumno
+                    && $asignatura = $idAsignatura){
+                $practica = utf8_encode($fila);
+               echo "<a href='practicas/entregaPracticas/$practica'>".$valor.'</a><strong> entregado en fecha: '. date('d-m-y h:m:s', $fecha).' </strong>'; 
+            }
+            
+            
+        }
+       
+        
+        
+        
+        
+        
+        //var_dump($respuesta);
+    }
+           
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*  -------------------------------------------------------------------------------------------------------------------------------------------     */
+    
 }//Fin clase PracticasController
 
 

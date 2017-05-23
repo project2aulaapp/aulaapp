@@ -18,17 +18,21 @@ public function practicaNuevaModel($datosModel, $idAsignatura) {
     }
     
     /*  -------------------------------------------------------------------------------------------------------------------------------------------     */
-    
-    
-    //Función para listar las prácticas que haya en la carpeta prácticas las lista todas y luego ya se filtra en el controlador
-       public function listarPracticasModel() {
-        $directorio = 'practicas';
+    //Función para que el profesor pueda listar y descargar las prácticas 
+    //que los alumnos han realizado y entregado
+    public function listarPracticasAlumnoModel(){
+        $directorio = 'practicas/entregaPracticas/';
         $practicas = scandir($directorio);
         return $practicas;
     }
+   
     
     
     /*  -------------------------------------------------------------------------------------------------------------------------------------------     */
+    
+    
+    
+    
     
     /*  -------------------------------------------------------------------------------------------------------------------------------------------     */
     
@@ -87,7 +91,7 @@ public function entregarPracticaModel($datosModel, $idAsignatura) {
         #Por ejemplo si el id del profesor es 15, rellenaremos sólo un cero, si es 3, dos ceros a la izquierda y así
         $alumno = str_pad($_SESSION["userId"], 3, '0', STR_PAD_LEFT);
         $asignatura = str_pad($idAsignatura, 3, '0', STR_PAD_LEFT);
-        if (move_uploaded_file($datosModel['tmp_name'], 'practicas/entregaPracticas/' . $alumno . $asignatura . utf8_decode($datosModel['name']))) {// archivos de uno en uno
+        if (move_uploaded_file($datosModel['tmp_name'], 'practicas/entregaPracticas/' . $alumno . $asignatura . time() . utf8_decode($datosModel['name']))) {// archivos de uno en uno
             #si todo va bien, sería un código de 6 números, profesor+asignatura+nombrearchivo.extension
             return "ok";
         } else {
@@ -95,6 +99,13 @@ public function entregarPracticaModel($datosModel, $idAsignatura) {
         }
     }
     
+    
+     //Función para listar las prácticas que haya en la carpeta prácticas las lista todas y luego ya se filtra en el controlador
+       public function listarPracticasModel() {
+        $directorio = 'practicas';
+        $practicas = scandir($directorio);
+        return $practicas;
+    }
     
     
     

@@ -36,7 +36,18 @@
                 ?>
             </div>
 
-            <header>
+            <?php
+            if($_SESSION["rol"]==1){
+                echo '<header class="adminHeader">';
+            }else if($_SESSION["rol"]==2){
+                echo '<header class="profeHeader">';
+            }else if($_SESSION["rol"]==3){
+                echo '<header class="alumnoHeader">';
+            }else{
+                echo '<header class="indexHeader">';
+            }
+            ?>
+            
                 <a href="index.php"><img src="src/img/logotipo_2.png"></a>
                 <?php
                 if (!isset($_SESSION["validar"])) {
