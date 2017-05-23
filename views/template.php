@@ -50,7 +50,7 @@
             }
             ?>
             
-                <a href="index.php"><img src="src/img/logotipo_2.png"></a>
+                <a href="index.php"><img src="src/img/logotipo_4.png"></a>
                 <?php
                 if (!isset($_SESSION["validar"])) {
 

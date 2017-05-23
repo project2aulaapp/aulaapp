@@ -1,3 +1,10 @@
+/*Ponemos el header para este rol*/
+#adminHeader{
+    background-image: url("../../img/imgHeader/admin_01.jpg");
+    background-color: #cccccc;
+}
+
+
 /*Ponemos el mismo formato a todos los formularios*/
  #cursoNuevo form,  #asigNueva form, #enviarMsg form{
     display: flex;

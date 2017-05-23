@@ -1,4 +1,8 @@
-
+/*Ponemos el header para este rol*/
+#profeHeader{
+    background-image: url("../../img/imgHeader/code_header_01.jpg");
+    background-color: #cccccc;
+}
 /*Damos formato  a todo el formulario*/
 #asignaturasProfesor form{
     display: flex;
