@@ -24,8 +24,7 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){
 		<thead>
 			
 			<tr>
-				<th>Nombre Curso</th>				
-				<th></th>
+				<th>Nombre Curso</th>
 				<th></th>
 
 			</tr>
@@ -38,7 +37,6 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){
 				$listaCursos = new CursosController();
 				$listaCursos ->listarCursosController();
 				$listaCursos -> borrarCursoController();
-                                //$listaCursos -> editarCursosController();
 			?>
 			
 

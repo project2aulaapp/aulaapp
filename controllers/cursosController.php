@@ -11,13 +11,10 @@ class CursosController extends MvcController {
 
             $respuesta = CursosModel::cursoNuevoModel($datosController, "curso");
 
-            //var_dump($respuesta);
             if ($respuesta == "ok") {
-                //header("location:index.php?action=ok");
-                echo "Nuevo curso grabado!";
+                echo '<div class="correct">Nuevo curso guardado correctamente.</div>';
             } else {
-                //header("location:index.php");
-                echo "maaaaaaal!";
+                echo '<div class="incorrect">Ocurrió algún problema, vuelva a intentarlo.</div>';
             }
         }
     }
@@ -30,8 +27,7 @@ class CursosController extends MvcController {
 
 		foreach ($respuesta as $fila => $item) {
 			echo'<tr>
-				<td>'.$item["nombreCurso"].'</td>				
-				<td><a href="index.php?action=editarCurso&idCurso='.$item["idCurso"].'"><button>Editar</button></a></td>
+				<td>'.$item["nombreCurso"].'</td>
 				<td><a href="index.php?action=lCursos&idCurso='.$item["idCurso"].'"><button>Borrar</button></a></td>
 			</tr>';
 		}	
@@ -83,7 +79,7 @@ class CursosController extends MvcController {
 			if ($respuesta == "ok") {
 				header("location:index.php?action=seleccionAsignaturas");
 			}else{
-                            echo 'Algo falló';
+                            echo '<div class="incorrect">Algo falló</div>';
                         }
             }
         }

@@ -6,12 +6,12 @@ class UsuariosController extends MvcController {
 
     public function registroUsuarioController() {
         if (isset($_POST["usuarioRegistro"])) {
-            $datosController = array("user" => $_POST["usuarioRegistro"],
+            $datosController = array("user" => filter_var($_POST["usuarioRegistro"], FILTER_SANITIZE_STRING),
               "password" => $_POST["passwordRegistro"],
-                "nombre" => $_POST["nombreRegistro"],
-                "apellido1" => $_POST["apellido1Registro"],
-                "apellido2" => $_POST["apellido2Registro"],
-                "email" => $_POST["emailRegistro"]
+                "nombre" => filter_var ( $_POST["nombreRegistro"], FILTER_SANITIZE_STRING),
+                "apellido1" => filter_var ( $_POST["apellido1Registro"], FILTER_SANITIZE_STRING),
+                "apellido2" => filter_var ( $_POST["apellido2Registro"], FILTER_SANITIZE_STRING),
+                "email" => filter_var($_POST["emailRegistro"], FILTER_SANITIZE_EMAIL)
             );
 
             $respuesta = UsuariosModel::registroUsuarioModel($datosController, "usuario");
@@ -29,7 +29,7 @@ class UsuariosController extends MvcController {
 
     public function ingresoUsuarioController() {
         if (isset($_POST["usuarioIngreso"])) {
-            $datosController = array("user" => $_POST["usuarioIngreso"],
+            $datosController = array("user" => filter_var($_POST["usuarioIngreso"], FILTER_SANITIZE_STRING),
                 "password" => $_POST["passwordIngreso"]);
 
             $respuesta = UsuariosModel::ingresoUsuarioModel($datosController, "usuario");
@@ -118,19 +118,19 @@ class UsuariosController extends MvcController {
     #------------------------------------
 
     public function actualizarUsuarioController() {
-
+//filter_var($_POST["usuarioRegistro"], FILTER_SANITIZE_STRING)
         if (isset($_POST["usuarioEditar"])) {
             $datosController = array(
                 "id" => $_SESSION["userId"],
-                "user" => $_POST["usuarioEditar"],
-                "nombre" => $_POST["nombreEditar"],
-                "ape1" => $_POST["apellido1Editar"],
-                "ape2" => $_POST["apellido2Editar"],
+                "user" => filter_var($_POST["usuarioEditar"],FILTER_SANITIZE_STRING),
+                "nombre" => filter_var($_POST["nombreEditar"], FILTER_SANITIZE_STRING),
+                "ape1" => filter_var($_POST["apellido1Editar"],FILTER_SANITIZE_STRING),
+                "ape2" => filter_var($_POST["apellido2Editar"],FILTER_SANITIZE_STRING),
                 "pass" => $_POST["passwordEditar"],
                 "passAntiguo" => sha1($_POST["oldPassword"]),
                 "newPass" => $_POST["newPassword"],
                 "rePassAntiguo" => $_POST["newRePassword"],
-                "email" => $_POST["emailEditar"]
+                "email" => filter_var($_POST["emailEditar"],FILTER_SANITIZE_EMAIL)
             ); //para enviarle al modelo para modificar
 
             if (($datosController["pass"] == $datosController["passAntiguo"]) && ($datosController["newPass"] == $datosController["rePassAntiguo"]) && $datosController["pass"] != "" && $datosController["passAntiguo"] != "" && $datosController["newPass"] != "" && $datosController["rePassAntiguo"] != "") {
