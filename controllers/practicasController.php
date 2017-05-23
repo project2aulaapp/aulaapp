@@ -185,7 +185,7 @@ class PracticasController extends MvcController {
                     && $alumno = $idAlumno
                     && $asignatura = $idAsignatura){
                 $practica = utf8_encode($fila);
-               echo "<a href='practicas/entregaPracticas/$practica'>".$valor.'</a><strong> entregado en fecha: '. date('d-m-y h:m:s', $fecha).' </strong>'; 
+               echo "<a href='practicas/entregaPracticas/$practica'>".utf8_encode($valor).'</a><strong> entregado en fecha: '. date('d-m-y h:m:s', $fecha).' </strong>'; 
             }
             
             

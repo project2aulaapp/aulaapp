@@ -38,13 +38,13 @@
 
             <?php
             if($_SESSION["rol"]==1){
-                echo '<header class="adminHeader">';
+                echo '<header id="adminHeader">';
             }else if($_SESSION["rol"]==2){
-                echo '<header class="profeHeader">';
+                echo '<header id="profeHeader">';
             }else if($_SESSION["rol"]==3){
-                echo '<header class="alumnoHeader">';
+                echo '<header id="alumnoHeader">';
             }else{
-                echo '<header class="indexHeader">';
+                echo '<header id="indexHeader">';
             }
             ?>
             
