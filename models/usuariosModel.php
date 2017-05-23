@@ -167,6 +167,12 @@ class UsuariosModel extends Datos {
         $bajaProfesor = Conexion::conectar()->prepare("UPDATE asignatura SET IDprofesor=null WHERE IDprofesor=$datosModel");
         $bajaProfesor->execute();
         
+        $bajaAlumnoAsignatura = Conexion::conectar()->prepare("DELETE FROM alumnoasignatura WHERE idAlumno=$datosModel");
+        $bajaAlumnoAsignatura->execute();
+        
+        $bajaUsuarioCurso = Conexion::conectar()->prepare("DELETE FROM usuariocurso WHERE idUsuario=$datosModel");
+        $bajaUsuarioCurso->execute();
+        
         if ($stmt->execute()) {
             return "ok";
         } else {
