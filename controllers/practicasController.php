@@ -172,8 +172,40 @@ class PracticasController extends MvcController {
     
     public function listarPracticasEntregadasController() {
         $respuesta = PracticasModel::listarPracticasAlumnoModel();
+        
+        $asignaturasProfesor = AsignaturaModel::listarAsignaturasProfesor($_SESSION["userId"]);
+        
+        if(!isset($_POST["idAsignatura"])){
+            echo 'Selecciona la asignatura de las que quires ver las prácticas';
+        echo '<form method="POST">';
+        foreach ($asignaturasProfesor as $fila => $item) {
+            echo '<input type="radio" name="idAsignatura" value="' . $item["idAsig"] . '">' . $item["nomAsig"] . '</input>';
+        }
+        echo '<input type="submit" value="Seleccionar" />';
+        echo '</form>';
+        }
+        $idAsignatura = str_pad($_POST["idAsignatura"], 3, '0', STR_PAD_LEFT);
+        
+              $idAlumno = AsignaturaModel::listarAlumnosAsignaturaModel($idAsignatura);
+         
+       
+        
+        
+        
+        if(!isset($_POST["idAlumno"])){
+            
+        }
+        
         $idAlumno = 032;
-        $idAsignatura = 001;
+        
+        
+        
+        
+        
+        if(isset($_POST["idAsignatura"]) && isset($_POST["idAlumno"])){
+            
+        
+        //echo $idAsignatura;
         foreach ($respuesta as $fila) {
             $alumno = substr($fila, 0,3);
             $asignatura = substr($fila, 3,3);
@@ -189,15 +221,9 @@ class PracticasController extends MvcController {
             }
             
             
+        }//fin foreach
         }
-       
-        
-        
-        
-        
-        
-        //var_dump($respuesta);
-    }
+    }//fin listarPracticasEntregadasController
            
     
     

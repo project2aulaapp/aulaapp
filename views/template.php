@@ -37,12 +37,14 @@
             </div>
 
             <?php
-            if($_SESSION["rol"]==1){
-                echo '<header id="adminHeader">';
-            }else if($_SESSION["rol"]==2){
-                echo '<header id="profeHeader">';
-            }else if($_SESSION["rol"]==3){
-                echo '<header id="alumnoHeader">';
+            if(isset($_SESSION["rol"])){
+                if($_SESSION["rol"]==1){
+                        echo '<header id="adminHeader">';
+                    }else if($_SESSION["rol"]==2){
+                        echo '<header id="profeHeader">';
+                    }else if($_SESSION["rol"]==3){
+                        echo '<header id="alumnoHeader">';
+                    }
             }else{
                 echo '<header id="indexHeader">';
             }

@@ -145,6 +145,25 @@ class AsignaturaModel extends Datos {
         
     }
     
+    public function listarAsignaturasProfesor($id){
+        $consulta = "SELECT asignatura.id as idAsig, "
+                . "asignatura.nombre as nomAsig "
+                . "from asignatura,usuario "
+                . "WHERE asignatura.IDprofesor=usuario.id "
+                . "AND usuario.id=$id";
+        $stmt = Conexion::conectar()->prepare($consulta);
+        $stmt->execute();       
+
+        return $stmt->fetchAll();
+
+        $stmt - close();
+    }
+    
+    
+    public function listarAlumnosAsignaturaModel($idAsignatura){
+        
+    }
+    
     
 
 }
