@@ -58,10 +58,8 @@ class AsignaturasController extends MvcController {
             //var_dump($respuesta);
             if ($respuesta == "ok") {
                 header("location:index.php?action=index");
-                //echo "Asignaturas elegidas!";
             } else {
-                //header("location:index.php");
-               echo 'errorrr';
+               echo '<div class="incorrect">Ocurrió algún error, vuelva a intentarlo.</div>';
                     }
         }
         
@@ -97,11 +95,7 @@ class AsignaturasController extends MvcController {
             if ($respuesta == "ok") {                
                 echo "<script>alert('Asignaturas elegidas!'); window.location='index.php?action=index';</script>";
                 
-                //header("location:index.php?action=index");
-            } else {
-                //header("location:index.php");
-               
-                    }
+            } 
         } 
     }
     
@@ -121,12 +115,5 @@ class AsignaturasController extends MvcController {
               
                
     }
-    
-    
-   
-    
-    
-    
-
 }//fin clase
 ?>

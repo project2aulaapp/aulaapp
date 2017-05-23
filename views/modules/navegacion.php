@@ -42,7 +42,7 @@ if (isset($_SESSION["validar"])) {
                 <li class="menu__item"><a class="menu__link" href="index.php?action=calendario">Calendario</a></li>
               </ul>';
     }else if($_SESSION["rol"]==4){ //Por autorizar
-        echo '<ul><li><a class="menu__link" href="#">vista de usuario sin autorizar</a></li></ul>';
+        echo '<ul><li><a class="menu__link" href="#">vista de usuario sin autorizar - Deberás esperar a que un administrador te autorice el acceso a los contenidos </a></li></ul>';
     }        
     
     

@@ -4,12 +4,6 @@ class MvcController{
 
 	#	CONTROLADOR PRINCIPAL, de él heredarán el resto de controladores
 
-
-
-
-
-
-
 	#LLAMADA A LA PLANTILLA
 	#-------------------------------------
 

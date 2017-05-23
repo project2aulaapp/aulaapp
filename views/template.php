@@ -44,6 +44,8 @@
                         echo '<header id="profeHeader">';
                     }else if($_SESSION["rol"]==3){
                         echo '<header id="alumnoHeader">';
+                    }else if($_SESSION["rol"]==4){
+                        echo '<header id="indexHeader">';
                     }
             }else{
                 echo '<header id="indexHeader">';

@@ -9,8 +9,8 @@ class MensajesController extends MvcController {
         if (isset($_POST["remitente"])) {
             $datosController = array("remitente" => $_POST["remitente"],
                 "destinatario" => $_POST["destinatario"],
-                "asunto" => $_POST["asunto"],
-                "cuerpo" => $_POST["cuerpo"]
+                "asunto" => filter_var ( $_POST["asunto"], FILTER_SANITIZE_STRING),
+                "cuerpo" => filter_var ( $_POST["cuerpo"], FILTER_SANITIZE_STRING)
             );
 
             $respuesta = MensajesModel::mensajeNuevoModel($datosController, "mensaje");
