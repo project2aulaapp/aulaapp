@@ -75,6 +75,7 @@ if (isset($_SESSION["validar"])) {
         echo '<ul class="menu">
                 <li  id="inicio"><a href="index.php?action=index">Inicio</a></li>
                 <li><a href="index.php?action=asignaturas">Asignaturas</a></li>
+                <li><a href="index.php?action=pizarra">Iniciar pizarra</a></li>
                  <li>   
                     <label for="drop-1" class="toggle">Practicas+</label>
                     <a href="#">Practicas</a>
