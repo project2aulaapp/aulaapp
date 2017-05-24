@@ -4,6 +4,7 @@
 @import "index/mainDesktop.css";
 @import "ids/formulario.css";
 @import "ids/tablas.css";
+@import "ids/menu.css";
 
 /*Vista del administrador*/
 @import "ids/formAdmin.css";
@@ -14,8 +15,6 @@
 /*Vista del alumno*/
 @import "ids/formAlumno.css";
 
-/*Vista del alumno*/
-@import "efectoMenu/menu.css";
 
 
 /*Llamamos el estilo de la ventana de la cookies*/

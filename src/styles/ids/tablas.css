@@ -1,25 +1,25 @@
 table {
-color: #333;
-width: 640px;
-border-collapse:collapse; 
-border-spacing: 0;
-margin:10px auto;
+	color: #333;
+	width: 90%;
+	border-spacing: 0;
+	margin:10px auto;
 }
 
 td, th {
-border: 1px solid transparent; 
-height: 30px;
-transition: all 0.3s; 
+	border: 1px solid transparent; 
+	height: 30px;
+	transition: all 0.3s; 
 }
 
 th {
-background: #DFDFDF; 
-font-weight: bold;
+    background: #424a55;
+    font-weight: bold;
+    color: #fff;
 }
 
 td {
-background: #FAFAFA;
-text-align: center;
+	background: #FAFAFA;
+	text-align: center;
 }
 
 

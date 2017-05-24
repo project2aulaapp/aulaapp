@@ -21,7 +21,6 @@ html, body{
 
 main{
     width:100%;
-    background-color:#e9e9e9;
     display:flex;
     flex-direction:column;
     align-items: center;
@@ -59,6 +58,12 @@ header div a, section a{
     font-weight: bold;
 }
 
+/*Enlace de cuando recibes un mensaje*/
+header #notificaciones a{
+    background: red;
+    line-height: 8px;
+}
+
 
 header #logueado{
     display: flex;
@@ -75,7 +80,7 @@ aside ul{
     margin-top: 60px;
 }
 
-/*Boton menu*/
+/*Boton menu
 @media  (max-width: 799px){
 
     #btnMenu{
@@ -117,7 +122,6 @@ aside ul{
         top: 0px;
         right: 0px;
         background-color: #bcbcbc;
-        opacity: 0.9;
         -webkit-animation-name: menuIn;
         -webkit-animation-duration: 0.4s;
         animation-name: menuIn;
@@ -177,7 +181,6 @@ section{
 
 section section{
     width: 100%;
-    background-color: #e9e9e9;
 }
 
 section article{
@@ -209,7 +212,7 @@ article img{
 
 footer{
     width:100%;
-    background: linear-gradient(#e9e9e9,#bcbcbc);
+    background: linear-gradient(#fff,#e9e9e9);
     text-align: center;
 }
 
@@ -309,7 +312,6 @@ div{
 /*Efecto parallax*/
 .parallax{
     
-    background-attachment: scroll;
 
     /* Damos medidas */
     width: 90%;

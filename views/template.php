@@ -81,9 +81,9 @@
 
             <section id="contenedor">
 <?php if (isset($_SESSION["validar"])) { ?>
-            <input type="checkbox" id="btnMenu">
-            <label for="btnMenu"></label>
             <aside id="menuWeb">
+                <label for="drop" class="toggle">Menu</label>
+                <input type="checkbox" id="drop" />
                 <?php include "modules/navegacion.php"; ?>   
 
             </aside>

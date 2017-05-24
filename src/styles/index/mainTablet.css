@@ -19,44 +19,18 @@
         background-color: #d4d4d4;
     }
 
-    aside{
-        width:25%;
-        display:flex;
-        background: #bcbcbc;
-    }
 
-    aside ul{
-        display:flex;
-        width: 100%;
-        flex-direction:column;
-        margin: 10px 0;
-    }
-
-    aside ul li{
-        line-height: 45px;
-        display: inline-block;
-        padding: 0;
-        width: 100%;
-
+   /* aside ul li{
+        border-bottom: 2px solid #254441;
+        border-top: 2px solid #254441;
     }
 
 
     aside ul li:hover{
-        border-bottom: 2px solid black;
-        border-top: 2px solid black;
-    }
+        border-bottom: 2px solid white;
+        border-top: 2px solid white;
+    }*/
 
-    aside ul li a{
-        text-decoration: none;
-        margin: 0;
-        padding:10px;
-        color :black;
-        width: 25%;
-        line-height: 25px;
-    }
 
-    #btnMenu{
-        display:none;
-    }
 
 }

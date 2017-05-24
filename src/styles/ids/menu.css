@@ -1,0 +1,196 @@
+.toggle,
+[id^=drop] {
+    display: none;
+}
+
+aside { 
+    margin:0;
+    padding: 0;
+    background-color: #254441;
+}
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+aside:after {
+    content:"";
+    display:table;
+    clear:both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+aside ul {
+    padding:0;
+    margin:0;
+    list-style: none;
+    position: relative;
+    }
+    
+/* Positioning the asideigation items inline */
+aside ul li {
+    margin: 0px;
+    display:inline-block;
+    background-color: #254441;
+    }
+
+/* Styling the links */
+aside a {
+    display:block;
+    padding:14px 20px;  
+    color:#FFF;
+    font-size:17px;
+    text-decoration:none;
+}
+
+
+aside ul li ul li:hover { background: #000000; }
+
+/* Background color change on Hover */
+aside a:hover { 
+    background-color: #000000; 
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+aside ul ul {
+    display: none;
+    position: absolute; 
+    /* has to be the same number as the "line-height" of "aside a" */
+    top: 47px; 
+}
+    
+/* Display Dropdowns on Hover */
+aside ul li:hover > ul {
+    display:inherit;
+}
+    
+/* Fisrt Tier Dropdown */
+aside ul ul li {
+    width:170px;
+    float:none;
+    display:list-item;
+    position: relative;
+}
+
+/* Second, Third and more Tiers 
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+aside ul ul ul li {
+    position: relative;
+    top:-60px;
+    /* has to be the same number as the "width" of "aside ul ul li" */ 
+    left:170px; 
+}
+
+    
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
+
+@media all and (max-width : 768px) {
+
+
+    aside {
+        margin: 0 auto;
+    }
+
+    /* Hide the asideigation menu by default */
+    /* Also hide the  */
+    .toggle + a,
+    .menu {
+        display: none;
+    }
+
+    /* Stylinf the toggle lable */
+    .toggle {
+        display: block;
+        background-color: #254441;
+        padding:14px 20px;  
+        color:#FFF;
+        font-size:17px;
+        text-decoration:none;
+        border:none;
+    }
+
+    .toggle:hover {
+        background-color: #000000;
+    }
+
+    /* Display Dropdown when clicked on Parent Lable */
+    [id^=drop]:checked + ul {
+        display: block;
+    }
+
+    /* Change menu item's width to 100% */
+    aside ul li {
+        display: block;
+        width: 100%;
+        }
+
+    aside ul ul .toggle,
+    aside ul ul a {
+        padding: 0 40px;
+    }
+
+    aside ul ul ul a {
+        padding: 0 80px;
+    }
+
+    aside a:hover,
+    aside ul ul ul a {
+        background-color: #000000;
+    }
+  
+    aside ul li ul li .toggle,
+    aside ul ul a,
+  aside ul ul ul a{
+        padding:14px 20px;  
+        color:#FFF;
+        font-size:17px; 
+    }
+  
+  
+    aside ul li ul li .toggle,
+    aside ul ul a {
+        background-color: #212121; 
+    }
+
+    /* Hide Dropdowns by Default */
+    aside ul ul {
+        float: none;
+        position:static;
+        color: #ffffff;
+        /* has to be the same number as the "line-height" of "aside a" */
+    }
+        
+    /* Hide menus on hover */
+    aside ul ul li:hover > ul,
+    aside ul li:hover > ul {
+        display: none;
+    }
+        
+    /* Fisrt Tier Dropdown */
+    aside ul ul li {
+        display: block;
+        width: 100%;
+    }
+
+    aside ul ul ul li {
+        position: static;
+        /* has to be the same number as the "width" of "aside ul ul li" */ 
+
+    }
+
+}
+
+@media all and (max-width : 330px) {
+
+    aside ul li {
+        display:block;
+        width: 94%;
+    }
+
+}
