@@ -6,8 +6,14 @@
             <file>file:/C:/xampp/htdocs/aulaapp/controllers/usuariosController.php</file>
             <file>file:/C:/xampp/htdocs/aulaapp/src/styles/maestro.css</file>
             <file>file:/C:/xampp/htdocs/aulaapp/models/practicasModel.php</file>
+            <file>file:/C:/xampp/htdocs/aulaapp/controllers/asignaturasController.php</file>
+            <file>file:/C:/xampp/htdocs/aulaapp/views/modules/seleccionarPracticasAlumno.php</file>
+            <file>file:/C:/xampp/htdocs/aulaapp/views/modules/pizarraCheck2.php</file>
+            <file>file:/C:/xampp/htdocs/aulaapp/models/enlaces.php</file>
             <file>file:/C:/xampp/htdocs/aulaapp/controllers/practicasController.php</file>
             <file>file:/C:/xampp/htdocs/aulaapp/models/usuariosModel.php</file>
+            <file>file:/C:/xampp/htdocs/aulaapp/views/modules/pizarra.php</file>
+            <file>file:/C:/xampp/htdocs/aulaapp/views/modules/pizarraCheck.php</file>
         </group>
     </open-files>
 </project-private>
