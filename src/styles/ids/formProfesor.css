@@ -1,6 +1,8 @@
 /*Ponemos el header para este rol*/
 #profeHeader{
     background-image: url("../../img/imgHeader/code_header_01.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     background-color: #cccccc;
 }
 /*Damos formato  a todo el formulario*/

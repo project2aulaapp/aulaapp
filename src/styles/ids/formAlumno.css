@@ -1,6 +1,8 @@
 /*Ponemos el header para este rol*/
 #alumnoHeader{
     background-image: url("../../img/imgHeader/alumno_01.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     background-color: #cccccc;
 }
 

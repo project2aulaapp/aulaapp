@@ -57,7 +57,7 @@
                 if (!isset($_SESSION["validar"])) {
 
                     /* Navegación para cuando no estemos logueados o registrados */
-                    echo '<div><a href="index.php?action=login">Login</a>
+                    echo '<div><a href="index.php?action=login">Entrar</a>
                           <a href="index.php?action=registro">Registro</a></div>';
 
                     //exit(); //usando el método exit() hacemos que nadie pueda, de ninguna forma continuar el script y alterarlo. 

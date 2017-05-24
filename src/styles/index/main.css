@@ -226,6 +226,11 @@ footer h2{
     flex-direction: column;
 }
 
+#login button{
+    width: 80px;
+    height: 30px;
+}
+
 /*Pagina perfil*/
 #verPerfil{
     display: flex;
