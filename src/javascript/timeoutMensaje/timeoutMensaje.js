@@ -12,6 +12,6 @@ function main() {
     if (incorrect) {
         setTimeout(function () {
             incorrect.parentNode.removeChild(incorrect);
-        }, 5000);
+        }, 3000);
     }
 }
