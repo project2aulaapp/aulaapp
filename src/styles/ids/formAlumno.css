@@ -6,6 +6,10 @@
     background-color: #cccccc;
 }
 
-#entregarPracticas form *{
+#entregarPracticas form * {
 	margin: 25px;
+}
+
+#inscribirEnCurso form *{
+	margin: 10px;
 }

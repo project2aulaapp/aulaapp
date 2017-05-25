@@ -20,11 +20,11 @@ html, body{
 }
 
 main{
-    width:100%;
-    display:flex;
-    flex-direction:column;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     margin: 0 auto;
 
 }
@@ -35,6 +35,10 @@ header{
     display:flex;
     justify-content:space-around;
     align-items: center;
+}
+
+header a{
+    font-family: 'Oswald', sans-serif;
 }
 
 header *{
@@ -72,6 +76,23 @@ header #logueado{
     align-items: center;
 }
 
+
+/*El bocadillo con la informacion de usuario*/
+#infoHeader{
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border: black 2px solid;
+    border-radius: 10px;
+}
+
+#infoHeader p b{
+    margin-right: 3px;
+}
+
+
+
 header img{
     width: 150px;
 }
@@ -80,99 +101,6 @@ aside ul{
     margin-top: 60px;
 }
 
-/*Boton menu
-@media  (max-width: 799px){
-
-    #btnMenu{
-        display:none;
-    }
-
-    #btnMenu + label {
-        background-image: url("../../img/menu.png");
-        background-size: 40px 40px;
-        background-repeat: no-repeat;
-        width: 40px;
-        height: 40px;
-        position: fixed;
-        z-index: 1001;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-        display:flex;
-    }
-
-    #btnMenu:checked + label{
-        background-image: url("../../img/close.png");
-        background-size: 40px 40px;
-        background-repeat: no-repeat;
-        width: 40px;
-        height: 40px;
-        position: fixed;
-        z-index: 1001;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-        display:flex;
-    }
-
-    aside{
-        display: none;
-        height: 100%;
-        position: fixed;
-        top: 0px;
-        right: 0px;
-        background-color: #bcbcbc;
-        -webkit-animation-name: menuIn;
-        -webkit-animation-duration: 0.4s;
-        animation-name: menuIn;
-        animation-duration: 0.4s;
-        z-index: 1000;
-    }
-
-    aside ul li{
-        list-style: none;
-        line-height: 45px;        
-        padding: 0;
-        text-align: center;
-    }
-
-    aside ul li a{
-        color:white;
-    }
-
-    #btnMenu:checked ~ aside {
-        display: flex;
-    }
-
-    @-webkit-keyframes menuIn {
-        from { 
-            right: -2000px; 
-            opacity: 0.2;
-        } 
-        to {
-            right: 8px; 
-            opacity: 0.7;
-        }
-    }
-
-    @keyframes menuIn {
-        from {
-            right: -2000px; 
-            opacity: 0.2;
-        }
-        to {
-            right: 8px; 
-            opacity: 0.7;
-        }
-    }
-    
-    
-    .parallax {
-        background-attachment: scroll;
-    }
-
-}
-/*Boton Menu*/
 
 section{
     font-family: 'Roboto','Khula', sans-serif;
@@ -184,11 +112,13 @@ section section{
 }
 
 section article{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    text-align: justify;
     margin-bottom: 15px;
+
 }
 
 section article:nth-child(-n+3){
@@ -216,9 +146,6 @@ footer{
     text-align: center;
 }
 
-footer h2{
-    margin-top:0;
-}
 
 /*Menu login*/
 #login{

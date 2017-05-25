@@ -10,7 +10,6 @@
         <link rel="shortcut icon" href="src/img/logotipo_4.png"/>
         <script src="src/javascript/ventanaModal/app.js"></script>
         <script src="src/javascript/timeoutMensaje/timeoutMensaje.js"></script>
-        <script src="src/javascript/paraIndex/cambiarColor.js"></script>
 
     </head>
 
@@ -64,9 +63,9 @@
                 }
 
                 if (isset($_SESSION["usuario"])) {
-                    echo '<div id="logueado"><p><b>Usuario: </b> ';
-                    echo ucfirst($_SESSION["usuario"]) . '      </p>';
-                    echo '<span id="notificaciones"></span>'; // aquí se insertarán las notificaciones, se puede mover donde sea.
+                    echo '<div id="logueado"><div id="infoHeader"><p><b>Usuario: </b><i> ';
+                    echo ucfirst($_SESSION["usuario"]) . '      </i></p>';
+                    echo '<span id="notificaciones"></span></div>'; // aquí se insertarán las notificaciones, se puede mover donde sea.
                     echo '<a href="index.php?action=salir">Salir</a></div>';
                 
                     
@@ -123,7 +122,6 @@ $mvc->enlacesPaginasController();
     </body>
   <?php if (isset($_SESSION["validar"])) {  //si no está logueado, no carga el script
     echo '<script type="text/javascript" src="src/javascript/ajax/notificaciones.js"></script>';
-    echo  '<script src="src/javascript/paraIndex/menu.js"></script>';
   }
     ?>
 </html>
