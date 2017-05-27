@@ -31,10 +31,30 @@
 }
 
 
-#listarPracticas{
-    text-align: center;
-}
-
 .contenidoPractia>p>a{
     color:aquamarine;
+}
+
+#practicasAlumnos form, #practicasAlumnos form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#practicasAlumnos form label, #practicaNueva form label{
+    width:50%;
+    display: flex;
+    align-items: center;
+    padding:5px;
+    margin: 20px 0;
+}
+
+#practicasAlumnos form label:hover, #practicaNueva form label:hover{
+    
+    background-color: #d4d4d4;
+}
+
+#practicasAlumnos form label input, #practicaNueva form label input{
+    width:150px;
+    height:20px;
 }

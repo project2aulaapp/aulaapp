@@ -6,10 +6,67 @@
     background-color: #cccccc;
 }
 
-#entregarPracticas form * {
-	margin: 25px;
-}
-
 #inscribirEnCurso form *{
 	margin: 10px;
+}
+/*Formularios de practicas*/
+
+#listarPracticas form, #entregarPracticas form{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#listarPracticas form label, #entregarPracticas form label{
+	width:50%;
+    display: flex;
+    align-items: center;
+    padding:5px;
+    margin: 20px 0;
+}
+
+#listarPracticas form label:hover, #entregarPracticas form label:hover{
+	
+	background-color: #d4d4d4;
+}
+
+ #listarPracticas form label input, #entregarPracticas form label input{
+	width:150px;
+    height:20px;
+}
+
+
+
+
+@media  (min-width: 1024px){
+	/*Este es el formulario cuando seleccionas las nuevas asginaturas*/
+	#seleccionAsignaturas form {
+		flex-direction: row;
+	    flex-wrap: wrap;
+	    justify-content: center;
+	    margin: 10px;
+	}
+
+	#seleccionAsignaturas form label{
+		width:50%;
+	    display: flex;
+	    align-items: center;
+	    margin: 10px 0;
+	}
+
+/*Este es el contenedor de las asignaturas*/
+	.contenedor-asignaturas{
+		display: flex;
+	    flex-wrap: wrap;
+	    justify-content: center;
+	}
+/*Esta es cada una de las asignaturas*/
+	.btn-asignatura{
+		width: 45%;
+	    margin: 10px;
+	    padding: 10px;
+	    background: #6c99bc;
+	}
+
+
 }

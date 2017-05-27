@@ -42,7 +42,6 @@ if (isset($_SESSION["validar"])) {
     }else if($_SESSION["rol"]==2){ //profesor
         echo '<ul class="menu">
               <li  id="inicio"><a href="index.php?action=index">Inicio</a></li>
-              <li  id="asignaturasProfe"><a href="index.php?action=asignaturasProfesor">Asignaturas</a></li>
               <li>   
                     <label for="drop-0" class="toggle">Archivos &#8681;</label>
                     <a href="#">Archivos &#8681;</a>
@@ -75,7 +74,16 @@ if (isset($_SESSION["validar"])) {
                     </ul> 
 
                 </li>
-              <li  id="perfil"><a href="index.php?action=perfil">Perfil</a></li>
+                <li>   
+                    <label for="drop-4" class="toggle">Perfil &#8681;</label>
+                    <a href="#">Perfil &#8681;</a>
+                    <input type="checkbox" id="drop-4"/>
+                    <ul>
+                        <li  id="asignaturasProfe"><a href="index.php?action=asignaturasProfesor">Asignaturas</a></li>
+                        <li  id="perfil"><a href="index.php?action=perfil">Tu perfil</a></li>
+                    </ul> 
+
+                </li>
               <li  id="calendario"><a href="index.php?action=calendario">Calendario</a></li>
               </ul>';
     }else if($_SESSION["rol"]==3){ //alumnos

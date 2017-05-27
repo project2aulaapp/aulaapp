@@ -11,7 +11,7 @@ class PracticasController extends MvcController {
         echo 'Enviar esta práctica: <input name="fichero_usuario" type="file"/> ';
         echo 'Selecciona la asignatura';
         foreach ($listadoAsignaturas as $fila => $item) {
-            echo '<input type="radio" name="idAsignatura" value="' . $item["id"] . '" checked>' . $item["nombre"] . '</input>';
+            echo '<label><input type="radio" name="idAsignatura" value="' . $item["id"] . '" checked>' . $item["nombre"] . '</input></label>';
         }
         echo '<input type="submit" value="Enviar fichero" />';
 
@@ -40,7 +40,7 @@ class PracticasController extends MvcController {
         echo 'Selecciona la asignatura de las que quires ver las prácticas';
         echo '<form method="POST">';
         foreach ($listadoAsignaturas as $fila => $item) {
-            echo '<input type="radio" name="idAsignatura" value="' . $item["id"] . '" checked>' . $item["nombre"] . '</input>';
+            echo '<label><input type="radio" name="idAsignatura" value="' . $item["id"] . '" checked>' . $item["nombre"] . '</input></label>';
         }
         echo '<input type="submit" value="Seleccionar" />';
         echo '</form>';
@@ -91,7 +91,7 @@ class PracticasController extends MvcController {
             echo 'Selecciona la asignatura de las que quires ver las prácticas';
         echo '<form method="POST">';
         foreach ($listadoAsignaturas as $fila => $item) {
-            echo '<input type="radio" name="idAsignatura" value="' . $item["id"] . '" checked>' . $item["nombre"] . '</input>';
+            echo '<label><input type="radio" name="idAsignatura" value="' . $item["id"] . '" checked>' . $item["nombre"] . '</input></label>';
         }
         echo '<input type="submit" value="Seleccionar" />';
         echo '</form>';
@@ -135,7 +135,7 @@ class PracticasController extends MvcController {
             echo '<p>Elige la asignatura en la que quieras entregar prácticas</p>';
             echo '<form method="POST">';
             foreach ($asignaturasAlumno as $fila => $item) {
-                echo '<input type="radio" name="idAsignatura" value="' . $item["id"] . '">' . $item["nombre"] . '</input>';
+                echo '<label><input type="radio" name="idAsignatura" value="' . $item["id"] . '">' . $item["nombre"] . '</input></label>';
             }
             echo '<input type="submit" value="Seleccionar" />';
             echo '</form>';
@@ -145,7 +145,7 @@ class PracticasController extends MvcController {
             if (!isset($_FILES['practica'])) {
                 if(isset($_POST["idAsignatura"])){
                     $_SESSION["idAsig"] = $_POST["idAsignatura"];
-                    echo 'Enviar esta práctica: <form method="POST"><input name="practica" type="file"/> ';                    
+                    echo 'Enviar esta práctica: <form method="POST"><label><input name="practica" type="file"/> </label>';                    
                     echo '<input type="submit" value="Enviar Practica" /></form>';
                 }
                 
@@ -178,7 +178,7 @@ class PracticasController extends MvcController {
             echo 'Selecciona la asignatura de las que quires ver las prácticas';
         echo '<form method="POST">';
         foreach ($asignaturasProfesor as $fila => $item) {
-            echo '<input type="radio" name="idAsignatura" value="' . $item["idAsig"] . '">' . $item["nomAsig"] . '</input>';
+            echo '<label><input type="radio" name="idAsignatura" value="' . $item["idAsig"] . '">' . $item["nomAsig"] . '</input></label>';
         }
         echo '<input type="submit" value="Seleccionar" />';
         echo '</form>';        
@@ -196,7 +196,7 @@ class PracticasController extends MvcController {
             echo 'Selecciona el alumno para descargar sus prácticas';
             echo '<form method="POST">';
             foreach ($idAlumno as $fila => $item) {
-                echo '<input type="radio" name="idAlumno" value="' . $item["userId"] . '">' . $item["user"] .' - '. $item["nombre"] .' '.$item["ape1"].' '.$item["ape2"].'</input>';
+                echo '<label><input type="radio" name="idAlumno" value="' . $item["userId"] . '">' . $item["user"] .' - '. $item["nombre"] .' '.$item["ape1"].' '.$item["ape2"].'</input></label>';
             }
             echo '<input type="submit" value="Seleccionar" />';
             echo '</form>';     

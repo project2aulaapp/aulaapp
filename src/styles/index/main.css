@@ -65,13 +65,16 @@ header div a, section a{
 /*Enlace de cuando recibes un mensaje*/
 header #notificaciones a{
     background: red;
-    line-height: 8px;
+    padding: 5px;
+    line-height: 5px;
+    font-size: 12px;
 }
 
 
 header #logueado{
     display: flex;
     flex-direction: column;
+    flex-wrap:wrap;
     justify-content: space-around;
     align-items: center;
 }
@@ -130,6 +133,11 @@ section article:nth-child(-n+3){
 section article *{
     margin:10px 15px;
     width:90%;
+}
+
+section section article:nth-child(-n+2){
+/*Cambiamos el hr por esta linea de separacion*/
+border-bottom:2px grey solid;
 }
 
 section h1{
