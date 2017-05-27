@@ -29,7 +29,7 @@ tr:nth-child(even) td {
 
 
 tr:nth-child(odd) td { 
-    background-color: #cacaca;
+    background-color: #bababa;
 }
 
 table tbody tr:hover td { 
@@ -41,4 +41,64 @@ table button{
 	margin: 5px;
     width: 200px;
     padding: 5px;
+}
+
+@media only screen and (max-width: 760px) {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { 
+		border: 1px solid #ccc;
+	}
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	table button{
+		margin: 0;
+	    width: 100px;
+	    padding: 5px;
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-top: 3px;
+		padding-bottom: 2px;
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+
+	/*Usuarios en admin*/
+	#listadoUsuarios td:nth-of-type(1):before { content: "Usuario"; }
+	#listadoUsuarios td:nth-of-type(2):before { content: "Admin"; }
+	#listadoUsuarios td:nth-of-type(3):before { content: "Borrar"; }
+	
+	/*Mensajes*/
+	#listaMensajes td:nth-of-type(1):before { content: "Remitente"; }
+	#listaMensajes td:nth-of-type(2):before { content: "Asunto"; }
+	#listaMensajes td:nth-of-type(3):before { content: "Mensaje"; }
+	#listaMensajes td:nth-of-type(4):before { content: "Fecha"; }
+	#listaMensajes td:nth-of-type(5):before { content: "Borrar"; }
+	#listaMensajes td:nth-of-type(6):before { content: "Ver"; }
+}
 }
