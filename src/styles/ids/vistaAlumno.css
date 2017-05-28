@@ -35,7 +35,44 @@
     height:20px;
 }
 
+/*Este es el contenedor de las asignaturas*/
+	.contenedor-asignaturas{
+		display: flex;
+	    flex-wrap: wrap;
+	    justify-content: center;
+	}
 
+/*Esta es cada una de las asignaturas*/
+.btn-asignatura{
+	width: 85%;
+    margin: 10px;
+    padding: 10px;
+    background: slateblue;
+	transition: box-shadow 0.5s linear;
+}
+
+.btn-asignatura a{
+	color:black;
+}
+
+.btn-asignatura p{
+	visibility: hidden;
+ 	opacity: 0;
+  	transition: visibility 0.7s, opacity 0.7s linear;
+}
+
+.btn-asignatura:hover{
+	box-shadow: 0 0 10px blue;
+}
+
+.btn-asignatura:hover p{
+	visibility: visible;
+	opacity: 1;
+}
+
+.btn-asignatura a:visited {
+	color:black;
+}
 
 
 @media  (min-width: 1024px){
@@ -54,12 +91,6 @@
 	    margin: 10px 0;
 	}
 
-/*Este es el contenedor de las asignaturas*/
-	.contenedor-asignaturas{
-		display: flex;
-	    flex-wrap: wrap;
-	    justify-content: center;
-	}
 /*Esta es cada una de las asignaturas*/
 	.btn-asignatura{
 		width: 45%;

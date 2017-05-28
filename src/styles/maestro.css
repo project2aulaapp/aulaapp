@@ -7,13 +7,13 @@
 @import "ids/menu.css";
 
 /*Vista del administrador*/
-@import "ids/formAdmin.css";
+@import "ids/vistaAdmin.css";
 
 /*Vista del profesor*/
-@import "ids/formProfesor.css";
+@import "ids/vistaProfesor.css";
 
 /*Vista del alumno*/
-@import "ids/formAlumno.css";
+@import "ids/vistaAlumno.css";
 
 
 
