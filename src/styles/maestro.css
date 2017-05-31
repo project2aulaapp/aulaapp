@@ -23,6 +23,9 @@
 /*Llamamos el estilo del timeoutMensaje*/
 @import "timeoutMensaje/timeoutMensaje.css";
 
+/*Llamamos el estilo de la pizarra*/
+@import "pizarra/pizarra.css";
+
 #depuracion{
     /*display: none;*/
 }

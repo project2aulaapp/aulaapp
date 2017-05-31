@@ -1,0 +1,16 @@
+#piz {
+	display: flexbox;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+}
+
+#pizarra {
+	display: flexbox;
+	width: 100%;
+	height: 500px;
+	border: outset 15px #CCCC99;
+	background-color: #336666;
+    color: white;
+    font-size: 14px;
+}
