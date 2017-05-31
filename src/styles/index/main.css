@@ -94,8 +94,6 @@ header #logueado{
     margin-right: 3px;
 }
 
-
-
 header img{
     width: 150px;
 }
@@ -275,4 +273,20 @@ div{
 
 #parallax3{
     background-image: url("../../img/dam.jpg");
+}
+
+/*Para ver bien los mensajes en detalle*/
+#mensajeEnDetalle{
+    margin: 0 auto;
+    width: 90%;
+    text-align: justify;
+}
+
+#mensajeEnDetalle h1+p{
+    font-style: italic;
+}
+
+#mensajeEnDetalle button{
+    margin:10px;
+    height: 30px;
 }
