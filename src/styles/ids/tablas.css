@@ -65,14 +65,17 @@ table button{
 		/* Behave  like a "row" */
 		border: none;
 		border-bottom: 1px solid #eee; 
+		height: 100%;
 		position: relative;
+		padding-top: 10px;
 		padding-left: 50%; 
 	}
 
 	table button{
 		margin: 0;
+		margin-bottom: 5px;
+		padding-bottom: 5px;
 	    width: 100px;
-	    padding: 5px;
 	}
 	
 	td:before { 
@@ -88,9 +91,15 @@ table button{
 		white-space: nowrap;
 	}
 
+	/*Autorizar Usuarios*/
+	#autorizarUsers td:nth-of-type(1):before { content: "Nombre Usuario"; }
+	#autorizarUsers td:nth-of-type(2):before { content: "Nombre y apellidos"; }
+	#autorizarUsers td:nth-of-type(3):before { content: "Autorizar"; }
+	#autorizarUsers td:nth-of-type(4):before { content: "Borrar"; }
+
 	/*Usuarios en admin*/
 	#listadoUsuarios td:nth-of-type(1):before { content: "Usuario"; }
-	#listadoUsuarios td:nth-of-type(2):before { content: "Admin"; }
+	#listadoUsuarios td:nth-of-type(2):before { content: "Mail"; }
 	#listadoUsuarios td:nth-of-type(3):before { content: "Borrar"; }
 	
 	/*Mensajes*/
@@ -100,5 +109,9 @@ table button{
 	#listaMensajes td:nth-of-type(4):before { content: "Fecha"; }
 	#listaMensajes td:nth-of-type(5):before { content: "Borrar"; }
 	#listaMensajes td:nth-of-type(6):before { content: "Ver"; }
+
+	/*<cursos*/
+	#listadoCursos td:nth-of-type(1):before { content: "Curso"; }
+	#listadoCursos td:nth-of-type(2):before { content: "Borrar"; }
 }
 }

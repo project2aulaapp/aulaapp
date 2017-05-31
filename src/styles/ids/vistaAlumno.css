@@ -47,18 +47,70 @@
 	width: 85%;
     margin: 10px;
     padding: 10px;
-    background: white;
+    color:white;
 	border:2px solid black;
 	transition: box-shadow 0.5s linear, border 0.4s linear;
 }
 
+/*Fondo para las asignaturas*/
+.btn-asignatura:first-child{
+	    background-image: url("../../img/fondoAsignatura/laptopFondo.jpg");
+	    background-size: 100% 100%;
+	    background-repeat: no-repeat;
+	    background-color: #cccccc;
+
+}
+
+.btn-asignatura:nth-child(2){
+	    background-image: url("../../img/fondoAsignatura/servidorFondo.jpg");
+	   	background-size: 100% 100%;
+	    background-repeat: no-repeat;
+	    background-color: #cccccc;
+
+}
+
+.btn-asignatura:nth-child(3){
+	    background-image: url("../../img/fondoAsignatura/tecladoFondo.jpg");
+	    background-size: 100% 100%;
+	    background-repeat: no-repeat;
+	    background-color: #cccccc;
+}
+
+.btn-asignatura:nth-child(4){
+	    background-image: url("../../img/fondoAsignatura/webDesignFondo.jpg");
+	    background-size: 100% 100%;
+	    background-repeat: no-repeat;
+	    background-color: #cccccc;
+}
+
+.btn-asignatura:nth-child(5){
+	    background-image: url("../../img/fondoAsignatura/movilesFondo.jpg");
+	    background-size: 100% 100%;
+	    background-repeat: no-repeat;
+	    background-color: #cccccc;
+}
+
+.btn-asignatura:nth-child(6){
+	    background-image: url("../../img/fondoAsignatura/teclado_2.jpg");
+	    background-size: 100% 100%;
+	    background-repeat: no-repeat;
+	    background-color: #cccccc;
+}
+
+
+/*Enlace*/
 .btn-asignatura a{
-	color:black;
+	color:white;
+}
+
+.btn-asignatura h1{
+    text-shadow: 2px 2px black;
 }
 
 .btn-asignatura p{
 	visibility: hidden;
 	text-align: justify;
+    text-shadow: 2px 2px black;
  	opacity: 0;
   	transition: visibility 0.7s, opacity 0.7s linear;
 }
@@ -71,10 +123,12 @@
 .btn-asignatura:hover p{
 	visibility: visible;
 	opacity: 1;
+	text-shadow:1px 1px  #5a5a5a;
 }
 
 .btn-asignatura a:visited {
-	color:black;
+	color:white;
+	text-shadow:2px 2px  #5a5a5a;
 }
 
 
