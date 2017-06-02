@@ -3,19 +3,19 @@
 
     <form method="post" id="myForm">
         <p>
-            <input type="text" name="usuarioRegistro" id="userName" placeholder="Nombre de usuario" title="nombre de usuario" autofocus>
+            <input type="text" name="usuarioRegistro" id="userName" placeholder="Nombre de usuario" title="nombre de usuario">
             <span></span>
         </p>
         <p>
             <input type="password" name="passwordRegistro" id="password" placeholder="Contraseña" title="contraseña">
             <span></span>
         </p>
-        
+
         <p>
             <input type="password" name="rePasswordRegistro" id="rePassword" placeholder="Repite contraseña" title="contraseña">
             <span></span>
-        </p>        
-        
+        </p>
+
         <p>
             <input type="text" name="nombreRegistro" id="userNameReal" placeholder="Nombre" title="nombre">
             <span></span>

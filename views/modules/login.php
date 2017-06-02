@@ -3,7 +3,7 @@
 
     <form method="post" id="myForm">
         <p>
-            <input type="text" name="usuarioIngreso" id="userName" placeholder="Nombre de usuario" title="nombre de usuario" autofocus>
+            <input type="text" name="usuarioIngreso" id="userName" placeholder="Nombre de usuario" title="nombre de usuario">
             <span></span>
         </p>
         <p>
@@ -27,7 +27,7 @@
 
 		if(isset($_GET["action"])){
 			if ($_GET["action"] == "fallo") {
-				echo "<div class='both incorrect'>Fallo al hacer login.</div>";                                
+				echo "<div class='both incorrect'>Fallo al hacer login.</div>";
 			}
 		}
 

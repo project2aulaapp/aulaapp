@@ -47,7 +47,7 @@ class UsuariosController extends MvcController {
                 $_SESSION["inscrito"] = $respuesta["inscritoCurso"];
                 $_SESSION["inscritoAsignaturas"] = $respuesta["inscritoAsignaturas"];
                 $_SESSION["fallosLogin"] = $respuesta["contador_fallo_login"];
-                
+
                 header("location:index.php?action=matricular");
             } else {
                 header("location:index.php?action=fallo");
@@ -84,29 +84,69 @@ class UsuariosController extends MvcController {
         //echo $datos;
 
         $respuesta = UsuariosModel::editarUsuarioModel($datosController, "usuario");
+            if($datosController == $respuesta["id"]){
+                echo '
+                <form method="post" id="myForm">
+                    <input type="hidden" value="' . $respuesta["id"] . '" name="idEditar">
 
-        echo '
-		<input type="hidden" value="' . $respuesta["id"] . '" name="idEditar">
+                    <p>
+                        <label>Nombre de usuario</label>
+                        <input type="text" value="' . $respuesta["user"] . '" name="usuarioEditar" id="userName" title="nombre de usuario">
+                        <span></span>
+                    </p>
 
-		<input type="text" value="' . $respuesta["user"] . '" name="usuarioEditar" required>
-                    
-		<input type="text" value="' . $respuesta["nombre"] . '" name="nombreEditar" required>
-                    
-		<input type="text" value="' . $respuesta["apellido1"] . '" name="apellido1Editar" required>
-                    
-		<input type="text" value="' . $respuesta["apellido2"] . '" name="apellido2Editar" required>
+                    <p>
+                        <label>Nombre</label>
+                        <input type="text" value="' . $respuesta["nombre"] . '" name="nombreEditar" id="userNameReal" title="nombre">
+                        <span></span>
+                    </p>
 
-		<input type="hidden" value="' . $respuesta["password"] . '" name="passwordEditar" required>
-                
-                Antigua contraseña <input type="password" value="" name="oldPassword" required>
-                
-                Nueva contraseña<input type="password" value="" name="newPassword" required>
-                
-                Repite nueva contraseña<input type="password" value="" name="newRePassword" required>
+                    <p>
+                        <label>Primer apellido</label>
+                        <input type="text" value="' . $respuesta["apellido1"] . '" name="apellido1Editar" id="firstSurname" title="primer apellido">
+                        <span></span>
+                    </p>
 
-		<input type="email" value="' . $respuesta["email"] . '" name="emailEditar" required>
+                    <p>
+                        <label>Segundo apellido</label>
+                        <input type="text" value="' . $respuesta["apellido2"] . '" name="apellido2Editar" id="secondSurname" title="segundo apellido">
+                        <span></span>
+                    </p>
 
-		<input type="submit" value="Actualizar">';
+                    <input type="hidden" value="' . $respuesta["password"] . '" name="passwordEditar">
+
+                    <p>
+                        <label>Antigua contraseña</label>
+                        <input type="password" value="" name="oldPassword">
+                        <span></span>
+                    </p>
+
+                    <p>
+                        <label>Nueva contraseña</label>
+                        <input type="password" value="" name="newPassword">
+                        <span></span>
+                    </p>
+
+                    <p>
+                        <label>Repite nueva contraseña</label>
+                        <input type="password" value="" name="newRePassword">
+                        <span></span>
+                    </p>
+
+                    <p>
+                        <label>Correo electronico</label>
+                        <input type="text" value="' . $respuesta["email"] . '" name="emailEditar" id="mail" title="e-mail">
+                        <span></span>
+                    </p>
+
+                    <button type="submit" value="Actualizar">ACTUALIZAR</button>
+                    <button type="reset" value="Limpiar">LIMPIAR</button>
+                </form>
+
+                <script type="text/javascript" src="src/javascript/validacionEditarPerfil/validacionSubmit.js"></script>
+                <script type="text/javascript" src="src/javascript/validacionEditarPerfil/validacionBlur.js"></script>
+                <script type="text/javascript" src="src/javascript/ajax/compruebaUsuario.js"></script>';
+            }
     }
 
     #Actualizar usuario editar.php
@@ -235,7 +275,7 @@ class UsuariosController extends MvcController {
         foreach ($respuesta as $fila => $item) {
             echo'<tr>
 				<td>' . $item["user"] . '</td>
-				<td>' . $item["email"] . '</td>				
+				<td>' . $item["email"] . '</td>
 				<td><a href="index.php?action=usuarios&idBorrar=' . $item["id"] . '"><button>Borrar</button></a></td>
 			</tr>';
         }
