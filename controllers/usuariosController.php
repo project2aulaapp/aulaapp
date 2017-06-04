@@ -86,7 +86,7 @@ class UsuariosController extends MvcController {
         $respuesta = UsuariosModel::editarUsuarioModel($datosController, "usuario");
             if($datosController == $respuesta["id"]){
                 echo '
-                <form method="post" id="myForm">
+                <form id="myForm">
                     <input type="hidden" value="' . $respuesta["id"] . '" name="idEditar">
 
                     <p>
@@ -139,13 +139,10 @@ class UsuariosController extends MvcController {
                         <span></span>
                     </p>
 
-                    <button type="submit" value="Actualizar">ACTUALIZAR</button>
-                    <button type="reset" value="Limpiar">LIMPIAR</button>
-                </form>
-
-                <script type="text/javascript" src="src/javascript/validacionEditarPerfil/validacionSubmit.js"></script>
-                <script type="text/javascript" src="src/javascript/validacionEditarPerfil/validacionBlur.js"></script>
-                <script type="text/javascript" src="src/javascript/ajax/compruebaUsuario.js"></script>';
+                    <p>
+                        <button type="submit" value="Actualizar">ACTUALIZAR</button>
+                    </p>
+                </form>';
             }
     }
 
