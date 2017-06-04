@@ -8,7 +8,7 @@ if (!$_SESSION["validar"]) {
 	exit(); //usando el método exit() hacemos que nadie pueda, de ninguna forma continuar el script y alterarlo. 
 }
 ?>
-<section id="listarPracticas"
+<section id="listarPracticas">
 
 
 <?php
@@ -16,11 +16,11 @@ if (!$_SESSION["validar"]) {
     
     
    if($_SESSION["rol"]==2){
-       echo '<p>profe</p>';
+       //echo '<p>profe</p>';
       $contenidos->listarPracticasProfesorController($_SESSION["userId"]);
       }          
     if($_SESSION["rol"]==3){
-        echo '<p>alumno</p>';
+        //echo '<p>alumno</p>';
         $contenidos->listarPracticasAlumnoController($_SESSION["userId"]);
     }
 
