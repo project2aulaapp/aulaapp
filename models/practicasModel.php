@@ -91,13 +91,19 @@ public function entregarPracticaModel($datosModel, $idAsignatura) {
         #Por ejemplo si el id del profesor es 15, rellenaremos sólo un cero, si es 3, dos ceros a la izquierda y así
         $alumno = str_pad($_SESSION["userId"], 3, '0', STR_PAD_LEFT);
         $asignatura = str_pad($idAsignatura, 3, '0', STR_PAD_LEFT);
+        $consulta ="select nombre, apellido1, apellido2 from usuario where id=".$_SESSION["userId"];
+        $datosAlumno = Datos::conectar()->prepare($consulta);
+        $datosAlumno->execute();
+        $resultado = $datosAlumno->fetch();
         date_default_timezone_set("UTC");
-        if (move_uploaded_file($datosModel['tmp_name'], 'practicas/entregaPracticas/' . $alumno . $asignatura . time() . utf8_decode($datosModel['name']))) {// archivos de uno en uno
+        if (move_uploaded_file($datosModel['tmp_name'], 'practicas/entregaPracticas/' . $alumno . $asignatura . time() .$resultado["nombre"].$resultado["apellido1"].$resultado["apellido2"]. utf8_decode($datosModel['name']))) {// archivos de uno en uno
+        //if (move_uploaded_file($datosModel['tmp_name'], 'practicas/entregaPracticas/' . $alumno . $asignatura . time() . utf8_decode($datosModel['name']))) {// archivos de uno en uno
             #si todo va bien, sería un código de 6 números, profesor+asignatura+nombrearchivo.extension
             return "ok";
         } else {
             return "ko";
         }
+        $datosAlumno->close();
     }
     
     

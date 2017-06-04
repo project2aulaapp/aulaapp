@@ -9,7 +9,7 @@ if (!$_SESSION["validar"]) {
 }
 ?>
 <section id="listarPracticas">
-
+    <h1>Listado de prácticas</h1>
 
 <?php
     $contenidos = new PracticasController();
