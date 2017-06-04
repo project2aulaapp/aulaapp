@@ -24,9 +24,9 @@ class PracticasController extends MvcController {
 
             if ($respuesta == "ok") {
                 //header("location:index.php?action=ok");
-                echo "Archivo de práctica cargado correctamente.";
+                echo '<div class="correct">Archivo de práctica cargado correctamente.</div>';
             } else {
-                echo "maaaaaaal!";
+                echo '<div class="incorrect">Debido a algún error, la práctica no se ha cargado correctamente, vuelve a intentarlo. Comprueba que has seleccionado algún archivo.</div>';
             }
         }
     }//Fin función practicaNuevaController
