@@ -78,7 +78,7 @@ class PracticasController extends MvcController {
         if (unlink('practicas/'.$nombrePractica)) {
             header("location:index.php?action=practicas");           
         } else {
-            echo 'Ocurrió algún error';
+            echo '<div class="incorrect">Ocurrió algún error.</div>';
         }
        
     }
