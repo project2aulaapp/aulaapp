@@ -27,9 +27,9 @@ class ArchivosController extends MvcController {
             $respuesta = ArchivosModel::archivoNuevoModel($datosController, $asignatura);
 
             if ($respuesta == "ok") {
-                echo '<div class="correct">Archivo cargado correctamente.</div>';
+                echo '<div class="both correct">Archivo cargado correctamente.</div>';
             } else {
-                 echo '<div class="incorrect">Debido a algún error el archivo no se cargó, vuelva a intentarlo.</div>';
+                 echo '<div class="both incorrect">Debido a algún error el archivo no se cargó, vuelva a intentarlo.</div>';
                 
             }
         }

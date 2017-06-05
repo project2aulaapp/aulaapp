@@ -12,9 +12,9 @@ class CursosController extends MvcController {
             $respuesta = CursosModel::cursoNuevoModel($datosController, "curso");
 
             if ($respuesta == "ok") {
-                echo '<div class="correct">Nuevo curso guardado correctamente.</div>';
+                echo '<div class="both correct">Nuevo curso guardado correctamente.</div>';
             } else {
-                echo '<div class="incorrect">Ocurrió algún problema, vuelva a intentarlo.</div>';
+                echo '<div class="both incorrect">Ocurrió algún problema, vuelva a intentarlo.</div>';
             }
         }
     }
@@ -79,7 +79,7 @@ class CursosController extends MvcController {
 			if ($respuesta == "ok") {
 				header("location:index.php?action=seleccionAsignaturas");
 			}else{
-                            echo '<div class="incorrect">Algo falló</div>';
+                            echo '<div class="both incorrect">Algo falló</div>';
                         }
             }
         }

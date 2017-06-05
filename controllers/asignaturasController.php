@@ -20,10 +20,10 @@ class AsignaturasController extends MvcController {
             if ($respuesta == "ok") {
                 //header("location:index.php?action=ok");
                 //echo "Asignatura grabada!";
-                echo '<div class="info"><div class="success">¡Asignatura grabada!</div></div>';
+                echo '<div class="both correct">¡Asignatura grabada!</div>';
             } else {
                 //header("location:index.php");
-                echo "maaaaaaal!";
+                echo "<div class='both incorrect'>Ha ocurrido algún error, la asignatura no se grabó</div>";
             }
         }
     }
@@ -59,7 +59,7 @@ class AsignaturasController extends MvcController {
             if ($respuesta == "ok") {
                 header("location:index.php?action=index");
             } else {
-               echo '<div class="incorrect">Ocurrió algún error, vuelva a intentarlo.</div>';
+               echo '<div class="both incorrect">Ocurrió algún error, vuelva a intentarlo.</div>';
                     }
         }
         

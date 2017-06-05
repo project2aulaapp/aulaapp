@@ -24,9 +24,9 @@ class PracticasController extends MvcController {
 
             if ($respuesta == "ok") {
                 //header("location:index.php?action=ok");
-                echo '<div class="correct">Archivo de práctica cargado correctamente.</div>';
+                echo '<div class="both correct">Archivo de práctica cargado correctamente.</div>';
             } else {
-                echo '<div class="incorrect">Debido a algún error, la práctica no se ha cargado correctamente, vuelve a intentarlo. Comprueba que has seleccionado algún archivo.</div>';
+                echo '<div class="both incorrect">Debido a algún error, la práctica no se ha cargado correctamente, vuelve a intentarlo. Comprueba que has seleccionado algún archivo.</div>';
             }
         }
     }//Fin función practicaNuevaController
@@ -78,7 +78,7 @@ class PracticasController extends MvcController {
         if (unlink('practicas/'.$nombrePractica)) {
             header("location:index.php?action=practicas");           
         } else {
-            echo '<div class="incorrect">Ocurrió algún error.</div>';
+            echo '<div class="both incorrect">Ocurrió algún error.</div>';
         }
        
     }
@@ -159,10 +159,10 @@ class PracticasController extends MvcController {
             // var_dump($respuesta);
             if ($respuesta == "ok") {
                 //header("location:index.php?action=ok");
-                echo "<div class='correct'>Archivo de práctica cargado correctamente.</div>";
+                echo "<div class='both correct'>Archivo de práctica cargado correctamente.</div>";
                 
             } else {
-                echo "<div class='incorrect'>El archivo no ha podido cargarse, comprueba que hiciste todo bien!</div>";
+                echo "<div class='both incorrect'>El archivo no ha podido cargarse, comprueba que hiciste todo bien!</div>";
             }
         }
 

@@ -18,10 +18,10 @@ class MensajesController extends MvcController {
             //var_dump($respuesta);
             if ($respuesta == "ok") {
                 //header("location:index.php?action=ok");
-                echo "<div class='correct'>¡Mensaje enviado!</div>";
+                echo "<div class='both correct'>¡Mensaje enviado!</div>";
             } else {
                 //header("location:index.php");
-                echo "<div class='incorrect'>Ha debido de ocurrir algún error y el mensaje no se envió</div>";
+                echo "<div class='both incorrect'>Ha debido de ocurrir algún error y el mensaje no se envió</div>";
             }
         }
     }
@@ -50,7 +50,7 @@ class MensajesController extends MvcController {
             if ($respuesta == "ok") {
                 header("location:index.php?action=verMensajes");
             } else {
-                echo '<div class="incorrect">No se borró el mensaje, ocurrió algún error.</div>';
+                echo '<div class="both incorrect">No se borró el mensaje, ocurrió algún error.</div>';
             }
         }
     }

@@ -170,10 +170,10 @@ class UsuariosController extends MvcController {
                 if ($respuesta == "ok") {
                     header("location:index.php?action=perfil");
                 } else {
-                    echo "error, no se actualizó";
+                    echo "<div class='both incorrect'>Ha ocurrido un error, no se actualizó el usuario</div>";
                 }
             } else {
-                echo 'Ha ocurrido algún error, comprueba que has introducido bien los datos, no se ha actualizado nada.';
+                echo "<div class='both incorrect'>Ha ocurrido algún error, comprueba que has introducido bien los datos, no se ha actualizado nada.</div>";
             }
         }
     }
@@ -213,7 +213,7 @@ class UsuariosController extends MvcController {
             if ($respuesta == "ok") {
                 header("location:index.php?action=usuarios");
             } else {
-                echo "error, no se pudo autorizar el usuario :( ";
+                echo "<div class='both incorrect'>Ha ocurrido un error, no se pudo autorizar el usuario :(</div>";
             }
         }
     }
@@ -230,7 +230,7 @@ class UsuariosController extends MvcController {
             if ($respuesta == "ok") {
                 header("location:index.php?action=usuarios");
             } else {
-                echo "error, no se pudo autorizar el usuario :( ";
+                echo "<div class='both incorrect'>Ha ocurrido un error, no se pudo autorizar el usuario :(</div>";
             }
         }
     }
@@ -247,7 +247,7 @@ class UsuariosController extends MvcController {
             if ($respuesta == "ok") {
                 header("location:index.php?action=usuarios");
             } else {
-                echo "error, no se pudo autorizar el usuario :( ";
+                echo "<div class='both incorrect'>Ha ocurrido un error, no se pudo autorizar el usuario :(</div>";
             }
         }
     }
