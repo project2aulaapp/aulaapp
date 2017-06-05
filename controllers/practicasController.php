@@ -37,7 +37,7 @@ class PracticasController extends MvcController {
     public function listarPracticasProfesorController($idProfe) {
         $listadoAsignaturas = PracticasModel::listarAsignaturasProfesorModel($idProfe);
         if(!isset($_POST["idAsignatura"])){
-        echo 'Selecciona la asignatura de las que quires ver las prácticas';
+        echo '<p class="margen">Selecciona la asignatura de las que quires ver las prácticas</p>';
         echo '<form method="POST">';
         foreach ($listadoAsignaturas as $fila => $item) {
             echo '<label><input type="radio" name="idAsignatura" value="' . $item["id"] . '" checked>' . $item["nombre"] . '</input></label>';
@@ -132,7 +132,7 @@ class PracticasController extends MvcController {
 
         $asignaturasAlumno = PracticasModel::listarAsignaturasAlumnoModel($_SESSION["userId"]);
         if (!isset($_POST["idAsignatura"])) {
-            echo '<p>Elige la asignatura en la que quieras entregar prácticas</p>';
+            echo '<p class="margen">Elige la asignatura en la que quieras entregar prácticas</p>';
             echo '<form method="POST">';
             foreach ($asignaturasAlumno as $fila => $item) {
                 echo '<label><input type="radio" name="idAsignatura" value="' . $item["id"] . '">' . $item["nombre"] . '</input></label>';

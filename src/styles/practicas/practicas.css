@@ -49,7 +49,7 @@
 
 
 
-.contenido-practica > button:last-child {
+.contenido-practica > button:last-child,  .archivo-borrar > button:last-child, .contenido-asignatura > button:last-child{
     display: block;
     margin:0 auto;
     width: 50%;
