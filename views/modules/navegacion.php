@@ -48,7 +48,7 @@ if (isset($_SESSION["validar"])) {
                     <input type="checkbox" id="drop-0"/>
                     <ul>
                       <li  id="subirApuntes"><a href="index.php?action=subirArchivo">Subir apuntes</a></li>
-                      <li  id="borrarArchivos"><a href="index.php?action=borrarArchivos">Borrar archivos</a></li>
+                      <li  id="borrarArchivos" style="background:#254441"><a href="index.php?action=borrarArchivos">Borrar archivos</a></li>
                     </ul>
 
                 </li>
