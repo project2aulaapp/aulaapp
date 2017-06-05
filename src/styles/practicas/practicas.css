@@ -1,0 +1,61 @@
+
+#listarPracticas,#entregarPracticas, #practicaNueva, #practicasAlumnos, #archivoNuevo, #borrarArchivos, #contenidosAsignaturas{
+   background-image: url("papel.png");
+   background-repeat: no-repeat;
+   background-size:cover; 
+   color: white;
+   text-shadow: 0.1em 0.1em 0.3em black;
+    
+}
+.contenido-practica, .archivo-borrar, .contenido-asignatura{
+    background: none;
+    margin:0 auto;
+    width:80%;
+}
+
+ .boton{
+             
+    display: inline-block;
+    white-space: nowrap;
+    background-color: #ccc;
+    background-image: linear-gradient(top, #eee, #ccc);
+    border: 1px solid #777;
+    padding: 0 1.5em;
+    margin: 0.5em;
+    font: bold 1em/2em Arial, Helvetica;
+    text-decoration: none;
+    color: #333;
+    text-shadow: 0 1px 0 rgba(255,255,255,.8);
+    border-radius: .2em;
+    box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+
+    
+}
+
+.boton:hover {
+    background-color: #ddd;            
+}
+
+
+
+.boton:focus {
+    outline: 0;
+    background: #fafafa;
+}    
+
+.boton:before {       
+    background-image: url("archivo.jpg");     
+}
+
+
+
+.contenido-practica > button:last-child {
+    display: block;
+    margin:0 auto;
+    width: 50%;
+    margin-bottom: 4em;
+}
+
+.margen{
+    margin-left: 3em;
+}

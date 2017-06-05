@@ -6,6 +6,7 @@
 @import "ids/tablas.css";
 @import "ids/menu.css";
 
+
 /*Vista del administrador*/
 @import "ids/vistaAdmin.css";
 
@@ -25,7 +26,7 @@
 
 /*Llamamos el estilo de la pizarra*/
 @import "pizarra/pizarra.css";
-
+@import "practicas/practicas.css";
 #depuracion{
     /*display: none;*/
 }

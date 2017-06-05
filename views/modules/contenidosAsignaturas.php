@@ -11,12 +11,13 @@ if (!$_SESSION["validar"]) {
 
 <section id="contenidosAsignaturas">
 <h1>Contenidos de la asignatura</h1>
-
+<div class="contenido-asignatura">
 <?php
     
     $contenidos = new ArchivosController();
     $contenidos-> listarArchivosController($_GET["id"]);
 ?>
 
-<a href="index.php?action=asignaturas">Volver a asignaturas</a>
+<a href="index.php?action=asignaturas" class="boton">Volver a asignaturas</a>
+</div>
 </section>

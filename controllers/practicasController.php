@@ -51,7 +51,7 @@ class PracticasController extends MvcController {
         $valor = ' ';
         $asignatura = str_pad($_POST["idAsignatura"], 3, '0', STR_PAD_LEFT);
         $profesor = str_pad($_SESSION["userId"], 3, '0', STR_PAD_LEFT);        
-
+        echo '<div class="contenido-practica">';
         foreach ($respuesta as $fila => $item) {
             
             // como me vienen todas las prácticas de la carpeta, las filtro para mostrarlas
@@ -60,12 +60,12 @@ class PracticasController extends MvcController {
                 $resultado = utf8_encode($valor);
                 $direccion = 'practicas/' . $item;
                 $practica = utf8_encode($item);
-                echo '<div class="contenido-practica">';
-                echo "<p><a href='$direccion'>Descargar--> $resultado </a> <a style='color:red' href='index.php?action=borrarPractica&nbPractica=$practica'>Borrar práctica</a></p>";
+                
+                echo "<fieldset><a href='$direccion' class='boton'>Descargar--> $resultado </a> <a class='boton' style='color:red' href='index.php?action=borrarPractica&nbPractica=$practica'>Borrar práctica</a></fieldset>";
                
             }
         }
-        echo '<p><a href="index.php?action=practicas">Volver</a></p></div>';
+        echo '<p><a href="index.php?action=practicas" class="boton">Volver atrás</a></p></div>';
         }    
           
         }
@@ -88,7 +88,7 @@ class PracticasController extends MvcController {
     public function listarPracticasAlumnoController($idAlum) {
         $listadoAsignaturas = PracticasModel::listarAsignaturasAlumnoModel($idAlum);
         if(!isset($_POST["idAsignatura"])){
-            echo 'Selecciona la asignatura de las que quires ver las prácticas';
+            echo '<p class="margen">Selecciona la asignatura de las que quires ver las prácticas</p>';
         echo '<form method="POST">';
         foreach ($listadoAsignaturas as $fila => $item) {
             echo '<label><input type="radio" name="idAsignatura" value="' . $item["id"] . '" checked>' . $item["nombre"] . '</input></label>';
@@ -103,7 +103,7 @@ class PracticasController extends MvcController {
         $valor = ' ';
         $asignatura = str_pad($_POST["idAsignatura"], 3, '0', STR_PAD_LEFT);
                 
-
+        echo '<div class="contenido-practica">';
         foreach ($respuesta as $fila => $item) {
             
             // como me vienen todas las prácticas de la carpeta, las filtro para mostrarlas
@@ -112,13 +112,13 @@ class PracticasController extends MvcController {
                 $resultado = utf8_encode($valor);
                 $direccion = 'practicas/' . utf8_encode($item);
                 $practica = utf8_encode($item);
-                echo '<div class="contenido-practica">';
-                echo "<p><a href='$direccion'>Descargar--> $resultado </a></p>";
+                
+                echo "<button class='boton'><a href='$direccion'>Descargar--> $resultado </a></button>";
                 
                
             }
         }
-        echo '<p><a href="index.php?action=practicas">Volver</a></p></div>';
+        echo '<button class="boton"><a href="index.php?action=practicas">Volver</a></button></div>';
         }    
           
         }

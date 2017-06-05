@@ -49,15 +49,15 @@ class ArchivosController extends MvcController {
 
         $valor = ' ';
         $asignatura = str_pad($idAsignatura, 3, '0', STR_PAD_LEFT);
-
+        
         foreach ($respuesta as $fila => $item) {
 
             if ($item != '.' && $item != '..' && (substr($item, 3, 3) == $asignatura)) {// (substr($item, 0, 2)==$asignatura) si los 2 número de caracteres desde el principio(0) coinciden con la asignatura, se muestran
                 $valor = utf8_encode(substr($item, 6));
                 $direccion = 'archivos/' . utf8_encode($item);
-                echo '<div class="contenido-asignatura">';
-                echo "<p><a href='$direccion'>Descargar $valor</a></p>";
-                echo '</div>';
+                
+                echo "<p><a class='boton' href='$direccion'>Descargar $valor</a></p>";
+                
             }
         }
     }
@@ -67,6 +67,7 @@ class ArchivosController extends MvcController {
 
         $valor = ' ';
         $profesor = str_pad($idProfesor, 3, '0', STR_PAD_LEFT);
+       
         foreach ($respuesta as $fila => $item) {
             $direccion = ' ';
             if ($item != '.' && $item != '..' && $item != '.htaccess' && (substr($item, 0, 3) == $profesor)) {// (substr($item, 0, 2)==$asignatura) si los 2 número de caracteres desde el principio(0) coinciden con la asignatura, se muestran
@@ -74,10 +75,10 @@ class ArchivosController extends MvcController {
                 $direccion = 'archivos/' . utf8_encode($item);
 
 
-                echo '<div class="archivo-borrar">';
-                echo "<p><a href='index.php?action=borrarArchivos&nbArchivo=$direccion'>Borrar archivo --> <strong>$valor</strong></a></p>";
+                
+                echo "<a href='index.php?action=borrarArchivos&nbArchivo=$direccion' class='boton'>Borrar archivo --> <strong>$valor</strong></a>";
                 //echo $direccion;
-                echo '</div>';
+                
             }
         }
     }

@@ -17,7 +17,7 @@ if(($_SESSION["rol"] == 1) || ($_SESSION["rol"] == 2) ){ //si no es profesor (ro
 ?>
 <section id="borrarArchivos">
 <h1>Borrar archivos</h1>
-
+<div class="archivo-borrar">
 <?php
 
 $archivos = new ArchivosController(); 
@@ -25,5 +25,6 @@ $archivos->listarArchivoBorrarController($_SESSION["userId"]);
 $archivos->borrarArchivoController();
 
 ?>
-
+   <a href="index.php" class="boton">Volver a inicio</a> 
+</div>
 </section>
