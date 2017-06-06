@@ -19,7 +19,7 @@ class UsuariosController extends MvcController {
             if ($respuesta == "ok") {
                 header("location:index.php?action=ok");
             } else {
-                header("location:index.php");
+                echo '<div class="both incorrect">El registro no se completó</div>';
             }
         }
     }
