@@ -10,11 +10,13 @@ $stmt = Datos::conectar()->prepare("SELECT notificaciones from usuario where use
 $stmt -> execute();
 
 $resultado = $stmt->fetch();
-
-if ($resultado['notificaciones']>0) {   
+if($resultado['notificaciones'] == 1) {   
+    echo '<p>Tienes ' . $resultado['notificaciones'] . ' <a href="index.php?action=verMensajes">mensaje</a></p>';
+   
+}else if ($resultado['notificaciones']>1) {   
     echo '<p>Tienes ' . $resultado['notificaciones'] . ' <a href="index.php?action=verMensajes">mensajes</a></p>';
    
-} else {
+}else{
     echo '<p>Sin notificaciones</p>'; //No tiene notificaciones, pues nada
 }
 ?>
