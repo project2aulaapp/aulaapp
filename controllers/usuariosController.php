@@ -90,52 +90,44 @@ class UsuariosController extends MvcController {
                     <input type="hidden" value="' . $respuesta["id"] . '" name="idEditar">
 
                     <p>
-                        <label>Nombre de usuario</label>
-                        <input type="text" value="' . $respuesta["user"] . '" name="usuarioEditar" id="userName" title="nombre de usuario">
+                        <input type="text" value="' . $respuesta["user"] . '" name="usuarioEditar" id="userName" placeholder="Nombre de usuario">
                         <span></span>
                     </p>
 
                     <p>
-                        <label>Nombre</label>
-                        <input type="text" value="' . $respuesta["nombre"] . '" name="nombreEditar" id="userNameReal" title="nombre">
+                        <input type="text" value="' . $respuesta["nombre"] . '" name="nombreEditar" id="userNameReal" placeholder="Nombre">
                         <span></span>
                     </p>
 
                     <p>
-                        <label>Primer apellido</label>
-                        <input type="text" value="' . $respuesta["apellido1"] . '" name="apellido1Editar" id="firstSurname" title="primer apellido">
+                        <input type="text" value="' . $respuesta["apellido1"] . '" name="apellido1Editar" id="firstSurname" placeholder="Primer apellido">
                         <span></span>
                     </p>
 
                     <p>
-                        <label>Segundo apellido</label>
-                        <input type="text" value="' . $respuesta["apellido2"] . '" name="apellido2Editar" id="secondSurname" title="segundo apellido">
+                        <input type="text" value="' . $respuesta["apellido2"] . '" name="apellido2Editar" id="secondSurname" placeholder="Segundo apellido">
                         <span></span>
                     </p>
 
                     <input type="hidden" value="' . $respuesta["password"] . '" name="passwordEditar">
 
                     <p>
-                        <label>Antigua contraseña</label>
-                        <input type="password" value="" name="oldPassword">
+                        <input type="password" value="" name="oldPassword" placeholder="Antigua contraseña">
                         <span></span>
                     </p>
 
                     <p>
-                        <label>Nueva contraseña</label>
-                        <input type="password" value="" name="newPassword">
+                        <input type="password" value="" name="newPassword" placeholder="Nueva contraseña">
                         <span></span>
                     </p>
 
                     <p>
-                        <label>Repite nueva contraseña</label>
-                        <input type="password" value="" name="newRePassword">
+                        <input type="password" value="" name="newRePassword" placeholder="Repite nueva contraseña">
                         <span></span>
                     </p>
 
                     <p>
-                        <label>Correo electronico</label>
-                        <input type="text" value="' . $respuesta["email"] . '" name="emailEditar" id="mail" title="e-mail">
+                        <input type="text" value="' . $respuesta["email"] . '" name="emailEditar" id="mail" placeholder="Correo electrónico">
                         <span></span>
                     </p>
 
