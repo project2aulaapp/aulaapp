@@ -7,7 +7,7 @@ function main() {
     if (correct) {
         setTimeout(function () {
             correct.parentNode.removeChild(correct);
-        }, 5000);
+        }, 3000);
     }
     if (incorrect) {
         setTimeout(function () {
