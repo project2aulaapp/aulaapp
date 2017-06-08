@@ -3,7 +3,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 if (!$_SESSION["validar"]) {
-    header("location:index.php?action=ingresar");
+    header("location:index.php?action=login");
     exit(); //usando el método exit() hacemos que nadie pueda, de ninguna forma continuar el script y alterarlo. 
 }
 ?>

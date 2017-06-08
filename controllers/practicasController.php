@@ -26,7 +26,7 @@ class PracticasController extends MvcController {
                 //header("location:index.php?action=ok");
                 echo '<div class="both correct">Archivo de práctica cargado correctamente.</div>';
             } else {
-                echo '<div class="both incorrect">Debido a algún error, la práctica no se ha cargado correctamente, vuelve a intentarlo. Comprueba que has seleccionado algún archivo.</div>';
+                echo '<div class="both incorrect">Error en la carga.</div>';
             }
         }
     }//Fin función practicaNuevaController
