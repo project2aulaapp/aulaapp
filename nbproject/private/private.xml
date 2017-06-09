@@ -2,6 +2,43 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/asignaturaNueva.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/listarPracticas.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/cursoNuevo.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/borrarPractica.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/editar.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/controllers/mensajesController.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/pizarraCheck2.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/contenidosAsignaturas.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/pizarraCheck.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/calendario.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/listadoAsignaturasProfesor.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/login.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/error.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/usuarios.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/pizarra.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/nuevoArchivo.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/footer.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/nuevaPractica.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/inicio.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/verPerfil.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/controllers/practicasController.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/detalleMensaje.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/navegacion.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/mensaje.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/models/mensajesModel.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/listadoUsuarios.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/asignaturas.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/seleccionAsignaturas.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/listarCursos.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/borrarArchivos.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/matricularEnCurso.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/registro.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/entregarPracticas.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/salir.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/verMensajes.php</file>
+            <file>file:/C:/xampp/htdocs/dev/aulaapp/views/modules/seleccionarPracticasAlumno.php</file>
+        </group>
     </open-files>
 </project-private>

@@ -113,7 +113,7 @@ class PracticasController extends MvcController {
                 $direccion = 'practicas/' . utf8_encode($item);
                 $practica = utf8_encode($item);
                 
-                echo "<button class='boton'><a href='$direccion'>Descargar--> $resultado </a></button>";
+                echo "<a href='$direccion' class='boton'>Descargar--> $resultado </a>";
                 
                
             }
