@@ -220,7 +220,9 @@ class PracticasController extends MvcController {
                     && $asignatura == $_SESSION["asignatura"]){
                 $practica = utf8_encode($fila);
                 date_default_timezone_set("UTC");
-               echo "<a href='practicas/entregaPracticas/$practica'>".utf8_encode($valor).'</a><strong> entregado en fecha: '. date('d-m-y H:i:s', $fecha).' </strong>'; 
+                echo '<fieldset style="max-width: 100px; margin-left:4em; margin-bottom:1em;">';
+                echo "<a href='practicas/entregaPracticas/$practica' class='boton'>".utf8_encode($valor).'</a><strong> entregado en fecha: '. date('d-m-y H:i:s', $fecha).' </strong>'; 
+		echo '</fieldset>'; 
             }
             
         }//fin foreach
