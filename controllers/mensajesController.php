@@ -35,7 +35,7 @@ class MensajesController extends MvcController {
                  echo'<tr>
 				<td>' . $remitente["nombre"] . ' ' . $remitente["apellido1"] . ' ' . $remitente["apellido2"] . '</td>
 				<td>' . $item["asunto"] . '</td>
-				<td>' . substr(utf8_decode($item["cuerpoMensaje"],0,25)) . '</td>
+				<td>' . substr($item["cuerpoMensaje"],0,25) . '</td>
                                 <td>' . $item["fecha_envio"] . '</td>
 				<td><a href="index.php?action=verMensajes&idBorrar=' . $item["id"] . '"><button>Borrar</button></a></td>
                                 <td><a href="index.php?action=verDetalle&id=' . $item["id"] . '"><button>Ver en detalle</button></a></td>
